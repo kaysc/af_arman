@@ -1,0 +1,378 @@
+>> Job started at: Sun Mar 12 11:07:30 CET 2023
+   On Machine:     ilfgridgpun02fl.unicph.domain
+   In directory:   /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/nmbr_human/613
+
+>> GPU is 5
+
+Loaded miniconda shell environment for bash
+I0312 11:07:40.379066 140234928101184 templates.py:857] Using precomputed obsolete pdbs /projects/ilfgrid/data/alphafold-genetic-databases///pdb_mmcif/obsolete.dat.
+I0312 11:07:43.577287 140234928101184 xla_bridge.py:353] Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker: 
+I0312 11:07:43.862226 140234928101184 xla_bridge.py:353] Unable to initialize backend 'rocm': NOT_FOUND: Could not find registered platform with name: "rocm". Available platform names are: Host CUDA Interpreter
+I0312 11:07:43.862834 140234928101184 xla_bridge.py:353] Unable to initialize backend 'tpu': module 'jaxlib.xla_extension' has no attribute 'get_tpu_client'
+I0312 11:07:43.862963 140234928101184 xla_bridge.py:353] Unable to initialize backend 'plugin': xla_extension has no attributes named get_plugin_device_client. Compile TensorFlow with //tensorflow/compiler/xla/python:enable_plugin_device set to true (defaults to false) to enable this.
+I0312 11:08:00.548660 140234928101184 run_alphafold.py:386] Have 5 models: ['model_1_multimer_v3_pred_0', 'model_2_multimer_v3_pred_0', 'model_3_multimer_v3_pred_0', 'model_4_multimer_v3_pred_0', 'model_5_multimer_v3_pred_0']
+I0312 11:08:00.549782 140234928101184 run_alphafold.py:403] Using random seed 84703613973908535 for the data pipeline
+I0312 11:08:00.550138 140234928101184 run_alphafold.py:161] Predicting nmbr_human-613
+I0312 11:08:00.562224 140234928101184 pipeline_multimer.py:210] Running monomer pipeline on chain A: nmbr_human P28336
+W0312 11:08:00.563878 140234928101184 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/nmbr_human/613/nmbr_human-613/msas/A/uniref90_hits.sto
+W0312 11:08:08.486879 140234928101184 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/nmbr_human/613/nmbr_human-613/msas/A/mgnify_hits.sto
+I0312 11:08:17.112645 140234928101184 hmmbuild.py:121] Launching subprocess ['/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/hmmbuild', '--hand', '--amino', '/tmp/tmpkekld9wd/output.hmm', '/tmp/tmpkekld9wd/query.msa']
+I0312 11:08:17.201581 140234928101184 utils.py:36] Started hmmbuild query
+I0312 11:08:18.486185 140234928101184 hmmbuild.py:128] hmmbuild stdout:
+# hmmbuild :: profile HMM construction from multiple sequence alignments
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# input alignment file:             /tmp/tmpkekld9wd/query.msa
+# output HMM file:                  /tmp/tmpkekld9wd/output.hmm
+# input alignment is asserted as:   protein
+# model architecture construction:  hand-specified by RF annotation
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# idx name                  nseq  alen  mlen eff_nseq re/pos description
+#---- -------------------- ----- ----- ----- -------- ------ -----------
+1     query                 9787  2107   390     7.11  0.590 
+
+# CPU time: 1.18u 0.09s 00:00:01.27 Elapsed: 00:00:01.28
+
+
+stderr:
+
+
+I0312 11:08:18.486435 140234928101184 utils.py:40] Finished hmmbuild query in 1.284 seconds
+I0312 11:08:18.491520 140234928101184 hmmsearch.py:103] Launching sub-process ['/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/hmmsearch', '--noali', '--cpu', '8', '--F1', '0.1', '--F2', '0.1', '--F3', '0.1', '--incE', '100', '-E', '100', '--domE', '100', '--incdomE', '100', '-A', '/tmp/tmpfig3rp3y/output.sto', '/tmp/tmpfig3rp3y/query.hmm', '/projects/ilfgrid/data/alphafold-genetic-databases///pdb_seqres/pdb_seqres.txt']
+I0312 11:08:19.276839 140234928101184 utils.py:36] Started hmmsearch (pdb_seqres.txt) query
+I0312 11:08:31.315906 140234928101184 utils.py:40] Finished hmmsearch (pdb_seqres.txt) query in 12.039 seconds
+W0312 11:08:35.745915 140234928101184 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/nmbr_human/613/nmbr_human-613/msas/A/bfd_uniref_hits.a3m
+I0312 11:08:35.855109 140234928101184 templates.py:940] Searching for template for: MPSKSLSNLSVTTGANESGSVPEGWERDFLPASDGTTTELVIRCVIPSLYLLIITVGLLGNIMLVKIFITNSAMRSVPNIFISNLAAGDLLLLLTCVPVDASRYFFDEWMFGKVGCKLIPVIQLTSVGVSVFTLTALSADRYRAIVNPMDMQTSGALLRTCVKAMGIWVVSVLLAVPEAVFSEVARISSLDNSSFTACIPYPQTDELHPKIHSVLIFLVYFLIPLAIISIYYYHIAKTLIKSAHNLPGEYNEHTKKQMETRKRLAKIVLVFVGCFIFCWFPNHILYMYRSFNYNEIDPSLGHMIVTLVARVLSFGNSCVNPFALYLLSESFRRHFNSQLCCGRKSYQERGTSYLLSSSAVRMTSLKSNAKNMVTNSVLLNGHSMKQEMAL
+I0312 11:08:36.270115 140234928101184 templates.py:267] Found an exact template match 7ul4_A.
+I0312 11:08:36.853635 140234928101184 templates.py:267] Found an exact template match 7sbf_R.
+I0312 11:08:37.318292 140234928101184 templates.py:267] Found an exact template match 7t2g_R.
+I0312 11:08:38.308011 140234928101184 templates.py:267] Found an exact template match 8f7r_M.
+I0312 11:08:38.322931 140234928101184 templates.py:267] Found an exact template match 8f7r_R.
+I0312 11:08:39.116375 140234928101184 templates.py:267] Found an exact template match 8f7q_M.
+I0312 11:08:39.132293 140234928101184 templates.py:267] Found an exact template match 8f7q_R.
+I0312 11:08:39.978296 140234928101184 templates.py:267] Found an exact template match 8f7w_R.
+I0312 11:08:40.622931 140234928101184 templates.py:267] Found an exact template match 6b73_A.
+I0312 11:08:40.638017 140234928101184 templates.py:267] Found an exact template match 6b73_B.
+I0312 11:08:41.235270 140234928101184 templates.py:267] Found an exact template match 7l1u_R.
+I0312 11:08:42.232306 140234928101184 templates.py:267] Found an exact template match 7l1v_R.
+I0312 11:08:42.828408 140234928101184 templates.py:267] Found an exact template match 7wq3_R.
+I0312 11:08:43.807061 140234928101184 templates.py:267] Found an exact template match 8ef5_M.
+I0312 11:08:43.821552 140234928101184 templates.py:267] Found an exact template match 8ef5_R.
+I0312 11:08:44.981857 140234928101184 templates.py:267] Found an exact template match 8ef6_M.
+I0312 11:08:44.996649 140234928101184 templates.py:267] Found an exact template match 8ef6_R.
+I0312 11:08:45.761650 140234928101184 templates.py:267] Found an exact template match 8efl_M.
+I0312 11:08:45.776049 140234928101184 templates.py:267] Found an exact template match 8efl_R.
+I0312 11:08:46.537928 140234928101184 templates.py:267] Found an exact template match 8efo_M.
+I0312 11:08:46.552202 140234928101184 templates.py:267] Found an exact template match 8efo_R.
+I0312 11:08:47.019985 140234928101184 templates.py:267] Found an exact template match 8efq_R.
+I0312 11:08:47.875683 140234928101184 templates.py:267] Found an exact template match 4n6h_A.
+I0312 11:08:48.467904 140234928101184 templates.py:267] Found an exact template match 8efb_R.
+I0312 11:08:49.095115 140234928101184 templates.py:267] Found an exact template match 4rwa_A.
+I0312 11:08:49.113990 140234928101184 templates.py:267] Found an exact template match 4rwa_B.
+I0312 11:08:49.774961 140234928101184 templates.py:267] Found an exact template match 4rwd_A.
+I0312 11:08:49.794058 140234928101184 templates.py:267] Found an exact template match 4rwd_B.
+I0312 11:08:50.368204 140234928101184 templates.py:267] Found an exact template match 6dde_R.
+I0312 11:08:50.823790 140234928101184 templates.py:267] Found an exact template match 6ddf_R.
+I0312 11:08:51.393250 140234928101184 templates.py:267] Found an exact template match 7scg_D.
+I0312 11:08:52.610872 140234928101184 templates.py:267] Found an exact template match 7t2h_D.
+I0312 11:08:53.062213 140234928101184 templates.py:267] Found an exact template match 7u2k_D.
+I0312 11:08:53.636803 140234928101184 templates.py:267] Found an exact template match 7u2l_D.
+I0312 11:08:54.174897 140234928101184 templates.py:267] Found an exact template match 4ea3_A.
+I0312 11:08:54.190036 140234928101184 templates.py:267] Found an exact template match 4ea3_B.
+I0312 11:08:54.856173 140234928101184 templates.py:267] Found an exact template match 8f7s_D.
+I0312 11:08:54.872002 140234928101184 templates.py:267] Found an exact template match 8f7s_R.
+I0312 11:08:56.066873 140234928101184 templates.py:267] Found an exact template match 5dhg_A.
+I0312 11:08:56.082306 140234928101184 templates.py:267] Found an exact template match 5dhg_B.
+I0312 11:08:56.650882 140234928101184 templates.py:267] Found an exact template match 5dhh_A.
+I0312 11:08:56.666248 140234928101184 templates.py:267] Found an exact template match 5dhh_B.
+I0312 11:08:57.173393 140234928101184 templates.py:267] Found an exact template match 7x9b_R.
+I0312 11:08:57.581974 140234928101184 templates.py:267] Found an exact template match 6vi4_A.
+I0312 11:08:57.595969 140234928101184 templates.py:267] Found an exact template match 6vi4_B.
+I0312 11:08:58.187364 140234928101184 templates.py:267] Found an exact template match 7wic_R.
+I0312 11:08:58.780898 140234928101184 templates.py:267] Found an exact template match 7wig_R.
+I0312 11:08:59.253415 140234928101184 templates.py:267] Found an exact template match 7xmr_R.
+I0312 11:09:00.931188 140234928101184 pipeline.py:234] Uniref90 MSA size: 10000 sequences.
+I0312 11:09:00.932436 140234928101184 pipeline.py:235] BFD MSA size: 1720 sequences.
+I0312 11:09:00.932519 140234928101184 pipeline.py:236] MGnify MSA size: 501 sequences.
+I0312 11:09:00.932585 140234928101184 pipeline.py:237] Final (deduplicated) MSA size: 11996 sequences.
+I0312 11:09:00.932912 140234928101184 pipeline.py:239] Total number of templates (NB: this can include bad templates and is later filtered to top 4): 20.
+W0312 11:09:00.954881 140234928101184 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/nmbr_human/613/nmbr_human-613/msas/A/uniprot_hits.sto
+I0312 11:10:52.960619 140234928101184 pipeline_multimer.py:210] Running monomer pipeline on chain B: neuromedin B gtp:613
+W0312 11:10:52.963485 140234928101184 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/nmbr_human/613/nmbr_human-613/msas/B/uniref90_hits.sto
+W0312 11:10:52.967133 140234928101184 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/nmbr_human/613/nmbr_human-613/msas/B/mgnify_hits.sto
+I0312 11:10:52.969764 140234928101184 hmmbuild.py:121] Launching subprocess ['/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/hmmbuild', '--hand', '--amino', '/tmp/tmpezhg6328/output.hmm', '/tmp/tmpezhg6328/query.msa']
+I0312 11:10:53.107450 140234928101184 utils.py:36] Started hmmbuild query
+I0312 11:10:53.118610 140234928101184 hmmbuild.py:128] hmmbuild stdout:
+# hmmbuild :: profile HMM construction from multiple sequence alignments
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# input alignment file:             /tmp/tmpezhg6328/query.msa
+# output HMM file:                  /tmp/tmpezhg6328/output.hmm
+# input alignment is asserted as:   protein
+# model architecture construction:  hand-specified by RF annotation
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# idx name                  nseq  alen  mlen eff_nseq re/pos description
+#---- -------------------- ----- ----- ----- -------- ------ -----------
+1     query                    1    10    10     1.00  1.693 
+
+# CPU time: 0.00u 0.00s 00:00:00.00 Elapsed: 00:00:00.00
+
+
+stderr:
+
+
+I0312 11:10:53.118783 140234928101184 utils.py:40] Finished hmmbuild query in 0.011 seconds
+I0312 11:10:53.119560 140234928101184 hmmsearch.py:103] Launching sub-process ['/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/hmmsearch', '--noali', '--cpu', '8', '--F1', '0.1', '--F2', '0.1', '--F3', '0.1', '--incE', '100', '-E', '100', '--domE', '100', '--incdomE', '100', '-A', '/tmp/tmpo12nuf9_/output.sto', '/tmp/tmpo12nuf9_/query.hmm', '/projects/ilfgrid/data/alphafold-genetic-databases///pdb_seqres/pdb_seqres.txt']
+I0312 11:10:53.260303 140234928101184 utils.py:36] Started hmmsearch (pdb_seqres.txt) query
+I0312 11:10:54.724715 140234928101184 utils.py:40] Finished hmmsearch (pdb_seqres.txt) query in 1.464 seconds
+W0312 11:10:54.736440 140234928101184 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/nmbr_human/613/nmbr_human-613/msas/B/bfd_uniref_hits.a3m
+I0312 11:10:54.738451 140234928101184 templates.py:940] Searching for template for: GNLWATGHFM
+I0312 11:10:54.738707 140234928101184 templates.py:718] hit 1c98_A did not pass prefilter: Template is an exact subsequence of query with large coverage. Length ratio: 1.0.
+I0312 11:10:54.738837 140234928101184 templates.py:718] hit 1c9a_A did not pass prefilter: Template is an exact subsequence of query with large coverage. Length ratio: 1.0.
+I0312 11:10:54.904413 140234928101184 templates.py:267] Found an exact template match 2n0b_A.
+I0312 11:10:55.039970 140234928101184 templates.py:267] Found an exact template match 2n0c_A.
+I0312 11:10:55.200143 140234928101184 templates.py:267] Found an exact template match 2n0d_A.
+I0312 11:10:55.354790 140234928101184 templates.py:267] Found an exact template match 2n0e_A.
+I0312 11:10:55.504155 140234928101184 templates.py:267] Found an exact template match 2n0f_A.
+I0312 11:10:55.658137 140234928101184 templates.py:267] Found an exact template match 2n0g_A.
+I0312 11:10:55.814724 140234928101184 templates.py:267] Found an exact template match 2n0h_A.
+I0312 11:10:55.815750 140234928101184 templates.py:718] hit 4ezu_B did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.815860 140234928101184 templates.py:718] hit 4ezv_C did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.815943 140234928101184 templates.py:718] hit 4ezv_D did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.816019 140234928101184 templates.py:718] hit 5w3f_B did not pass prefilter: Template too short. Length: 9.
+I0312 11:10:55.816086 140234928101184 templates.py:718] hit 5w3h_B did not pass prefilter: Template too short. Length: 9.
+I0312 11:10:55.816150 140234928101184 templates.py:718] hit 4ffb_B did not pass prefilter: Template too short. Length: 9.
+I0312 11:10:55.816218 140234928101184 templates.py:718] hit 4u3j_B did not pass prefilter: Template too short. Length: 9.
+I0312 11:10:55.816283 140234928101184 templates.py:718] hit 5w3j_B did not pass prefilter: Template too short. Length: 9.
+I0312 11:10:55.816353 140234928101184 templates.py:718] hit 2avf_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.816417 140234928101184 templates.py:718] hit 2avf_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.816480 140234928101184 templates.py:718] hit 2avf_B did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.816542 140234928101184 templates.py:718] hit 2avf_B did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.816604 140234928101184 templates.py:718] hit 2avf_C did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.816666 140234928101184 templates.py:718] hit 2avf_C did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.816728 140234928101184 templates.py:718] hit 2avf_D did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.816789 140234928101184 templates.py:718] hit 2avf_D did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.816851 140234928101184 templates.py:718] hit 2avf_E did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.816912 140234928101184 templates.py:718] hit 2avf_E did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.816974 140234928101184 templates.py:718] hit 2avf_F did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.817035 140234928101184 templates.py:718] hit 2avf_F did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.817112 140234928101184 templates.py:718] hit 5i6l_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.817176 140234928101184 templates.py:718] hit 5i6l_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.817239 140234928101184 templates.py:718] hit 5i6m_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.817301 140234928101184 templates.py:718] hit 5i6m_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.817375 140234928101184 templates.py:718] hit 5i6n_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.817438 140234928101184 templates.py:718] hit 5i6n_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.817499 140234928101184 templates.py:718] hit 5i6o_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.817561 140234928101184 templates.py:718] hit 5i6o_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.817621 140234928101184 templates.py:718] hit 5i6p_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.817683 140234928101184 templates.py:718] hit 5i6p_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.817744 140234928101184 templates.py:718] hit 5ogf_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.817806 140234928101184 templates.py:718] hit 5ogf_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.817869 140234928101184 templates.py:718] hit 6qwg_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.817930 140234928101184 templates.py:718] hit 6qwg_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.817990 140234928101184 templates.py:718] hit 1rzp_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.818052 140234928101184 templates.py:718] hit 1rzp_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.818113 140234928101184 templates.py:718] hit 1rzp_B did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.818174 140234928101184 templates.py:718] hit 1rzp_B did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.818235 140234928101184 templates.py:718] hit 1rzp_C did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.818297 140234928101184 templates.py:718] hit 1rzp_C did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.818368 140234928101184 templates.py:718] hit 1rzq_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.818431 140234928101184 templates.py:718] hit 1rzq_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.818492 140234928101184 templates.py:718] hit 1rzq_B did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.818553 140234928101184 templates.py:718] hit 1rzq_B did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.818614 140234928101184 templates.py:718] hit 1rzq_C did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.818675 140234928101184 templates.py:718] hit 1rzq_C did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.818736 140234928101184 templates.py:718] hit 5i6k_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.818798 140234928101184 templates.py:718] hit 5i6k_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.818859 140234928101184 templates.py:718] hit 5n8f_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.818920 140234928101184 templates.py:718] hit 5n8f_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.818981 140234928101184 templates.py:718] hit 5n8g_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.819043 140234928101184 templates.py:718] hit 5n8g_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.819103 140234928101184 templates.py:718] hit 5n8h_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.819165 140234928101184 templates.py:718] hit 5n8h_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.819232 140234928101184 templates.py:718] hit 5n8i_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.819295 140234928101184 templates.py:718] hit 5n8i_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.819363 140234928101184 templates.py:718] hit 5of5_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.819426 140234928101184 templates.py:718] hit 5of5_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.819487 140234928101184 templates.py:718] hit 5of6_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.819548 140234928101184 templates.py:718] hit 5of6_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.819609 140234928101184 templates.py:718] hit 5of7_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.819670 140234928101184 templates.py:718] hit 5of7_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.819731 140234928101184 templates.py:718] hit 5of8_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.819792 140234928101184 templates.py:718] hit 5of8_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.819853 140234928101184 templates.py:718] hit 5ofc_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.819914 140234928101184 templates.py:718] hit 5ofc_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.819975 140234928101184 templates.py:718] hit 5ofd_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.820036 140234928101184 templates.py:718] hit 5ofd_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.820099 140234928101184 templates.py:718] hit 5ofe_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.820160 140234928101184 templates.py:718] hit 5ofe_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.820221 140234928101184 templates.py:718] hit 5off_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.820282 140234928101184 templates.py:718] hit 5off_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.820347 140234928101184 templates.py:718] hit 5ofg_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.820410 140234928101184 templates.py:718] hit 5ofg_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.820471 140234928101184 templates.py:718] hit 5ofh_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.820533 140234928101184 templates.py:718] hit 5ofh_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.820594 140234928101184 templates.py:718] hit 5og2_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.820655 140234928101184 templates.py:718] hit 5og2_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.820716 140234928101184 templates.py:718] hit 5og3_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.820778 140234928101184 templates.py:718] hit 5og3_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.820839 140234928101184 templates.py:718] hit 5og4_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.820901 140234928101184 templates.py:718] hit 5og4_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.820962 140234928101184 templates.py:718] hit 5og5_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.821022 140234928101184 templates.py:718] hit 5og5_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.821084 140234928101184 templates.py:718] hit 5og6_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.821145 140234928101184 templates.py:718] hit 5og6_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.821208 140234928101184 templates.py:718] hit 5ogg_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.821277 140234928101184 templates.py:718] hit 5ogg_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.821345 140234928101184 templates.py:718] hit 6knf_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.821408 140234928101184 templates.py:718] hit 6knf_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.821470 140234928101184 templates.py:718] hit 6knf_B did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.821531 140234928101184 templates.py:718] hit 6knf_B did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.821592 140234928101184 templates.py:718] hit 6knf_C did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.821653 140234928101184 templates.py:718] hit 6knf_C did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.821715 140234928101184 templates.py:718] hit 6kng_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.821776 140234928101184 templates.py:718] hit 6kng_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.821838 140234928101184 templates.py:718] hit 6kng_B did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.821898 140234928101184 templates.py:718] hit 6kng_B did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.821959 140234928101184 templates.py:718] hit 6kng_C did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.822021 140234928101184 templates.py:718] hit 6kng_C did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.822082 140234928101184 templates.py:718] hit 6zu6_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.822144 140234928101184 templates.py:718] hit 6zu6_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.822205 140234928101184 templates.py:718] hit 6zua_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.822267 140234928101184 templates.py:718] hit 6zua_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.822335 140234928101184 templates.py:718] hit 6zub_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.822398 140234928101184 templates.py:718] hit 6zub_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.822460 140234928101184 templates.py:718] hit 6zud_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.822522 140234928101184 templates.py:718] hit 6zud_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.822583 140234928101184 templates.py:718] hit 6zut_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.822644 140234928101184 templates.py:718] hit 6zut_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.822705 140234928101184 templates.py:718] hit 1nia_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.822766 140234928101184 templates.py:718] hit 1nia_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.822827 140234928101184 templates.py:718] hit 1nia_B did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.822888 140234928101184 templates.py:718] hit 1nia_B did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.822949 140234928101184 templates.py:718] hit 1nia_C did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.823011 140234928101184 templates.py:718] hit 1nia_C did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.823072 140234928101184 templates.py:718] hit 1nib_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.823134 140234928101184 templates.py:718] hit 1nib_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.823196 140234928101184 templates.py:718] hit 1nib_B did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.823267 140234928101184 templates.py:718] hit 1nib_B did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.823343 140234928101184 templates.py:718] hit 1nib_C did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.823419 140234928101184 templates.py:718] hit 1nib_C did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.823489 140234928101184 templates.py:718] hit 1nic_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.823558 140234928101184 templates.py:718] hit 1nic_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.823626 140234928101184 templates.py:718] hit 1nid_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.823694 140234928101184 templates.py:718] hit 1nid_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.823762 140234928101184 templates.py:718] hit 1nie_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.823830 140234928101184 templates.py:718] hit 1nie_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.823896 140234928101184 templates.py:718] hit 1nif_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.823962 140234928101184 templates.py:718] hit 1nif_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.824029 140234928101184 templates.py:718] hit 2bw4_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.824097 140234928101184 templates.py:718] hit 2bw4_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.824164 140234928101184 templates.py:718] hit 2bw5_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.824231 140234928101184 templates.py:718] hit 2bw5_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.824299 140234928101184 templates.py:718] hit 2bwd_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.824372 140234928101184 templates.py:718] hit 2bwd_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.824439 140234928101184 templates.py:718] hit 2bwi_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.824506 140234928101184 templates.py:718] hit 2bwi_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.824574 140234928101184 templates.py:718] hit 2nrd_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.824641 140234928101184 templates.py:718] hit 2nrd_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.824708 140234928101184 templates.py:718] hit 2y1a_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.824775 140234928101184 templates.py:718] hit 2y1a_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.824843 140234928101184 templates.py:718] hit 6gb8_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.824910 140234928101184 templates.py:718] hit 6gb8_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.824977 140234928101184 templates.py:718] hit 6gbb_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.825042 140234928101184 templates.py:718] hit 6gbb_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.825109 140234928101184 templates.py:718] hit 6gtj_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.825176 140234928101184 templates.py:718] hit 6gtj_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.825244 140234928101184 templates.py:718] hit 1kcb_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.825311 140234928101184 templates.py:718] hit 1kcb_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.825387 140234928101184 templates.py:718] hit 5akr_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.825454 140234928101184 templates.py:718] hit 5akr_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.825518 140234928101184 templates.py:718] hit 6gby_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.825580 140234928101184 templates.py:718] hit 6gby_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.825641 140234928101184 templates.py:718] hit 6gcg_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.825708 140234928101184 templates.py:718] hit 6gcg_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.825771 140234928101184 templates.py:718] hit 6gsq_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.825834 140234928101184 templates.py:718] hit 6gsq_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.825895 140234928101184 templates.py:718] hit 6gt0_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.825956 140234928101184 templates.py:718] hit 6gt0_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.826017 140234928101184 templates.py:718] hit 6gt2_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.826078 140234928101184 templates.py:718] hit 6gt2_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.826140 140234928101184 templates.py:718] hit 6gti_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.826201 140234928101184 templates.py:718] hit 6gti_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.826263 140234928101184 templates.py:718] hit 6gtk_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.826324 140234928101184 templates.py:718] hit 6gtk_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.826392 140234928101184 templates.py:718] hit 6gtl_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.826454 140234928101184 templates.py:718] hit 6gtl_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.826515 140234928101184 templates.py:718] hit 6gtn_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.826576 140234928101184 templates.py:718] hit 6gtn_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.826637 140234928101184 templates.py:718] hit 1rqq_E did not pass prefilter: Template too short. Length: 8.
+I0312 11:10:55.826699 140234928101184 templates.py:718] hit 1rqq_F did not pass prefilter: Template too short. Length: 8.
+I0312 11:10:55.826760 140234928101184 templates.py:718] hit 3boh_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.826822 140234928101184 templates.py:718] hit 3boh_A did not pass prefilter: Template too short. Length: 6.
+I0312 11:10:55.826884 140234928101184 templates.py:718] hit 3boh_B did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.826945 140234928101184 templates.py:718] hit 3boh_B did not pass prefilter: Template too short. Length: 6.
+I0312 11:10:55.827007 140234928101184 templates.py:718] hit 3boj_A did not pass prefilter: Template too short. Length: 7.
+I0312 11:10:55.827068 140234928101184 templates.py:718] hit 3boj_A did not pass prefilter: Template too short. Length: 6.
+I0312 11:10:55.827916 140234928101184 pipeline.py:234] Uniref90 MSA size: 1 sequences.
+I0312 11:10:55.828004 140234928101184 pipeline.py:235] BFD MSA size: 34 sequences.
+I0312 11:10:55.828060 140234928101184 pipeline.py:236] MGnify MSA size: 1 sequences.
+I0312 11:10:55.828109 140234928101184 pipeline.py:237] Final (deduplicated) MSA size: 34 sequences.
+I0312 11:10:55.828173 140234928101184 pipeline.py:239] Total number of templates (NB: this can include bad templates and is later filtered to top 4): 1.
+W0312 11:10:55.829813 140234928101184 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/nmbr_human/613/nmbr_human-613/msas/B/uniprot_hits.sto
+I0312 11:10:56.423642 140234928101184 run_alphafold.py:191] Running model model_1_multimer_v3_pred_0 on nmbr_human-613
+I0312 11:10:56.426464 140234928101184 model.py:165] Running predict with shape(feat) = {'aatype': (400,), 'residue_index': (400,), 'seq_length': (), 'msa': (2081, 400), 'num_alignments': (), 'template_aatype': (4, 400), 'template_all_atom_mask': (4, 400, 37), 'template_all_atom_positions': (4, 400, 37, 3), 'asym_id': (400,), 'sym_id': (400,), 'entity_id': (400,), 'deletion_matrix': (2081, 400), 'deletion_mean': (400,), 'all_atom_mask': (400, 37), 'all_atom_positions': (400, 37, 3), 'assembly_num_chains': (), 'entity_mask': (400,), 'num_templates': (), 'cluster_bias_mask': (2081,), 'bert_mask': (2081, 400), 'seq_mask': (400,), 'msa_mask': (2081, 400)}
+I0312 11:22:54.817491 140234928101184 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (400, 400, 64)}, 'experimentally_resolved': {'logits': (400, 37)}, 'masked_msa': {'logits': (508, 400, 22)}, 'num_recycles': (), 'predicted_aligned_error': (400, 400), 'predicted_lddt': {'logits': (400, 50)}, 'structure_module': {'final_atom_mask': (400, 37), 'final_atom_positions': (400, 37, 3)}, 'plddt': (400,), 'aligned_confidence_probs': (400, 400, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0312 11:22:54.819031 140234928101184 run_alphafold.py:203] Total JAX model model_1_multimer_v3_pred_0 on nmbr_human-613 predict time (includes compilation time, see --benchmark): 718.4s
+I0312 11:23:27.706764 140234928101184 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 389 (LEU) of chain 0>: ['OXT'], <Residue 399 (MET) of chain 1>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0312 11:23:28.984236 140234928101184 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0312 11:23:29.866465 140234928101184 amber_minimize.py:72] Restraining 3129 / 6327 particles.
+I0312 11:25:52.812894 140234928101184 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0312 11:25:57.142763 140234928101184 amber_minimize.py:503] Iteration completed: Einit 6728352.93 Efinal -6120.15 Time 139.74 s num residue violations 0 num residue exclusions 0 
+I0312 11:25:57.418159 140234928101184 run_alphafold.py:191] Running model model_2_multimer_v3_pred_0 on nmbr_human-613
+I0312 11:25:57.418422 140234928101184 model.py:165] Running predict with shape(feat) = {'aatype': (400,), 'residue_index': (400,), 'seq_length': (), 'msa': (2081, 400), 'num_alignments': (), 'template_aatype': (4, 400), 'template_all_atom_mask': (4, 400, 37), 'template_all_atom_positions': (4, 400, 37, 3), 'asym_id': (400,), 'sym_id': (400,), 'entity_id': (400,), 'deletion_matrix': (2081, 400), 'deletion_mean': (400,), 'all_atom_mask': (400, 37), 'all_atom_positions': (400, 37, 3), 'assembly_num_chains': (), 'entity_mask': (400,), 'num_templates': (), 'cluster_bias_mask': (2081,), 'bert_mask': (2081, 400), 'seq_mask': (400,), 'msa_mask': (2081, 400)}
+I0312 11:37:53.552052 140234928101184 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (400, 400, 64)}, 'experimentally_resolved': {'logits': (400, 37)}, 'masked_msa': {'logits': (508, 400, 22)}, 'num_recycles': (), 'predicted_aligned_error': (400, 400), 'predicted_lddt': {'logits': (400, 50)}, 'structure_module': {'final_atom_mask': (400, 37), 'final_atom_positions': (400, 37, 3)}, 'plddt': (400,), 'aligned_confidence_probs': (400, 400, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0312 11:37:53.553707 140234928101184 run_alphafold.py:203] Total JAX model model_2_multimer_v3_pred_0 on nmbr_human-613 predict time (includes compilation time, see --benchmark): 716.1s
+I0312 11:38:20.159714 140234928101184 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 389 (LEU) of chain 0>: ['OXT'], <Residue 399 (MET) of chain 1>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0312 11:38:21.319822 140234928101184 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0312 11:38:22.122473 140234928101184 amber_minimize.py:72] Restraining 3129 / 6327 particles.
+I0312 11:43:22.695170 140234928101184 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0312 11:43:25.648222 140234928101184 amber_minimize.py:503] Iteration completed: Einit 28569.22 Efinal -6285.22 Time 295.57 s num residue violations 0 num residue exclusions 0 
+I0312 11:43:25.980380 140234928101184 run_alphafold.py:191] Running model model_3_multimer_v3_pred_0 on nmbr_human-613
+I0312 11:43:25.980736 140234928101184 model.py:165] Running predict with shape(feat) = {'aatype': (400,), 'residue_index': (400,), 'seq_length': (), 'msa': (2081, 400), 'num_alignments': (), 'template_aatype': (4, 400), 'template_all_atom_mask': (4, 400, 37), 'template_all_atom_positions': (4, 400, 37, 3), 'asym_id': (400,), 'sym_id': (400,), 'entity_id': (400,), 'deletion_matrix': (2081, 400), 'deletion_mean': (400,), 'all_atom_mask': (400, 37), 'all_atom_positions': (400, 37, 3), 'assembly_num_chains': (), 'entity_mask': (400,), 'num_templates': (), 'cluster_bias_mask': (2081,), 'bert_mask': (2081, 400), 'seq_mask': (400,), 'msa_mask': (2081, 400)}
+I0312 11:56:35.346244 140234928101184 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (400, 400, 64)}, 'experimentally_resolved': {'logits': (400, 37)}, 'masked_msa': {'logits': (508, 400, 22)}, 'num_recycles': (), 'predicted_aligned_error': (400, 400), 'predicted_lddt': {'logits': (400, 50)}, 'structure_module': {'final_atom_mask': (400, 37), 'final_atom_positions': (400, 37, 3)}, 'plddt': (400,), 'aligned_confidence_probs': (400, 400, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0312 11:56:35.348563 140234928101184 run_alphafold.py:203] Total JAX model model_3_multimer_v3_pred_0 on nmbr_human-613 predict time (includes compilation time, see --benchmark): 789.4s
+I0312 11:57:01.662671 140234928101184 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 389 (LEU) of chain 0>: ['OXT'], <Residue 399 (MET) of chain 1>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0312 11:57:02.537796 140234928101184 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0312 11:57:03.626711 140234928101184 amber_minimize.py:72] Restraining 3129 / 6327 particles.
+I0312 12:02:13.149713 140234928101184 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0312 12:02:15.741758 140234928101184 amber_minimize.py:503] Iteration completed: Einit 31603.99 Efinal -6216.61 Time 305.32 s num residue violations 0 num residue exclusions 0 
+I0312 12:02:16.045615 140234928101184 run_alphafold.py:191] Running model model_4_multimer_v3_pred_0 on nmbr_human-613
+I0312 12:02:16.045936 140234928101184 model.py:165] Running predict with shape(feat) = {'aatype': (400,), 'residue_index': (400,), 'seq_length': (), 'msa': (2081, 400), 'num_alignments': (), 'template_aatype': (4, 400), 'template_all_atom_mask': (4, 400, 37), 'template_all_atom_positions': (4, 400, 37, 3), 'asym_id': (400,), 'sym_id': (400,), 'entity_id': (400,), 'deletion_matrix': (2081, 400), 'deletion_mean': (400,), 'all_atom_mask': (400, 37), 'all_atom_positions': (400, 37, 3), 'assembly_num_chains': (), 'entity_mask': (400,), 'num_templates': (), 'cluster_bias_mask': (2081,), 'bert_mask': (2081, 400), 'seq_mask': (400,), 'msa_mask': (2081, 400)}
+I0312 12:12:22.197745 140234928101184 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (400, 400, 64)}, 'experimentally_resolved': {'logits': (400, 37)}, 'masked_msa': {'logits': (508, 400, 22)}, 'num_recycles': (), 'predicted_aligned_error': (400, 400), 'predicted_lddt': {'logits': (400, 50)}, 'structure_module': {'final_atom_mask': (400, 37), 'final_atom_positions': (400, 37, 3)}, 'plddt': (400,), 'aligned_confidence_probs': (400, 400, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0312 12:12:22.200191 140234928101184 run_alphafold.py:203] Total JAX model model_4_multimer_v3_pred_0 on nmbr_human-613 predict time (includes compilation time, see --benchmark): 606.2s
+I0312 12:12:49.243934 140234928101184 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 389 (LEU) of chain 0>: ['OXT'], <Residue 399 (MET) of chain 1>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0312 12:12:50.304985 140234928101184 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0312 12:12:51.658876 140234928101184 amber_minimize.py:72] Restraining 3129 / 6327 particles.
+I0312 12:16:25.555375 140234928101184 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0312 12:16:28.224225 140234928101184 amber_minimize.py:503] Iteration completed: Einit 356959.42 Efinal -6255.22 Time 210.36 s num residue violations 0 num residue exclusions 0 
+I0312 12:16:28.498080 140234928101184 run_alphafold.py:191] Running model model_5_multimer_v3_pred_0 on nmbr_human-613
+I0312 12:16:28.498368 140234928101184 model.py:165] Running predict with shape(feat) = {'aatype': (400,), 'residue_index': (400,), 'seq_length': (), 'msa': (2081, 400), 'num_alignments': (), 'template_aatype': (4, 400), 'template_all_atom_mask': (4, 400, 37), 'template_all_atom_positions': (4, 400, 37, 3), 'asym_id': (400,), 'sym_id': (400,), 'entity_id': (400,), 'deletion_matrix': (2081, 400), 'deletion_mean': (400,), 'all_atom_mask': (400, 37), 'all_atom_positions': (400, 37, 3), 'assembly_num_chains': (), 'entity_mask': (400,), 'num_templates': (), 'cluster_bias_mask': (2081,), 'bert_mask': (2081, 400), 'seq_mask': (400,), 'msa_mask': (2081, 400)}
+I0312 12:27:29.753187 140234928101184 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (400, 400, 64)}, 'experimentally_resolved': {'logits': (400, 37)}, 'masked_msa': {'logits': (508, 400, 22)}, 'num_recycles': (), 'predicted_aligned_error': (400, 400), 'predicted_lddt': {'logits': (400, 50)}, 'structure_module': {'final_atom_mask': (400, 37), 'final_atom_positions': (400, 37, 3)}, 'plddt': (400,), 'aligned_confidence_probs': (400, 400, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0312 12:27:29.755473 140234928101184 run_alphafold.py:203] Total JAX model model_5_multimer_v3_pred_0 on nmbr_human-613 predict time (includes compilation time, see --benchmark): 661.3s
+I0312 12:27:57.203763 140234928101184 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 389 (LEU) of chain 0>: ['OXT'], <Residue 399 (MET) of chain 1>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0312 12:27:58.299516 140234928101184 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0312 12:27:59.664119 140234928101184 amber_minimize.py:72] Restraining 3129 / 6327 particles.
+I0312 12:32:18.752250 140234928101184 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0312 12:32:25.370641 140234928101184 amber_minimize.py:503] Iteration completed: Einit 308392.86 Efinal -5982.42 Time 255.43 s num residue violations 0 num residue exclusions 0 
+I0312 12:32:25.716409 140234928101184 run_alphafold.py:277] Final timings for nmbr_human-613: {'features': 175.7269561290741, 'process_features_model_1_multimer_v3_pred_0': 0.00010085105895996094, 'predict_and_compile_model_1_multimer_v3_pred_0': 718.3950815200806, 'relax_model_1_multimer_v3_pred_0': 171.22566151618958, 'process_features_model_2_multimer_v3_pred_0': 5.0067901611328125e-06, 'predict_and_compile_model_2_multimer_v3_pred_0': 716.1353871822357, 'relax_model_2_multimer_v3_pred_0': 321.42089796066284, 'process_features_model_3_multimer_v3_pred_0': 6.9141387939453125e-06, 'predict_and_compile_model_3_multimer_v3_pred_0': 789.3679754734039, 'relax_model_3_multimer_v3_pred_0': 329.4734539985657, 'process_features_model_4_multimer_v3_pred_0': 6.198883056640625e-06, 'predict_and_compile_model_4_multimer_v3_pred_0': 606.1543757915497, 'relax_model_4_multimer_v3_pred_0': 234.95180249214172, 'process_features_model_5_multimer_v3_pred_0': 5.9604644775390625e-06, 'predict_and_compile_model_5_multimer_v3_pred_0': 661.2571978569031, 'relax_model_5_multimer_v3_pred_0': 284.2283661365509}
+
+>> Job finished at: Sun Mar 12 12:32:33 CET 2023
+
+>> Runtime: 5103 s

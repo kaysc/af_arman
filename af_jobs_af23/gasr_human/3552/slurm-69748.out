@@ -1,0 +1,452 @@
+>> Job started at: Fri Mar  3 09:37:40 CET 2023
+   On Machine:     ilfgridgpun02fl.unicph.domain
+   In directory:   /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/gasr_human/3552
+
+>> GPU is 6
+
+Loaded miniconda shell environment for bash
+I0303 09:37:52.403893 140280944858944 templates.py:857] Using precomputed obsolete pdbs /projects/ilfgrid/data/alphafold-genetic-databases///pdb_mmcif/obsolete.dat.
+I0303 09:37:55.466995 140280944858944 xla_bridge.py:353] Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker: 
+I0303 09:37:55.750448 140280944858944 xla_bridge.py:353] Unable to initialize backend 'rocm': NOT_FOUND: Could not find registered platform with name: "rocm". Available platform names are: CUDA Interpreter Host
+I0303 09:37:55.750945 140280944858944 xla_bridge.py:353] Unable to initialize backend 'tpu': module 'jaxlib.xla_extension' has no attribute 'get_tpu_client'
+I0303 09:37:55.751068 140280944858944 xla_bridge.py:353] Unable to initialize backend 'plugin': xla_extension has no attributes named get_plugin_device_client. Compile TensorFlow with //tensorflow/compiler/xla/python:enable_plugin_device set to true (defaults to false) to enable this.
+I0303 09:38:11.212814 140280944858944 run_alphafold.py:386] Have 5 models: ['model_1_multimer_v3_pred_0', 'model_2_multimer_v3_pred_0', 'model_3_multimer_v3_pred_0', 'model_4_multimer_v3_pred_0', 'model_5_multimer_v3_pred_0']
+I0303 09:38:11.213634 140280944858944 run_alphafold.py:403] Using random seed 1247092075272808379 for the data pipeline
+I0303 09:38:11.214383 140280944858944 run_alphafold.py:161] Predicting gasr_human-3552
+I0303 09:38:11.226539 140280944858944 pipeline_multimer.py:210] Running monomer pipeline on chain A: gasr_human P32239
+W0303 09:38:11.227789 140280944858944 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/gasr_human/3552/gasr_human-3552/msas/A/uniref90_hits.sto
+W0303 09:38:23.724245 140280944858944 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/gasr_human/3552/gasr_human-3552/msas/A/mgnify_hits.sto
+I0303 09:38:32.640603 140280944858944 hmmbuild.py:121] Launching subprocess ['/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/hmmbuild', '--hand', '--amino', '/tmp/tmp6cukub4t/output.hmm', '/tmp/tmp6cukub4t/query.msa']
+I0303 09:38:32.772212 140280944858944 utils.py:36] Started hmmbuild query
+I0303 09:38:34.214077 140280944858944 hmmbuild.py:128] hmmbuild stdout:
+# hmmbuild :: profile HMM construction from multiple sequence alignments
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# input alignment file:             /tmp/tmp6cukub4t/query.msa
+# output HMM file:                  /tmp/tmp6cukub4t/output.hmm
+# input alignment is asserted as:   protein
+# model architecture construction:  hand-specified by RF annotation
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# idx name                  nseq  alen  mlen eff_nseq re/pos description
+#---- -------------------- ----- ----- ----- -------- ------ -----------
+1     query                 9649  2242   447    12.21  0.590 
+
+# CPU time: 1.35u 0.08s 00:00:01.43 Elapsed: 00:00:01.43
+
+
+stderr:
+
+
+I0303 09:38:34.368046 140280944858944 utils.py:40] Finished hmmbuild query in 1.595 seconds
+I0303 09:38:34.373538 140280944858944 hmmsearch.py:103] Launching sub-process ['/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/hmmsearch', '--noali', '--cpu', '8', '--F1', '0.1', '--F2', '0.1', '--F3', '0.1', '--incE', '100', '-E', '100', '--domE', '100', '--incdomE', '100', '-A', '/tmp/tmp75h6juci/output.sto', '/tmp/tmp75h6juci/query.hmm', '/projects/ilfgrid/data/alphafold-genetic-databases///pdb_seqres/pdb_seqres.txt']
+I0303 09:38:34.583822 140280944858944 utils.py:36] Started hmmsearch (pdb_seqres.txt) query
+I0303 09:38:50.887452 140280944858944 utils.py:40] Finished hmmsearch (pdb_seqres.txt) query in 16.303 seconds
+W0303 09:38:55.628862 140280944858944 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/gasr_human/3552/gasr_human-3552/msas/A/bfd_uniref_hits.a3m
+I0303 09:38:55.808730 140280944858944 templates.py:940] Searching for template for: MELLKLNRSVQGTGPGPGASLCRPGAPLLNSSSVGNLSCEPPRIRGAGTRELELAIRITLYAVIFLMSVGGNMLIIVVLGLSRRLRTVTNAFLLSLAVSDLLLAVACMPFTLLPNLMGTFIFGTVICKAVSYLMGVSVSVSTLSLVAIALERYSAICRPLQARVWQTRSHAARVIVATWLLSGLLMVPYPVYTVVQPVGPRVLQCVHRWPSARVRQTWSVLLLLLLFFIPGVVMAVAYGLISRELYLGLRFDGDSDSDSQSRVRNQGGLPGAVHQNGRCRPETGAVGEDSDGCYVQLPRSRPALELTALTAPGPGSGSRPTQAKLLAKKRVVRMLLVIVVLFFLCWLPVYSANTWRAFDGPGAHRALSGAPISFIHLLSYASACVNPLVYCFMHRRFRQACLETCARCCPRPPRARPRALPDEDPPTPSIASLSRLSYTTISTLGPG
+I0303 09:38:55.809224 140280944858944 templates.py:718] hit 7xow_R did not pass prefilter: Template is an exact subsequence of query with large coverage. Length ratio: 1.0.
+I0303 09:38:55.809398 140280944858944 templates.py:718] hit 7xox_R did not pass prefilter: Template is an exact subsequence of query with large coverage. Length ratio: 1.0.
+I0303 09:38:56.481985 140280944858944 templates.py:267] Found an exact template match 7f8v_R.
+I0303 09:38:57.067051 140280944858944 templates.py:267] Found an exact template match 7f8w_R.
+I0303 09:38:57.727478 140280944858944 templates.py:267] Found an exact template match 7mby_R.
+I0303 09:38:58.302390 140280944858944 templates.py:267] Found an exact template match 7ezh_D.
+I0303 09:38:58.778263 140280944858944 templates.py:267] Found an exact template match 7ezk_D.
+I0303 09:38:59.632733 140280944858944 templates.py:267] Found an exact template match 7ezm_D.
+I0303 09:39:00.210604 140280944858944 templates.py:267] Found an exact template match 7xou_R.
+I0303 09:39:00.793878 140280944858944 templates.py:267] Found an exact template match 7xov_R.
+I0303 09:39:01.674588 140280944858944 templates.py:267] Found an exact template match 7mbx_R.
+I0303 09:39:02.094638 140280944858944 templates.py:267] Found an exact template match 7f8x_A.
+I0303 09:39:02.116305 140280944858944 templates.py:267] Found an exact template match 7f8x_A.
+I0303 09:39:02.380807 140280944858944 templates.py:267] Found an exact template match 7f8u_A.
+I0303 09:39:02.402048 140280944858944 templates.py:267] Found an exact template match 7f8u_A.
+I0303 09:39:02.827677 140280944858944 templates.py:267] Found an exact template match 7f8y_A.
+I0303 09:39:02.848845 140280944858944 templates.py:267] Found an exact template match 7f8y_A.
+I0303 09:39:03.297490 140280944858944 templates.py:267] Found an exact template match 4s0v_A.
+I0303 09:39:03.321319 140280944858944 templates.py:267] Found an exact template match 4s0v_A.
+I0303 09:39:03.811125 140280944858944 templates.py:267] Found an exact template match 5wqc_A.
+I0303 09:39:03.836723 140280944858944 templates.py:267] Found an exact template match 5wqc_A.
+I0303 09:39:04.314912 140280944858944 templates.py:267] Found an exact template match 5ws3_A.
+I0303 09:39:04.339510 140280944858944 templates.py:267] Found an exact template match 5ws3_A.
+I0303 09:39:05.948259 140280944858944 templates.py:267] Found an exact template match 7sqo_R.
+I0303 09:39:05.968297 140280944858944 templates.py:267] Found an exact template match 7sqo_R.
+I0303 09:39:06.597455 140280944858944 templates.py:267] Found an exact template match 7sr8_R.
+I0303 09:39:06.612920 140280944858944 templates.py:267] Found an exact template match 7sr8_R.
+I0303 09:39:07.245306 140280944858944 templates.py:267] Found an exact template match 7l1u_R.
+I0303 09:39:07.260142 140280944858944 templates.py:267] Found an exact template match 7l1u_R.
+I0303 09:39:07.958888 140280944858944 templates.py:267] Found an exact template match 7l1v_R.
+I0303 09:39:07.974901 140280944858944 templates.py:267] Found an exact template match 7l1v_R.
+I0303 09:39:08.449073 140280944858944 templates.py:267] Found an exact template match 6tpg_A.
+I0303 09:39:08.473906 140280944858944 templates.py:267] Found an exact template match 6tpg_A.
+I0303 09:39:09.912717 140280944858944 templates.py:267] Found an exact template match 6tpj_A.
+I0303 09:39:09.938080 140280944858944 templates.py:267] Found an exact template match 6tpj_A.
+I0303 09:39:09.961107 140280944858944 templates.py:267] Found an exact template match 6tpj_B.
+I0303 09:39:09.986409 140280944858944 templates.py:267] Found an exact template match 6tpj_B.
+I0303 09:39:10.475805 140280944858944 templates.py:267] Found an exact template match 6tpn_A.
+I0303 09:39:10.500628 140280944858944 templates.py:267] Found an exact template match 6tpn_A.
+I0303 09:39:10.976324 140280944858944 templates.py:267] Found an exact template match 6v9s_A.
+I0303 09:39:11.001097 140280944858944 templates.py:267] Found an exact template match 6v9s_A.
+I0303 09:39:11.479762 140280944858944 templates.py:267] Found an exact template match 4zj8_A.
+I0303 09:39:11.504290 140280944858944 templates.py:267] Found an exact template match 4zj8_A.
+I0303 09:39:11.980215 140280944858944 templates.py:267] Found an exact template match 4zjc_A.
+I0303 09:39:12.004867 140280944858944 templates.py:267] Found an exact template match 4zjc_A.
+I0303 09:39:12.437273 140280944858944 templates.py:267] Found an exact template match 7ddz_A.
+I0303 09:39:12.459882 140280944858944 templates.py:267] Found an exact template match 7ddz_A.
+I0303 09:39:13.708086 140280944858944 pipeline.py:234] Uniref90 MSA size: 10000 sequences.
+I0303 09:39:13.708287 140280944858944 pipeline.py:235] BFD MSA size: 2586 sequences.
+I0303 09:39:13.708361 140280944858944 pipeline.py:236] MGnify MSA size: 501 sequences.
+I0303 09:39:13.708424 140280944858944 pipeline.py:237] Final (deduplicated) MSA size: 12718 sequences.
+I0303 09:39:13.708793 140280944858944 pipeline.py:239] Total number of templates (NB: this can include bad templates and is later filtered to top 4): 20.
+W0303 09:39:13.735992 140280944858944 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/gasr_human/3552/gasr_human-3552/msas/A/uniprot_hits.sto
+I0303 09:42:10.915866 140280944858944 pipeline_multimer.py:210] Running monomer pipeline on chain B: CCK-58 gtp:3552
+W0303 09:42:11.337475 140280944858944 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/gasr_human/3552/gasr_human-3552/msas/B/uniref90_hits.sto
+W0303 09:42:11.998469 140280944858944 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/gasr_human/3552/gasr_human-3552/msas/B/mgnify_hits.sto
+I0303 09:42:12.490201 140280944858944 hmmbuild.py:121] Launching subprocess ['/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/hmmbuild', '--hand', '--amino', '/tmp/tmpgptcvw2g/output.hmm', '/tmp/tmpgptcvw2g/query.msa']
+I0303 09:42:12.872873 140280944858944 utils.py:36] Started hmmbuild query
+I0303 09:42:12.959527 140280944858944 hmmbuild.py:128] hmmbuild stdout:
+# hmmbuild :: profile HMM construction from multiple sequence alignments
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# input alignment file:             /tmp/tmpgptcvw2g/query.msa
+# output HMM file:                  /tmp/tmpgptcvw2g/output.hmm
+# input alignment is asserted as:   protein
+# model architecture construction:  hand-specified by RF annotation
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# idx name                  nseq  alen  mlen eff_nseq re/pos description
+#---- -------------------- ----- ----- ----- -------- ------ -----------
+1     query                  254    96    58     2.30  0.961 
+
+# CPU time: 0.07u 0.00s 00:00:00.07 Elapsed: 00:00:00.07
+
+
+stderr:
+
+
+I0303 09:42:12.959778 140280944858944 utils.py:40] Finished hmmbuild query in 0.087 seconds
+I0303 09:42:12.960697 140280944858944 hmmsearch.py:103] Launching sub-process ['/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/hmmsearch', '--noali', '--cpu', '8', '--F1', '0.1', '--F2', '0.1', '--F3', '0.1', '--incE', '100', '-E', '100', '--domE', '100', '--incdomE', '100', '-A', '/tmp/tmplgfdkw6a/output.sto', '/tmp/tmplgfdkw6a/query.hmm', '/projects/ilfgrid/data/alphafold-genetic-databases///pdb_seqres/pdb_seqres.txt']
+I0303 09:42:13.212391 140280944858944 utils.py:36] Started hmmsearch (pdb_seqres.txt) query
+I0303 09:42:16.177034 140280944858944 utils.py:40] Finished hmmsearch (pdb_seqres.txt) query in 2.964 seconds
+W0303 09:42:16.204321 140280944858944 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/gasr_human/3552/gasr_human-3552/msas/B/bfd_uniref_hits.a3m
+I0303 09:42:16.209211 140280944858944 templates.py:940] Searching for template for: VSQRTDGESRAHLGALLARYIQQARKAPSGRMSIVKNLQNLDPSHRISDRDYMGWMDF
+I0303 09:42:16.209398 140280944858944 templates.py:718] hit 1d6g_B did not pass prefilter: Template too short. Length: 8.
+I0303 09:42:16.209513 140280944858944 templates.py:718] hit 7ezh_P did not pass prefilter: Template too short. Length: 8.
+I0303 09:42:16.209599 140280944858944 templates.py:718] hit 7ezk_P did not pass prefilter: Template too short. Length: 8.
+I0303 09:42:16.209713 140280944858944 templates.py:718] hit 7ezm_P did not pass prefilter: Template too short. Length: 8.
+I0303 09:42:16.209785 140280944858944 templates.py:718] hit 7mbx_P did not pass prefilter: Template too short. Length: 8.
+I0303 09:42:16.209856 140280944858944 templates.py:718] hit 7mby_P did not pass prefilter: Template too short. Length: 8.
+I0303 09:42:16.209922 140280944858944 templates.py:718] hit 7xou_L did not pass prefilter: Template too short. Length: 8.
+I0303 09:42:16.328211 140280944858944 templates.py:267] Found an exact template match 5nnx_A.
+I0303 09:42:16.556961 140280944858944 templates.py:267] Found an exact template match 5no6_I.
+I0303 09:42:16.560769 140280944858944 templates.py:267] Found an exact template match 5no6_N.
+I0303 09:42:16.715301 140280944858944 templates.py:267] Found an exact template match 4z8e_A.
+I0303 09:42:16.718116 140280944858944 templates.py:267] Found an exact template match 4z8e_B.
+I0303 09:42:16.720654 140280944858944 templates.py:267] Found an exact template match 4z8e_C.
+I0303 09:42:18.859941 140280944858944 templates.py:267] Found an exact template match 2hzd_A.
+I0303 09:42:18.865279 140280944858944 templates.py:718] hit 5wrj_F did not pass prefilter: Template too short. Length: 6.
+I0303 09:42:18.865388 140280944858944 templates.py:718] hit 5wrj_H did not pass prefilter: Template too short. Length: 6.
+I0303 09:42:18.865466 140280944858944 templates.py:718] hit 5wrj_J did not pass prefilter: Template too short. Length: 6.
+I0303 09:42:18.865536 140280944858944 templates.py:718] hit 5wrj_L did not pass prefilter: Template too short. Length: 6.
+I0303 09:42:19.640850 140280944858944 templates.py:267] Found an exact template match 1iuy_A.
+I0303 09:42:21.682129 140280944858944 templates.py:267] Found an exact template match 2jvf_A.
+I0303 09:42:21.688204 140280944858944 templates.py:267] Found an exact template match 2jvf_A.
+I0303 09:42:22.032238 140280944858944 templates.py:267] Found an exact template match 7qha_C.
+I0303 09:42:22.132293 140280944858944 templates.py:267] Found an exact template match 5gzb_A.
+I0303 09:42:22.136582 140280944858944 templates.py:267] Found an exact template match 5gzb_A.
+I0303 09:42:23.713723 140280944858944 templates.py:267] Found an exact template match 3j0j_I.
+I0303 09:42:23.718688 140280944858944 templates.py:267] Found an exact template match 3j0j_I.
+I0303 09:42:23.722711 140280944858944 templates.py:267] Found an exact template match 3j0j_K.
+I0303 09:42:23.726844 140280944858944 templates.py:267] Found an exact template match 3j0j_K.
+I0303 09:42:23.978624 140280944858944 templates.py:267] Found an exact template match 3k5b_B.
+I0303 09:42:23.982944 140280944858944 templates.py:267] Found an exact template match 3k5b_B.
+I0303 09:42:23.986752 140280944858944 templates.py:267] Found an exact template match 3k5b_G.
+I0303 09:42:23.990894 140280944858944 templates.py:267] Found an exact template match 3k5b_G.
+I0303 09:42:24.945938 140280944858944 templates.py:267] Found an exact template match 3v6i_B.
+I0303 09:42:24.950278 140280944858944 templates.py:267] Found an exact template match 3v6i_B.
+I0303 09:42:24.953891 140280944858944 templates.py:267] Found an exact template match 3v6i_X.
+I0303 09:42:24.957974 140280944858944 templates.py:267] Found an exact template match 3v6i_X.
+I0303 09:42:26.811412 140280944858944 templates.py:267] Found an exact template match 5gar_I.
+I0303 09:42:26.814774 140280944858944 templates.py:267] Found an exact template match 5gar_I.
+I0303 09:42:26.817665 140280944858944 templates.py:267] Found an exact template match 5gar_J.
+I0303 09:42:26.820741 140280944858944 templates.py:267] Found an exact template match 5gar_J.
+I0303 09:42:29.131802 140280944858944 templates.py:267] Found an exact template match 5gas_I.
+I0303 09:42:29.135218 140280944858944 templates.py:267] Found an exact template match 5gas_I.
+I0303 09:42:29.138136 140280944858944 templates.py:267] Found an exact template match 5gas_J.
+I0303 09:42:29.141213 140280944858944 templates.py:267] Found an exact template match 5gas_J.
+I0303 09:42:31.074638 140280944858944 templates.py:267] Found an exact template match 5tsj_I.
+I0303 09:42:31.078515 140280944858944 templates.py:267] Found an exact template match 5tsj_I.
+I0303 09:42:31.081530 140280944858944 templates.py:267] Found an exact template match 5tsj_J.
+I0303 09:42:31.084616 140280944858944 templates.py:267] Found an exact template match 5tsj_J.
+I0303 09:42:46.030906 140280944858944 templates.py:267] Found an exact template match 7pua_Cd.
+I0303 09:43:01.648592 140280944858944 templates.py:267] Found an exact template match 7pub_Cd.
+I0303 09:43:05.502179 140280944858944 templates.py:267] Found an exact template match 6qum_I.
+I0303 09:43:05.507091 140280944858944 templates.py:267] Found an exact template match 6qum_I.
+I0303 09:43:05.511309 140280944858944 templates.py:267] Found an exact template match 6qum_K.
+I0303 09:43:05.515819 140280944858944 templates.py:267] Found an exact template match 6qum_K.
+I0303 09:43:05.519864 140280944858944 templates.py:718] hit 3d0w_A did not pass prefilter: Template too short. Length: 7.
+I0303 09:43:05.717376 140280944858944 templates.py:267] Found an exact template match 3d0w_A.
+I0303 09:43:05.721558 140280944858944 templates.py:718] hit 3d0w_B did not pass prefilter: Template too short. Length: 7.
+I0303 09:43:05.721806 140280944858944 templates.py:267] Found an exact template match 3d0w_B.
+I0303 09:43:05.725741 140280944858944 templates.py:718] hit 3d0w_C did not pass prefilter: Template too short. Length: 7.
+I0303 09:43:05.725921 140280944858944 templates.py:267] Found an exact template match 3d0w_C.
+I0303 09:43:05.729657 140280944858944 templates.py:718] hit 3d0w_D did not pass prefilter: Template too short. Length: 7.
+I0303 09:43:05.729827 140280944858944 templates.py:267] Found an exact template match 3d0w_D.
+I0303 09:43:06.059603 140280944858944 templates.py:267] Found an exact template match 5z1o_A.
+I0303 09:43:06.071724 140280944858944 templates.py:267] Found an exact template match 5z1o_A.
+I0303 09:43:06.082763 140280944858944 templates.py:267] Found an exact template match 5z1o_A.
+I0303 09:43:06.093793 140280944858944 templates.py:267] Found an exact template match 5z1o_A.
+I0303 09:43:06.104806 140280944858944 templates.py:267] Found an exact template match 5z1o_B.
+I0303 09:43:06.116714 140280944858944 templates.py:267] Found an exact template match 5z1o_B.
+I0303 09:43:06.127719 140280944858944 templates.py:267] Found an exact template match 5z1o_B.
+I0303 09:43:06.138732 140280944858944 templates.py:267] Found an exact template match 5z1o_B.
+I0303 09:43:06.474709 140280944858944 templates.py:267] Found an exact template match 5fzr_A.
+I0303 09:43:06.479861 140280944858944 templates.py:267] Found an exact template match 5fzr_A.
+I0303 09:43:06.484397 140280944858944 templates.py:267] Found an exact template match 5fzr_A.
+I0303 09:43:06.488864 140280944858944 templates.py:267] Found an exact template match 5fzr_B.
+I0303 09:43:06.493702 140280944858944 templates.py:267] Found an exact template match 5fzr_B.
+I0303 09:43:06.498081 140280944858944 templates.py:267] Found an exact template match 5fzr_B.
+I0303 09:43:06.502270 140280944858944 templates.py:267] Found an exact template match 5fzr_C.
+I0303 09:43:06.506794 140280944858944 templates.py:267] Found an exact template match 5fzr_C.
+I0303 09:43:06.510881 140280944858944 templates.py:267] Found an exact template match 5fzr_C.
+I0303 09:43:06.515030 140280944858944 templates.py:267] Found an exact template match 5fzr_D.
+I0303 09:43:06.519526 140280944858944 templates.py:267] Found an exact template match 5fzr_D.
+I0303 09:43:06.523510 140280944858944 templates.py:267] Found an exact template match 5fzr_D.
+I0303 09:43:06.623618 140280944858944 templates.py:267] Found an exact template match 5fzs_A.
+I0303 09:43:06.628309 140280944858944 templates.py:267] Found an exact template match 5fzs_A.
+I0303 09:43:06.632377 140280944858944 templates.py:267] Found an exact template match 5fzs_A.
+I0303 09:43:06.826721 140280944858944 templates.py:267] Found an exact template match 7yzg_A.
+I0303 09:43:08.737361 140280944858944 templates.py:267] Found an exact template match 5y5x_I.
+I0303 09:43:08.740843 140280944858944 templates.py:718] hit 5y5x_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:08.741026 140280944858944 templates.py:267] Found an exact template match 5y5x_I.
+I0303 09:43:08.744094 140280944858944 templates.py:267] Found an exact template match 5y5x_K.
+I0303 09:43:08.747266 140280944858944 templates.py:718] hit 5y5x_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:08.747467 140280944858944 templates.py:267] Found an exact template match 5y5x_K.
+I0303 09:43:10.660664 140280944858944 templates.py:267] Found an exact template match 5y5y_I.
+I0303 09:43:10.663954 140280944858944 templates.py:718] hit 5y5y_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:10.664133 140280944858944 templates.py:267] Found an exact template match 5y5y_I.
+I0303 09:43:10.667153 140280944858944 templates.py:267] Found an exact template match 5y5y_K.
+I0303 09:43:10.670210 140280944858944 templates.py:718] hit 5y5y_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:10.670388 140280944858944 templates.py:267] Found an exact template match 5y5y_K.
+I0303 09:43:12.605734 140280944858944 templates.py:267] Found an exact template match 5y5z_I.
+I0303 09:43:12.609319 140280944858944 templates.py:718] hit 5y5z_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:12.609519 140280944858944 templates.py:267] Found an exact template match 5y5z_I.
+I0303 09:43:12.612610 140280944858944 templates.py:267] Found an exact template match 5y5z_K.
+I0303 09:43:12.615837 140280944858944 templates.py:718] hit 5y5z_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:12.616010 140280944858944 templates.py:267] Found an exact template match 5y5z_K.
+I0303 09:43:16.103767 140280944858944 templates.py:267] Found an exact template match 5y60_I.
+I0303 09:43:16.107270 140280944858944 templates.py:718] hit 5y60_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:16.107461 140280944858944 templates.py:267] Found an exact template match 5y60_I.
+I0303 09:43:16.110542 140280944858944 templates.py:267] Found an exact template match 5y60_K.
+I0303 09:43:16.113762 140280944858944 templates.py:718] hit 5y60_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:16.113936 140280944858944 templates.py:267] Found an exact template match 5y60_K.
+I0303 09:43:16.968015 140280944858944 templates.py:267] Found an exact template match 6ly9_K.
+I0303 09:43:16.969925 140280944858944 templates.py:718] hit 6ly9_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:16.970109 140280944858944 templates.py:267] Found an exact template match 6ly9_K.
+I0303 09:43:19.512415 140280944858944 templates.py:267] Found an exact template match 6r0w_I.
+I0303 09:43:19.517425 140280944858944 templates.py:718] hit 6r0w_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:19.517611 140280944858944 templates.py:267] Found an exact template match 6r0w_I.
+I0303 09:43:19.521986 140280944858944 templates.py:267] Found an exact template match 6r0w_K.
+I0303 09:43:19.526596 140280944858944 templates.py:718] hit 6r0w_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:19.526773 140280944858944 templates.py:267] Found an exact template match 6r0w_K.
+I0303 09:43:22.063505 140280944858944 templates.py:267] Found an exact template match 6r0y_I.
+I0303 09:43:22.068324 140280944858944 templates.py:718] hit 6r0y_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:22.068517 140280944858944 templates.py:267] Found an exact template match 6r0y_I.
+I0303 09:43:22.072849 140280944858944 templates.py:267] Found an exact template match 6r0y_K.
+I0303 09:43:22.077364 140280944858944 templates.py:718] hit 6r0y_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:22.077541 140280944858944 templates.py:267] Found an exact template match 6r0y_K.
+I0303 09:43:26.182882 140280944858944 templates.py:267] Found an exact template match 6r0z_I.
+I0303 09:43:26.187846 140280944858944 templates.py:718] hit 6r0z_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:26.188032 140280944858944 templates.py:267] Found an exact template match 6r0z_I.
+I0303 09:43:26.192349 140280944858944 templates.py:267] Found an exact template match 6r0z_K.
+I0303 09:43:26.196851 140280944858944 templates.py:718] hit 6r0z_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:26.197025 140280944858944 templates.py:267] Found an exact template match 6r0z_K.
+I0303 09:43:28.822471 140280944858944 templates.py:267] Found an exact template match 6r10_I.
+I0303 09:43:28.826393 140280944858944 templates.py:718] hit 6r10_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:28.826592 140280944858944 templates.py:267] Found an exact template match 6r10_I.
+I0303 09:43:28.830004 140280944858944 templates.py:267] Found an exact template match 6r10_K.
+I0303 09:43:28.833510 140280944858944 templates.py:718] hit 6r10_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:28.833686 140280944858944 templates.py:267] Found an exact template match 6r10_K.
+I0303 09:43:30.712853 140280944858944 templates.py:267] Found an exact template match 7vai_I.
+I0303 09:43:30.715725 140280944858944 templates.py:718] hit 7vai_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:30.715915 140280944858944 templates.py:267] Found an exact template match 7vai_I.
+I0303 09:43:30.718433 140280944858944 templates.py:267] Found an exact template match 7vai_K.
+I0303 09:43:30.720932 140280944858944 templates.py:718] hit 7vai_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:30.721110 140280944858944 templates.py:267] Found an exact template match 7vai_K.
+I0303 09:43:32.471525 140280944858944 templates.py:267] Found an exact template match 7vaj_I.
+I0303 09:43:32.474349 140280944858944 templates.py:718] hit 7vaj_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:32.474531 140280944858944 templates.py:267] Found an exact template match 7vaj_I.
+I0303 09:43:32.477049 140280944858944 templates.py:267] Found an exact template match 7vaj_K.
+I0303 09:43:32.479546 140280944858944 templates.py:718] hit 7vaj_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:32.479721 140280944858944 templates.py:267] Found an exact template match 7vaj_K.
+I0303 09:43:34.221813 140280944858944 templates.py:267] Found an exact template match 7vak_I.
+I0303 09:43:34.224812 140280944858944 templates.py:718] hit 7vak_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:34.225006 140280944858944 templates.py:267] Found an exact template match 7vak_I.
+I0303 09:43:34.227506 140280944858944 templates.py:267] Found an exact template match 7vak_K.
+I0303 09:43:34.229993 140280944858944 templates.py:718] hit 7vak_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:34.230164 140280944858944 templates.py:267] Found an exact template match 7vak_K.
+I0303 09:43:38.048624 140280944858944 templates.py:267] Found an exact template match 7val_I.
+I0303 09:43:38.051723 140280944858944 templates.py:718] hit 7val_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:38.051916 140280944858944 templates.py:267] Found an exact template match 7val_I.
+I0303 09:43:38.054693 140280944858944 templates.py:267] Found an exact template match 7val_K.
+I0303 09:43:38.057544 140280944858944 templates.py:718] hit 7val_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:38.057743 140280944858944 templates.py:267] Found an exact template match 7val_K.
+I0303 09:43:39.846894 140280944858944 templates.py:267] Found an exact template match 7vam_I.
+I0303 09:43:39.849658 140280944858944 templates.py:718] hit 7vam_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:39.849837 140280944858944 templates.py:267] Found an exact template match 7vam_I.
+I0303 09:43:39.852333 140280944858944 templates.py:267] Found an exact template match 7vam_K.
+I0303 09:43:39.855084 140280944858944 templates.py:718] hit 7vam_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:39.855254 140280944858944 templates.py:267] Found an exact template match 7vam_K.
+I0303 09:43:41.635967 140280944858944 templates.py:267] Found an exact template match 7van_I.
+I0303 09:43:41.638708 140280944858944 templates.py:718] hit 7van_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:41.638886 140280944858944 templates.py:267] Found an exact template match 7van_I.
+I0303 09:43:41.641371 140280944858944 templates.py:267] Found an exact template match 7van_K.
+I0303 09:43:41.643845 140280944858944 templates.py:718] hit 7van_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:41.644018 140280944858944 templates.py:267] Found an exact template match 7van_K.
+I0303 09:43:43.417837 140280944858944 templates.py:267] Found an exact template match 7vao_I.
+I0303 09:43:43.420781 140280944858944 templates.py:718] hit 7vao_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:43.420969 140280944858944 templates.py:267] Found an exact template match 7vao_I.
+I0303 09:43:43.423475 140280944858944 templates.py:267] Found an exact template match 7vao_K.
+I0303 09:43:43.425941 140280944858944 templates.py:718] hit 7vao_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:43.426120 140280944858944 templates.py:267] Found an exact template match 7vao_K.
+I0303 09:43:46.210966 140280944858944 templates.py:267] Found an exact template match 7vap_I.
+I0303 09:43:46.213775 140280944858944 templates.py:718] hit 7vap_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:46.213978 140280944858944 templates.py:267] Found an exact template match 7vap_I.
+I0303 09:43:46.216538 140280944858944 templates.py:267] Found an exact template match 7vap_K.
+I0303 09:43:46.219031 140280944858944 templates.py:718] hit 7vap_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:46.219204 140280944858944 templates.py:267] Found an exact template match 7vap_K.
+I0303 09:43:48.119936 140280944858944 templates.py:267] Found an exact template match 7vaq_I.
+I0303 09:43:48.122730 140280944858944 templates.py:718] hit 7vaq_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:48.122916 140280944858944 templates.py:267] Found an exact template match 7vaq_I.
+I0303 09:43:48.125410 140280944858944 templates.py:267] Found an exact template match 7vaq_K.
+I0303 09:43:48.127878 140280944858944 templates.py:718] hit 7vaq_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:48.128048 140280944858944 templates.py:267] Found an exact template match 7vaq_K.
+I0303 09:43:49.931198 140280944858944 templates.py:267] Found an exact template match 7var_I.
+I0303 09:43:49.934091 140280944858944 templates.py:718] hit 7var_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:49.934273 140280944858944 templates.py:267] Found an exact template match 7var_I.
+I0303 09:43:49.936811 140280944858944 templates.py:267] Found an exact template match 7var_K.
+I0303 09:43:49.939283 140280944858944 templates.py:718] hit 7var_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:49.939463 140280944858944 templates.py:267] Found an exact template match 7var_K.
+I0303 09:43:51.738468 140280944858944 templates.py:267] Found an exact template match 7vas_I.
+I0303 09:43:51.741332 140280944858944 templates.py:718] hit 7vas_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:51.741524 140280944858944 templates.py:267] Found an exact template match 7vas_I.
+I0303 09:43:51.744102 140280944858944 templates.py:267] Found an exact template match 7vas_K.
+I0303 09:43:51.746673 140280944858944 templates.py:718] hit 7vas_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:51.746845 140280944858944 templates.py:267] Found an exact template match 7vas_K.
+I0303 09:43:54.828577 140280944858944 templates.py:267] Found an exact template match 7vat_I.
+I0303 09:43:54.831418 140280944858944 templates.py:718] hit 7vat_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:54.831600 140280944858944 templates.py:267] Found an exact template match 7vat_I.
+I0303 09:43:54.834107 140280944858944 templates.py:267] Found an exact template match 7vat_K.
+I0303 09:43:54.836585 140280944858944 templates.py:718] hit 7vat_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:54.836756 140280944858944 templates.py:267] Found an exact template match 7vat_K.
+I0303 09:43:56.648987 140280944858944 templates.py:267] Found an exact template match 7vau_I.
+I0303 09:43:56.651823 140280944858944 templates.py:718] hit 7vau_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:56.652016 140280944858944 templates.py:267] Found an exact template match 7vau_I.
+I0303 09:43:56.654531 140280944858944 templates.py:267] Found an exact template match 7vau_K.
+I0303 09:43:56.657033 140280944858944 templates.py:718] hit 7vau_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:56.657203 140280944858944 templates.py:267] Found an exact template match 7vau_K.
+I0303 09:43:58.441632 140280944858944 templates.py:267] Found an exact template match 7vav_I.
+I0303 09:43:58.444578 140280944858944 templates.py:718] hit 7vav_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:58.444758 140280944858944 templates.py:267] Found an exact template match 7vav_I.
+I0303 09:43:58.447252 140280944858944 templates.py:267] Found an exact template match 7vav_K.
+I0303 09:43:58.449721 140280944858944 templates.py:718] hit 7vav_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:43:58.449890 140280944858944 templates.py:267] Found an exact template match 7vav_K.
+I0303 09:44:01.478449 140280944858944 templates.py:267] Found an exact template match 7vaw_I.
+I0303 09:44:01.481360 140280944858944 templates.py:718] hit 7vaw_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:44:01.481558 140280944858944 templates.py:267] Found an exact template match 7vaw_I.
+I0303 09:44:01.484080 140280944858944 templates.py:267] Found an exact template match 7vaw_K.
+I0303 09:44:01.486594 140280944858944 templates.py:718] hit 7vaw_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:44:01.486766 140280944858944 templates.py:267] Found an exact template match 7vaw_K.
+I0303 09:44:03.327516 140280944858944 templates.py:267] Found an exact template match 7vax_I.
+I0303 09:44:03.330417 140280944858944 templates.py:718] hit 7vax_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:44:03.330620 140280944858944 templates.py:267] Found an exact template match 7vax_I.
+I0303 09:44:03.333215 140280944858944 templates.py:267] Found an exact template match 7vax_K.
+I0303 09:44:03.335798 140280944858944 templates.py:718] hit 7vax_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:44:03.335988 140280944858944 templates.py:267] Found an exact template match 7vax_K.
+I0303 09:44:05.128631 140280944858944 templates.py:267] Found an exact template match 7vay_I.
+I0303 09:44:05.131550 140280944858944 templates.py:718] hit 7vay_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:44:05.131738 140280944858944 templates.py:267] Found an exact template match 7vay_I.
+I0303 09:44:05.134315 140280944858944 templates.py:267] Found an exact template match 7vay_K.
+I0303 09:44:05.136886 140280944858944 templates.py:718] hit 7vay_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:44:05.137065 140280944858944 templates.py:267] Found an exact template match 7vay_K.
+I0303 09:44:06.922544 140280944858944 templates.py:267] Found an exact template match 7vb0_I.
+I0303 09:44:06.925749 140280944858944 templates.py:718] hit 7vb0_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:44:06.925949 140280944858944 templates.py:267] Found an exact template match 7vb0_I.
+I0303 09:44:06.928600 140280944858944 templates.py:267] Found an exact template match 7vb0_K.
+I0303 09:44:06.931056 140280944858944 templates.py:718] hit 7vb0_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:44:06.931231 140280944858944 templates.py:267] Found an exact template match 7vb0_K.
+I0303 09:44:10.041128 140280944858944 templates.py:718] hit 8gxu_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:44:10.041534 140280944858944 templates.py:718] hit 8gxu_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:44:11.832208 140280944858944 templates.py:718] hit 8gxw_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:44:11.832609 140280944858944 templates.py:718] hit 8gxw_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:44:13.635492 140280944858944 templates.py:718] hit 8gxx_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:44:13.635930 140280944858944 templates.py:718] hit 8gxx_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:44:15.426947 140280944858944 templates.py:718] hit 8gxy_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:44:15.427361 140280944858944 templates.py:718] hit 8gxy_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:44:18.421162 140280944858944 templates.py:718] hit 8gxz_I did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:44:18.421563 140280944858944 templates.py:718] hit 8gxz_K did not pass prefilter: Proportion of residues aligned to query too small. Align ratio: 0.017241379310344827.
+I0303 09:44:18.610362 140280944858944 templates.py:267] Found an exact template match 3i9f_A.
+I0303 09:44:18.617817 140280944858944 templates.py:267] Found an exact template match 3i9f_B.
+I0303 09:44:18.625036 140280944858944 templates.py:718] hit 7f8v_E did not pass prefilter: Template too short. Length: 6.
+I0303 09:44:18.625193 140280944858944 templates.py:718] hit 7f8w_E did not pass prefilter: Template too short. Length: 6.
+I0303 09:44:18.625273 140280944858944 templates.py:718] hit 7xow_L did not pass prefilter: Template too short. Length: 6.
+I0303 09:44:18.947618 140280944858944 templates.py:267] Found an exact template match 5ja4_D.
+I0303 09:44:50.086943 140280944858944 templates.py:267] Found an exact template match 4bts_AU.
+I0303 09:44:50.102038 140280944858944 pipeline.py:234] Uniref90 MSA size: 268 sequences.
+I0303 09:44:50.102174 140280944858944 pipeline.py:235] BFD MSA size: 193 sequences.
+I0303 09:44:50.102239 140280944858944 pipeline.py:236] MGnify MSA size: 3 sequences.
+I0303 09:44:50.102296 140280944858944 pipeline.py:237] Final (deduplicated) MSA size: 443 sequences.
+I0303 09:44:50.102380 140280944858944 pipeline.py:239] Total number of templates (NB: this can include bad templates and is later filtered to top 4): 20.
+W0303 09:44:50.105162 140280944858944 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/gasr_human/3552/gasr_human-3552/msas/B/uniprot_hits.sto
+I0303 09:44:51.104605 140280944858944 run_alphafold.py:191] Running model model_1_multimer_v3_pred_0 on gasr_human-3552
+I0303 09:44:51.105429 140280944858944 model.py:165] Running predict with shape(feat) = {'aatype': (505,), 'residue_index': (505,), 'seq_length': (), 'msa': (2329, 505), 'num_alignments': (), 'template_aatype': (4, 505), 'template_all_atom_mask': (4, 505, 37), 'template_all_atom_positions': (4, 505, 37, 3), 'asym_id': (505,), 'sym_id': (505,), 'entity_id': (505,), 'deletion_matrix': (2329, 505), 'deletion_mean': (505,), 'all_atom_mask': (505, 37), 'all_atom_positions': (505, 37, 3), 'assembly_num_chains': (), 'entity_mask': (505,), 'num_templates': (), 'cluster_bias_mask': (2329,), 'bert_mask': (2329, 505), 'seq_mask': (505,), 'msa_mask': (2329, 505)}
+I0303 10:16:16.831355 140280944858944 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (505, 505, 64)}, 'experimentally_resolved': {'logits': (505, 37)}, 'masked_msa': {'logits': (508, 505, 22)}, 'num_recycles': (), 'predicted_aligned_error': (505, 505), 'predicted_lddt': {'logits': (505, 50)}, 'structure_module': {'final_atom_mask': (505, 37), 'final_atom_positions': (505, 37, 3)}, 'plddt': (505,), 'aligned_confidence_probs': (505, 505, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0303 10:16:16.832172 140280944858944 run_alphafold.py:203] Total JAX model model_1_multimer_v3_pred_0 on gasr_human-3552 predict time (includes compilation time, see --benchmark): 1885.7s
+I0303 10:16:52.728047 140280944858944 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 446 (GLY) of chain 0>: ['OXT'], <Residue 504 (PHE) of chain 1>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0303 10:16:55.360916 140280944858944 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0303 10:16:56.404900 140280944858944 amber_minimize.py:72] Restraining 3864 / 7865 particles.
+I0303 10:21:45.830940 140280944858944 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0303 10:21:53.139051 140280944858944 amber_minimize.py:503] Iteration completed: Einit 198538611.34 Efinal -6776.26 Time 285.29 s num residue violations 0 num residue exclusions 0 
+I0303 10:21:53.487818 140280944858944 run_alphafold.py:191] Running model model_2_multimer_v3_pred_0 on gasr_human-3552
+I0303 10:21:53.488162 140280944858944 model.py:165] Running predict with shape(feat) = {'aatype': (505,), 'residue_index': (505,), 'seq_length': (), 'msa': (2329, 505), 'num_alignments': (), 'template_aatype': (4, 505), 'template_all_atom_mask': (4, 505, 37), 'template_all_atom_positions': (4, 505, 37, 3), 'asym_id': (505,), 'sym_id': (505,), 'entity_id': (505,), 'deletion_matrix': (2329, 505), 'deletion_mean': (505,), 'all_atom_mask': (505, 37), 'all_atom_positions': (505, 37, 3), 'assembly_num_chains': (), 'entity_mask': (505,), 'num_templates': (), 'cluster_bias_mask': (2329,), 'bert_mask': (2329, 505), 'seq_mask': (505,), 'msa_mask': (2329, 505)}
+I0303 10:52:59.638944 140280944858944 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (505, 505, 64)}, 'experimentally_resolved': {'logits': (505, 37)}, 'masked_msa': {'logits': (508, 505, 22)}, 'num_recycles': (), 'predicted_aligned_error': (505, 505), 'predicted_lddt': {'logits': (505, 50)}, 'structure_module': {'final_atom_mask': (505, 37), 'final_atom_positions': (505, 37, 3)}, 'plddt': (505,), 'aligned_confidence_probs': (505, 505, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0303 10:52:59.641423 140280944858944 run_alphafold.py:203] Total JAX model model_2_multimer_v3_pred_0 on gasr_human-3552 predict time (includes compilation time, see --benchmark): 1866.2s
+I0303 10:53:34.350732 140280944858944 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 446 (GLY) of chain 0>: ['OXT'], <Residue 504 (PHE) of chain 1>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0303 10:53:35.057879 140280944858944 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0303 10:53:37.721352 140280944858944 amber_minimize.py:72] Restraining 3864 / 7865 particles.
+I0303 11:00:26.313840 140280944858944 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0303 11:00:31.490306 140280944858944 amber_minimize.py:503] Iteration completed: Einit 1936092.33 Efinal -6733.21 Time 406.72 s num residue violations 0 num residue exclusions 0 
+I0303 11:00:31.843655 140280944858944 run_alphafold.py:191] Running model model_3_multimer_v3_pred_0 on gasr_human-3552
+I0303 11:00:31.843969 140280944858944 model.py:165] Running predict with shape(feat) = {'aatype': (505,), 'residue_index': (505,), 'seq_length': (), 'msa': (2329, 505), 'num_alignments': (), 'template_aatype': (4, 505), 'template_all_atom_mask': (4, 505, 37), 'template_all_atom_positions': (4, 505, 37, 3), 'asym_id': (505,), 'sym_id': (505,), 'entity_id': (505,), 'deletion_matrix': (2329, 505), 'deletion_mean': (505,), 'all_atom_mask': (505, 37), 'all_atom_positions': (505, 37, 3), 'assembly_num_chains': (), 'entity_mask': (505,), 'num_templates': (), 'cluster_bias_mask': (2329,), 'bert_mask': (2329, 505), 'seq_mask': (505,), 'msa_mask': (2329, 505)}
+I0303 11:31:42.397092 140280944858944 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (505, 505, 64)}, 'experimentally_resolved': {'logits': (505, 37)}, 'masked_msa': {'logits': (508, 505, 22)}, 'num_recycles': (), 'predicted_aligned_error': (505, 505), 'predicted_lddt': {'logits': (505, 50)}, 'structure_module': {'final_atom_mask': (505, 37), 'final_atom_positions': (505, 37, 3)}, 'plddt': (505,), 'aligned_confidence_probs': (505, 505, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0303 11:31:42.399174 140280944858944 run_alphafold.py:203] Total JAX model model_3_multimer_v3_pred_0 on gasr_human-3552 predict time (includes compilation time, see --benchmark): 1870.6s
+I0303 11:32:16.514435 140280944858944 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 446 (GLY) of chain 0>: ['OXT'], <Residue 504 (PHE) of chain 1>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0303 11:32:17.228103 140280944858944 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0303 11:32:18.235531 140280944858944 amber_minimize.py:72] Restraining 3864 / 7865 particles.
+I0303 11:38:41.486878 140280944858944 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0303 11:38:46.787986 140280944858944 amber_minimize.py:503] Iteration completed: Einit 1044093855.54 Efinal -7130.88 Time 373.00 s num residue violations 0 num residue exclusions 0 
+I0303 11:38:47.536602 140280944858944 run_alphafold.py:191] Running model model_4_multimer_v3_pred_0 on gasr_human-3552
+I0303 11:38:47.537022 140280944858944 model.py:165] Running predict with shape(feat) = {'aatype': (505,), 'residue_index': (505,), 'seq_length': (), 'msa': (2329, 505), 'num_alignments': (), 'template_aatype': (4, 505), 'template_all_atom_mask': (4, 505, 37), 'template_all_atom_positions': (4, 505, 37, 3), 'asym_id': (505,), 'sym_id': (505,), 'entity_id': (505,), 'deletion_matrix': (2329, 505), 'deletion_mean': (505,), 'all_atom_mask': (505, 37), 'all_atom_positions': (505, 37, 3), 'assembly_num_chains': (), 'entity_mask': (505,), 'num_templates': (), 'cluster_bias_mask': (2329,), 'bert_mask': (2329, 505), 'seq_mask': (505,), 'msa_mask': (2329, 505)}
+I0303 12:09:49.907322 140280944858944 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (505, 505, 64)}, 'experimentally_resolved': {'logits': (505, 37)}, 'masked_msa': {'logits': (508, 505, 22)}, 'num_recycles': (), 'predicted_aligned_error': (505, 505), 'predicted_lddt': {'logits': (505, 50)}, 'structure_module': {'final_atom_mask': (505, 37), 'final_atom_positions': (505, 37, 3)}, 'plddt': (505,), 'aligned_confidence_probs': (505, 505, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0303 12:09:49.908660 140280944858944 run_alphafold.py:203] Total JAX model model_4_multimer_v3_pred_0 on gasr_human-3552 predict time (includes compilation time, see --benchmark): 1862.4s
+I0303 12:10:27.869350 140280944858944 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 446 (GLY) of chain 0>: ['OXT'], <Residue 504 (PHE) of chain 1>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0303 12:10:31.595792 140280944858944 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0303 12:10:33.132579 140280944858944 amber_minimize.py:72] Restraining 3864 / 7865 particles.
+I0303 12:15:43.693516 140280944858944 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0303 12:15:49.094926 140280944858944 amber_minimize.py:503] Iteration completed: Einit 15046.86 Efinal -7642.85 Time 307.31 s num residue violations 0 num residue exclusions 0 
+I0303 12:15:49.433176 140280944858944 run_alphafold.py:191] Running model model_5_multimer_v3_pred_0 on gasr_human-3552
+I0303 12:15:49.433439 140280944858944 model.py:165] Running predict with shape(feat) = {'aatype': (505,), 'residue_index': (505,), 'seq_length': (), 'msa': (2329, 505), 'num_alignments': (), 'template_aatype': (4, 505), 'template_all_atom_mask': (4, 505, 37), 'template_all_atom_positions': (4, 505, 37, 3), 'asym_id': (505,), 'sym_id': (505,), 'entity_id': (505,), 'deletion_matrix': (2329, 505), 'deletion_mean': (505,), 'all_atom_mask': (505, 37), 'all_atom_positions': (505, 37, 3), 'assembly_num_chains': (), 'entity_mask': (505,), 'num_templates': (), 'cluster_bias_mask': (2329,), 'bert_mask': (2329, 505), 'seq_mask': (505,), 'msa_mask': (2329, 505)}
+I0303 12:46:09.376353 140280944858944 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (505, 505, 64)}, 'experimentally_resolved': {'logits': (505, 37)}, 'masked_msa': {'logits': (508, 505, 22)}, 'num_recycles': (), 'predicted_aligned_error': (505, 505), 'predicted_lddt': {'logits': (505, 50)}, 'structure_module': {'final_atom_mask': (505, 37), 'final_atom_positions': (505, 37, 3)}, 'plddt': (505,), 'aligned_confidence_probs': (505, 505, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0303 12:46:09.378575 140280944858944 run_alphafold.py:203] Total JAX model model_5_multimer_v3_pred_0 on gasr_human-3552 predict time (includes compilation time, see --benchmark): 1819.9s
+I0303 12:46:55.474325 140280944858944 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 446 (GLY) of chain 0>: ['OXT'], <Residue 504 (PHE) of chain 1>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0303 12:46:56.287943 140280944858944 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0303 12:46:58.913391 140280944858944 amber_minimize.py:72] Restraining 3864 / 7865 particles.
+I0303 12:51:24.654094 140280944858944 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0303 12:51:29.446418 140280944858944 amber_minimize.py:503] Iteration completed: Einit 77989.71 Efinal -7138.21 Time 263.81 s num residue violations 0 num residue exclusions 0 
+I0303 12:51:29.843189 140280944858944 run_alphafold.py:277] Final timings for gasr_human-3552: {'features': 399.6944124698639, 'process_features_model_1_multimer_v3_pred_0': 1.5735626220703125e-05, 'predict_and_compile_model_1_multimer_v3_pred_0': 1885.7273290157318, 'relax_model_1_multimer_v3_pred_0': 321.5750381946564, 'process_features_model_2_multimer_v3_pred_0': 5.245208740234375e-06, 'predict_and_compile_model_2_multimer_v3_pred_0': 1866.1533663272858, 'relax_model_2_multimer_v3_pred_0': 438.20324087142944, 'process_features_model_3_multimer_v3_pred_0': 5.245208740234375e-06, 'predict_and_compile_model_3_multimer_v3_pred_0': 1870.555294752121, 'relax_model_3_multimer_v3_pred_0': 411.04902815818787, 'process_features_model_4_multimer_v3_pred_0': 7.62939453125e-06, 'predict_and_compile_model_4_multimer_v3_pred_0': 1862.371819972992, 'relax_model_4_multimer_v3_pred_0': 340.651704788208, 'process_features_model_5_multimer_v3_pred_0': 5.4836273193359375e-06, 'predict_and_compile_model_5_multimer_v3_pred_0': 1819.945220708847, 'relax_model_5_multimer_v3_pred_0': 301.2384955883026}
+
+>> Job finished at: Fri Mar  3 12:51:38 CET 2023
+
+>> Runtime: 11638 s

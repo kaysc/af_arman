@@ -1,0 +1,35 @@
+#!/bin/bash -l
+#SBATCH --job-name=mc3r_human-3633
+###SBATCH --output=$PWD/slurm-%A.out
+###SBATCH --chdir=/projects/ilfgrid/apps/alphafold-2.3.1/                    # change location to the install directory
+#SBATCH --partition=standard                                                 # the queue you submit to
+#SBATCH --mem=20G                                                            # the amount of memory to reserve
+#SBATCH --ntasks=4                                                          # combined with --cpus-per-task it determines
+#SBATCH --cpus-per-task=1                                                    # the number of cpus to use
+#SBATCH --nodes=1                                                            # no. of nodes to use
+#SBATCH --gres=gpu:1                                                         # no. of gpus (can only use one)
+#SBATCH --dependency=singleton
+
+echo ">> Job started at: $(date)"
+echo "   On Machine:     $(hostname)"
+echo -e "   In directory:   $(pwd)\n"
+echo -e ">> GPU is "${SLURM_JOB_GPUS}"\n"
+start=`date +%s`
+
+WDIR="$PWD"
+FASTAFILE="$WDIR/mc3r_human-3633.fasta"
+
+AF_DIR="/projects/ilfgrid/apps/alphafold-2.3.1"
+AFDB_DIR="/projects/ilfgrid/data/alphafold-genetic-databases//"
+module load miniconda
+conda activate $AF_DIR/AF_2.3.1_conda_env
+
+cd $AF_DIR && $AF_DIR/run_alphafold.sh -d $AFDB_DIR -n 4 -o $WDIR/ -f $FASTAFILE -t 2023-01-01 -m multimer -r true -l 1 -e false -p true -a $SLURM_JOB_GPUS
+
+BASENAME=`basename $FASTAFILE .fasta`
+cp $WDIR/$BASENAME/ranked_0.pdb $WDIR/${BASENAME}.pdb
+
+end=`date +%s`
+runtime=$((end-start))
+echo -e "\n>> Job finished at: $(date)"
+echo -e "\n>> Runtime: $runtime s"

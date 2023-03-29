@@ -1,0 +1,596 @@
+>> Job started at: Tue Mar 14 14:45:54 CET 2023
+   On Machine:     ilfgridgpun02fl.unicph.domain
+   In directory:   /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/ntr1_rat/3830
+
+>> GPU is 6
+
+Loaded miniconda shell environment for bash
+I0314 14:46:07.024324 140427965241152 templates.py:857] Using precomputed obsolete pdbs /projects/ilfgrid/data/alphafold-genetic-databases///pdb_mmcif/obsolete.dat.
+I0314 14:46:10.099970 140427965241152 xla_bridge.py:353] Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker: 
+I0314 14:46:10.384495 140427965241152 xla_bridge.py:353] Unable to initialize backend 'rocm': NOT_FOUND: Could not find registered platform with name: "rocm". Available platform names are: Host Interpreter CUDA
+I0314 14:46:10.384936 140427965241152 xla_bridge.py:353] Unable to initialize backend 'tpu': module 'jaxlib.xla_extension' has no attribute 'get_tpu_client'
+I0314 14:46:10.385050 140427965241152 xla_bridge.py:353] Unable to initialize backend 'plugin': xla_extension has no attributes named get_plugin_device_client. Compile TensorFlow with //tensorflow/compiler/xla/python:enable_plugin_device set to true (defaults to false) to enable this.
+I0314 14:46:26.081424 140427965241152 run_alphafold.py:386] Have 5 models: ['model_1_multimer_v3_pred_0', 'model_2_multimer_v3_pred_0', 'model_3_multimer_v3_pred_0', 'model_4_multimer_v3_pred_0', 'model_5_multimer_v3_pred_0']
+I0314 14:46:26.081612 140427965241152 run_alphafold.py:403] Using random seed 1173539786761822856 for the data pipeline
+I0314 14:46:26.081933 140427965241152 run_alphafold.py:161] Predicting ntr1_rat-3830
+I0314 14:46:26.094896 140427965241152 pipeline_multimer.py:210] Running monomer pipeline on chain A: ntr1_rat P20789
+W0314 14:46:26.096152 140427965241152 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/ntr1_rat/3830/ntr1_rat-3830/msas/A/uniref90_hits.sto
+W0314 14:46:34.045976 140427965241152 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/ntr1_rat/3830/ntr1_rat-3830/msas/A/mgnify_hits.sto
+I0314 14:46:40.973938 140427965241152 hmmbuild.py:121] Launching subprocess ['/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/hmmbuild', '--hand', '--amino', '/tmp/tmpk150xoj8/output.hmm', '/tmp/tmpk150xoj8/query.msa']
+I0314 14:46:41.055704 140427965241152 utils.py:36] Started hmmbuild query
+I0314 14:46:42.248544 140427965241152 hmmbuild.py:128] hmmbuild stdout:
+# hmmbuild :: profile HMM construction from multiple sequence alignments
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# input alignment file:             /tmp/tmpk150xoj8/query.msa
+# output HMM file:                  /tmp/tmpk150xoj8/output.hmm
+# input alignment is asserted as:   protein
+# model architecture construction:  hand-specified by RF annotation
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# idx name                  nseq  alen  mlen eff_nseq re/pos description
+#---- -------------------- ----- ----- ----- -------- ------ -----------
+1     query                 9769  2259   424    11.59  0.590 
+
+# CPU time: 1.12u 0.06s 00:00:01.18 Elapsed: 00:00:01.18
+
+
+stderr:
+
+
+I0314 14:46:42.248748 140427965241152 utils.py:40] Finished hmmbuild query in 1.193 seconds
+I0314 14:46:42.252959 140427965241152 hmmsearch.py:103] Launching sub-process ['/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/hmmsearch', '--noali', '--cpu', '8', '--F1', '0.1', '--F2', '0.1', '--F3', '0.1', '--incE', '100', '-E', '100', '--domE', '100', '--incdomE', '100', '-A', '/tmp/tmprk3r3dkm/output.sto', '/tmp/tmprk3r3dkm/query.hmm', '/projects/ilfgrid/data/alphafold-genetic-databases///pdb_seqres/pdb_seqres.txt']
+I0314 14:46:42.336599 140427965241152 utils.py:36] Started hmmsearch (pdb_seqres.txt) query
+I0314 14:46:52.765488 140427965241152 utils.py:40] Finished hmmsearch (pdb_seqres.txt) query in 10.429 seconds
+W0314 14:46:56.653553 140427965241152 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/ntr1_rat/3830/ntr1_rat-3830/msas/A/bfd_uniref_hits.a3m
+I0314 14:46:56.825363 140427965241152 templates.py:940] Searching for template for: MHLNSSVPQGTPGEPDAQPFSGPQSEMEATFLALSLSNGSGNTSESDTAGPNSDLDVNTDIYSKVLVTAIYLALFVVGTVGNSVTAFTLARKKSLQSLQSTVHYHLGSLALSDLLILLLAMPVELYNFIWVHHPWAFGDAGCRGYYFLRDACTYATALNVASLSVERYLAICHPFKAKTLMSRSRTKKFISAIWLASALLAIPMLFTMGLQNRSGDGTHPGGLVCTPIVDTATVKVVIQVNTFMSFLFPMLVISILNTVIANKLTVMVHQAAEQGRVCTVGTHNGLEHSTFNMTIEPGRVQALRHGVLVLRAVVIAFVVCWLPYHVRRLMFCYISDEQWTTFLFDFYHYFYMLTNALFYVSSAINPILYNLVSANFRQVFLSTLACLCPGWRHRRKKRPTFSRKPNSMSSNHAFSTSATRETLY
+I0314 14:46:57.349135 140427965241152 templates.py:267] Found an exact template match 4xee_A.
+I0314 14:46:57.716183 140427965241152 templates.py:267] Found an exact template match 4xes_A.
+I0314 14:46:58.314343 140427965241152 templates.py:267] Found an exact template match 6os9_R.
+I0314 14:46:58.989371 140427965241152 templates.py:267] Found an exact template match 6osa_R.
+I0314 14:46:59.384634 140427965241152 templates.py:267] Found an exact template match 6pwc_R.
+I0314 14:46:59.623296 140427965241152 templates.py:267] Found an exact template match 7ul2_R.
+I0314 14:46:59.973459 140427965241152 templates.py:267] Found an exact template match 5t04_A.
+I0314 14:46:59.993498 140427965241152 templates.py:267] Found an exact template match 5t04_A.
+I0314 14:47:00.335001 140427965241152 templates.py:267] Found an exact template match 6up7_R.
+I0314 14:47:00.763434 140427965241152 templates.py:267] Found an exact template match 4grv_A.
+I0314 14:47:00.784034 140427965241152 templates.py:267] Found an exact template match 4grv_A.
+I0314 14:47:01.208041 140427965241152 templates.py:267] Found an exact template match 7l0p_C.
+I0314 14:47:01.665070 140427965241152 templates.py:267] Found an exact template match 7l0q_C.
+I0314 14:47:02.074431 140427965241152 templates.py:267] Found an exact template match 7l0r_C.
+I0314 14:47:02.797872 140427965241152 templates.py:267] Found an exact template match 7l0s_C.
+I0314 14:47:03.266357 140427965241152 templates.py:267] Found an exact template match 3zev_A.
+I0314 14:47:03.281248 140427965241152 templates.py:267] Found an exact template match 3zev_B.
+I0314 14:47:03.744693 140427965241152 templates.py:267] Found an exact template match 4buo_A.
+I0314 14:47:03.759415 140427965241152 templates.py:267] Found an exact template match 4buo_B.
+I0314 14:47:04.048902 140427965241152 templates.py:267] Found an exact template match 4bwb_A.
+I0314 14:47:04.063251 140427965241152 templates.py:267] Found an exact template match 4bwb_B.
+I0314 14:47:04.523784 140427965241152 templates.py:267] Found an exact template match 4bv0_A.
+I0314 14:47:04.539146 140427965241152 templates.py:267] Found an exact template match 4bv0_B.
+I0314 14:47:04.922399 140427965241152 templates.py:267] Found an exact template match 6z4s_AAA.
+I0314 14:47:05.677751 140427965241152 templates.py:267] Found an exact template match 6z4v_AAA.
+I0314 14:47:07.023109 140427965241152 templates.py:267] Found an exact template match 6yvr_AAA.
+I0314 14:47:07.054520 140427965241152 templates.py:267] Found an exact template match 6yvr_BBB.
+I0314 14:47:07.427714 140427965241152 templates.py:267] Found an exact template match 6z4q_AAA.
+I0314 14:47:07.811709 140427965241152 templates.py:267] Found an exact template match 6z66_AAA.
+I0314 14:47:08.208304 140427965241152 templates.py:267] Found an exact template match 6z8n_AAA.
+I0314 14:47:08.603747 140427965241152 templates.py:267] Found an exact template match 6za8_AAA.
+I0314 14:47:09.630751 140427965241152 templates.py:267] Found an exact template match 6zin_AAA.
+I0314 14:47:10.603229 140427965241152 templates.py:267] Found an exact template match 7w53_R.
+I0314 14:47:11.600997 140427965241152 templates.py:267] Found an exact template match 7w56_R.
+I0314 14:47:13.082217 140427965241152 templates.py:267] Found an exact template match 7w55_R.
+I0314 14:47:14.109217 140427965241152 templates.py:267] Found an exact template match 7w57_R.
+I0314 14:47:14.697443 140427965241152 templates.py:267] Found an exact template match 7f9y_R.
+I0314 14:47:15.739531 140427965241152 pipeline.py:234] Uniref90 MSA size: 10000 sequences.
+I0314 14:47:15.739705 140427965241152 pipeline.py:235] BFD MSA size: 2852 sequences.
+I0314 14:47:15.739764 140427965241152 pipeline.py:236] MGnify MSA size: 501 sequences.
+I0314 14:47:15.739820 140427965241152 pipeline.py:237] Final (deduplicated) MSA size: 13109 sequences.
+I0314 14:47:15.740077 140427965241152 pipeline.py:239] Total number of templates (NB: this can include bad templates and is later filtered to top 4): 20.
+W0314 14:47:15.767051 140427965241152 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/ntr1_rat/3830/ntr1_rat-3830/msas/A/uniprot_hits.sto
+I0314 14:48:56.658157 140427965241152 pipeline_multimer.py:210] Running monomer pipeline on chain B: neurotensin gtp:3830
+W0314 14:48:56.660036 140427965241152 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/ntr1_rat/3830/ntr1_rat-3830/msas/B/uniref90_hits.sto
+W0314 14:48:56.663742 140427965241152 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/ntr1_rat/3830/ntr1_rat-3830/msas/B/mgnify_hits.sto
+I0314 14:48:56.666617 140427965241152 hmmbuild.py:121] Launching subprocess ['/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/hmmbuild', '--hand', '--amino', '/tmp/tmpq_i28suq/output.hmm', '/tmp/tmpq_i28suq/query.msa']
+I0314 14:48:56.779190 140427965241152 utils.py:36] Started hmmbuild query
+I0314 14:48:56.790667 140427965241152 hmmbuild.py:128] hmmbuild stdout:
+# hmmbuild :: profile HMM construction from multiple sequence alignments
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# input alignment file:             /tmp/tmpq_i28suq/query.msa
+# output HMM file:                  /tmp/tmpq_i28suq/output.hmm
+# input alignment is asserted as:   protein
+# model architecture construction:  hand-specified by RF annotation
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# idx name                  nseq  alen  mlen eff_nseq re/pos description
+#---- -------------------- ----- ----- ----- -------- ------ -----------
+1     query                    1    13    13     1.00  1.434 
+
+# CPU time: 0.00u 0.00s 00:00:00.00 Elapsed: 00:00:00.01
+
+
+stderr:
+
+
+I0314 14:48:56.790775 140427965241152 utils.py:40] Finished hmmbuild query in 0.011 seconds
+I0314 14:48:56.791389 140427965241152 hmmsearch.py:103] Launching sub-process ['/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/hmmsearch', '--noali', '--cpu', '8', '--F1', '0.1', '--F2', '0.1', '--F3', '0.1', '--incE', '100', '-E', '100', '--domE', '100', '--incdomE', '100', '-A', '/tmp/tmp_390a40u/output.sto', '/tmp/tmp_390a40u/query.hmm', '/projects/ilfgrid/data/alphafold-genetic-databases///pdb_seqres/pdb_seqres.txt']
+I0314 14:48:56.902463 140427965241152 utils.py:36] Started hmmsearch (pdb_seqres.txt) query
+I0314 14:48:58.268944 140427965241152 utils.py:40] Finished hmmsearch (pdb_seqres.txt) query in 1.366 seconds
+W0314 14:48:58.279049 140427965241152 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/ntr1_rat/3830/ntr1_rat-3830/msas/B/bfd_uniref_hits.a3m
+I0314 14:48:58.281648 140427965241152 templates.py:940] Searching for template for: XLYENKPRRPYIL
+W0314 14:48:58.615600 140427965241152 templates.py:547] The exact sequence QLYENKPRRPYIL was not found in 2lyw_B. Realigning the template to the actual sequence.
+I0314 14:48:58.615777 140427965241152 kalign.py:66] Aligning 2 sequences
+I0314 14:48:58.616152 140427965241152 kalign.py:87] Launching subprocess "/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/kalign -i /tmp/tmphj9fv1dq/input.fasta -o /tmp/tmphj9fv1dq/output.a3m -format fasta"
+I0314 14:48:58.723803 140427965241152 utils.py:36] Started Kalign query
+I0314 14:48:58.724549 140427965241152 kalign.py:94] Kalign stdout:
+
+
+stderr:
+
+Kalign version 2.04, Copyright (C) 2004, 2005, 2006 Timo Lassmann
+
+        Kalign is free software. You can redistribute it and/or modify
+        it under the terms of the GNU General Public License as
+        published by the Free Software Foundation.
+
+reading from STDIN: found 0 sequences
+reading from /tmp/tmphj9fv1dq/input.fasta: found 2 sequences
+Aligning 2 protein sequences with these parameters:
+        54.94940948	gap open penalty
+        8.52492046	gap extension
+        4.42409992	terminal gap penalty
+        0.20000000	bonus
+Alignment will be written to file:'/tmp/tmphj9fv1dq/output.a3m'.
+
+Distance Calculation:
+     100 percent done
+Alignment:
+       0 percent done     100 percent done
+
+
+I0314 14:48:58.724660 140427965241152 utils.py:40] Finished Kalign query in 0.001 seconds
+I0314 14:48:58.725107 140427965241152 templates.py:370] Old aligned template: QLYENKPRRPYIL
+New aligned template: ELYENKPRRPYIL
+I0314 14:48:58.725204 140427965241152 templates.py:555] Sequence in 2lyw_B: QLYENKPRRPYIL successfully realigned to ELYENKPRRPYIL
+W0314 14:48:58.896184 140427965241152 templates.py:547] The exact sequence QLYENKPRRPYIL was not found in 2oyv_A. Realigning the template to the actual sequence.
+I0314 14:48:58.896310 140427965241152 kalign.py:66] Aligning 2 sequences
+I0314 14:48:58.896674 140427965241152 kalign.py:87] Launching subprocess "/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/kalign -i /tmp/tmp6reybc4b/input.fasta -o /tmp/tmp6reybc4b/output.a3m -format fasta"
+I0314 14:48:59.008424 140427965241152 utils.py:36] Started Kalign query
+I0314 14:48:59.009140 140427965241152 kalign.py:94] Kalign stdout:
+
+
+stderr:
+
+Kalign version 2.04, Copyright (C) 2004, 2005, 2006 Timo Lassmann
+
+        Kalign is free software. You can redistribute it and/or modify
+        it under the terms of the GNU General Public License as
+        published by the Free Software Foundation.
+
+reading from STDIN: found 0 sequences
+reading from /tmp/tmp6reybc4b/input.fasta: found 2 sequences
+Aligning 2 protein sequences with these parameters:
+        54.94940948	gap open penalty
+        8.52492046	gap extension
+        4.42409992	terminal gap penalty
+        0.20000000	bonus
+Alignment will be written to file:'/tmp/tmp6reybc4b/output.a3m'.
+
+Distance Calculation:
+     100 percent done
+Alignment:
+       0 percent done     100 percent done
+
+
+I0314 14:48:59.009224 140427965241152 utils.py:40] Finished Kalign query in 0.000 seconds
+I0314 14:48:59.009796 140427965241152 templates.py:370] Old aligned template: QLYENKPRRPYIL
+New aligned template: ELYENKPRRPYIL
+I0314 14:48:59.009902 140427965241152 templates.py:555] Sequence in 2oyv_A: QLYENKPRRPYIL successfully realigned to ELYENKPRRPYIL
+W0314 14:48:59.195580 140427965241152 templates.py:547] The exact sequence QLYENKPRRPYIL was not found in 2oyw_A. Realigning the template to the actual sequence.
+I0314 14:48:59.195754 140427965241152 kalign.py:66] Aligning 2 sequences
+I0314 14:48:59.196142 140427965241152 kalign.py:87] Launching subprocess "/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/kalign -i /tmp/tmp35nib0_6/input.fasta -o /tmp/tmp35nib0_6/output.a3m -format fasta"
+I0314 14:48:59.303529 140427965241152 utils.py:36] Started Kalign query
+I0314 14:48:59.304243 140427965241152 kalign.py:94] Kalign stdout:
+
+
+stderr:
+
+Kalign version 2.04, Copyright (C) 2004, 2005, 2006 Timo Lassmann
+
+        Kalign is free software. You can redistribute it and/or modify
+        it under the terms of the GNU General Public License as
+        published by the Free Software Foundation.
+
+reading from STDIN: found 0 sequences
+reading from /tmp/tmp35nib0_6/input.fasta: found 2 sequences
+Aligning 2 protein sequences with these parameters:
+        54.94940948	gap open penalty
+        8.52492046	gap extension
+        4.42409992	terminal gap penalty
+        0.20000000	bonus
+Alignment will be written to file:'/tmp/tmp35nib0_6/output.a3m'.
+
+Distance Calculation:
+     100 percent done
+Alignment:
+       0 percent done     100 percent done
+
+
+I0314 14:48:59.304361 140427965241152 utils.py:40] Finished Kalign query in 0.000 seconds
+I0314 14:48:59.304842 140427965241152 templates.py:370] Old aligned template: QLYENKPRRPYIL
+New aligned template: ELYENKPRRPYIL
+I0314 14:48:59.304949 140427965241152 templates.py:555] Sequence in 2oyw_A: QLYENKPRRPYIL successfully realigned to ELYENKPRRPYIL
+W0314 14:48:59.643737 140427965241152 templates.py:547] The exact sequence QLYENKPRRPYIL was not found in 3f6k_N. Realigning the template to the actual sequence.
+I0314 14:48:59.643880 140427965241152 kalign.py:66] Aligning 2 sequences
+I0314 14:48:59.644263 140427965241152 kalign.py:87] Launching subprocess "/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/kalign -i /tmp/tmp72oahywj/input.fasta -o /tmp/tmp72oahywj/output.a3m -format fasta"
+I0314 14:48:59.766902 140427965241152 utils.py:36] Started Kalign query
+I0314 14:48:59.767712 140427965241152 kalign.py:94] Kalign stdout:
+
+
+stderr:
+
+Kalign version 2.04, Copyright (C) 2004, 2005, 2006 Timo Lassmann
+
+        Kalign is free software. You can redistribute it and/or modify
+        it under the terms of the GNU General Public License as
+        published by the Free Software Foundation.
+
+reading from STDIN: found 0 sequences
+reading from /tmp/tmp72oahywj/input.fasta: found 2 sequences
+Aligning 2 protein sequences with these parameters:
+        54.94940948	gap open penalty
+        8.52492046	gap extension
+        4.42409992	terminal gap penalty
+        0.20000000	bonus
+Alignment will be written to file:'/tmp/tmp72oahywj/output.a3m'.
+
+Distance Calculation:
+     100 percent done
+Alignment:
+       0 percent done     100 percent done
+
+
+I0314 14:48:59.767814 140427965241152 utils.py:40] Finished Kalign query in 0.001 seconds
+I0314 14:48:59.768245 140427965241152 templates.py:370] Old aligned template: QLYENKPRRPYIL
+New aligned template: ELYENKPRRPYIL
+I0314 14:48:59.768375 140427965241152 templates.py:555] Sequence in 3f6k_N: QLYENKPRRPYIL successfully realigned to ELYENKPRRPYIL
+W0314 14:49:00.274509 140427965241152 templates.py:547] The exact sequence QLYENKPRRPYIL was not found in 4po7_N. Realigning the template to the actual sequence.
+I0314 14:49:00.274664 140427965241152 kalign.py:66] Aligning 2 sequences
+I0314 14:49:00.275049 140427965241152 kalign.py:87] Launching subprocess "/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/kalign -i /tmp/tmprgz4o4d6/input.fasta -o /tmp/tmprgz4o4d6/output.a3m -format fasta"
+I0314 14:49:00.400484 140427965241152 utils.py:36] Started Kalign query
+I0314 14:49:00.401250 140427965241152 kalign.py:94] Kalign stdout:
+
+
+stderr:
+
+Kalign version 2.04, Copyright (C) 2004, 2005, 2006 Timo Lassmann
+
+        Kalign is free software. You can redistribute it and/or modify
+        it under the terms of the GNU General Public License as
+        published by the Free Software Foundation.
+
+reading from STDIN: found 0 sequences
+reading from /tmp/tmprgz4o4d6/input.fasta: found 2 sequences
+Aligning 2 protein sequences with these parameters:
+        54.94940948	gap open penalty
+        8.52492046	gap extension
+        4.42409992	terminal gap penalty
+        0.20000000	bonus
+Alignment will be written to file:'/tmp/tmprgz4o4d6/output.a3m'.
+
+Distance Calculation:
+     100 percent done
+Alignment:
+       0 percent done     100 percent done
+
+
+I0314 14:49:00.401361 140427965241152 utils.py:40] Finished Kalign query in 0.001 seconds
+I0314 14:49:00.401859 140427965241152 templates.py:370] Old aligned template: QLYENKPRRPYIL
+New aligned template: ELYENKPRRPYIL
+I0314 14:49:00.401970 140427965241152 templates.py:555] Sequence in 4po7_N: QLYENKPRRPYIL successfully realigned to ELYENKPRRPYIL
+W0314 14:49:00.403413 140427965241152 templates.py:547] The exact sequence QLYENKPRRPYIL was not found in 4po7_P. Realigning the template to the actual sequence.
+I0314 14:49:00.403498 140427965241152 kalign.py:66] Aligning 2 sequences
+I0314 14:49:00.403872 140427965241152 kalign.py:87] Launching subprocess "/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/kalign -i /tmp/tmpb8alywk9/input.fasta -o /tmp/tmpb8alywk9/output.a3m -format fasta"
+I0314 14:49:00.520780 140427965241152 utils.py:36] Started Kalign query
+I0314 14:49:00.521521 140427965241152 kalign.py:94] Kalign stdout:
+
+
+stderr:
+
+Kalign version 2.04, Copyright (C) 2004, 2005, 2006 Timo Lassmann
+
+        Kalign is free software. You can redistribute it and/or modify
+        it under the terms of the GNU General Public License as
+        published by the Free Software Foundation.
+
+reading from STDIN: found 0 sequences
+reading from /tmp/tmpb8alywk9/input.fasta: found 2 sequences
+Aligning 2 protein sequences with these parameters:
+        54.94940948	gap open penalty
+        8.52492046	gap extension
+        4.42409992	terminal gap penalty
+        0.20000000	bonus
+Alignment will be written to file:'/tmp/tmpb8alywk9/output.a3m'.
+
+Distance Calculation:
+     100 percent done
+Alignment:
+       0 percent done     100 percent done
+
+
+I0314 14:49:00.521614 140427965241152 utils.py:40] Finished Kalign query in 0.001 seconds
+I0314 14:49:00.522092 140427965241152 templates.py:370] Old aligned template: QLYENKPRRPYIL
+New aligned template: ELYENKPRRPYIL
+I0314 14:49:00.522195 140427965241152 templates.py:555] Sequence in 4po7_P: QLYENKPRRPYIL successfully realigned to ELYENKPRRPYIL
+W0314 14:49:01.535893 140427965241152 templates.py:547] The exact sequence QLYENKPRRPYIL was not found in 5luz_C. Realigning the template to the actual sequence.
+I0314 14:49:01.536050 140427965241152 kalign.py:66] Aligning 2 sequences
+I0314 14:49:01.536476 140427965241152 kalign.py:87] Launching subprocess "/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/kalign -i /tmp/tmpvjm4wfcc/input.fasta -o /tmp/tmpvjm4wfcc/output.a3m -format fasta"
+I0314 14:49:01.645725 140427965241152 utils.py:36] Started Kalign query
+I0314 14:49:01.646478 140427965241152 kalign.py:94] Kalign stdout:
+
+
+stderr:
+
+Kalign version 2.04, Copyright (C) 2004, 2005, 2006 Timo Lassmann
+
+        Kalign is free software. You can redistribute it and/or modify
+        it under the terms of the GNU General Public License as
+        published by the Free Software Foundation.
+
+reading from STDIN: found 0 sequences
+reading from /tmp/tmpvjm4wfcc/input.fasta: found 2 sequences
+Aligning 2 protein sequences with these parameters:
+        54.94940948	gap open penalty
+        8.52492046	gap extension
+        4.42409992	terminal gap penalty
+        0.20000000	bonus
+Alignment will be written to file:'/tmp/tmpvjm4wfcc/output.a3m'.
+
+Distance Calculation:
+     100 percent done
+Alignment:
+       0 percent done     100 percent done
+
+
+I0314 14:49:01.646569 140427965241152 utils.py:40] Finished Kalign query in 0.001 seconds
+I0314 14:49:01.647059 140427965241152 templates.py:370] Old aligned template: QLYENKPRRPYIL
+New aligned template: ELYENKPRRPYIL
+I0314 14:49:01.647160 140427965241152 templates.py:555] Sequence in 5luz_C: QLYENKPRRPYIL successfully realigned to ELYENKPRRPYIL
+W0314 14:49:01.648463 140427965241152 templates.py:547] The exact sequence QLYENKPRRPYIL was not found in 5luz_D. Realigning the template to the actual sequence.
+I0314 14:49:01.648545 140427965241152 kalign.py:66] Aligning 2 sequences
+I0314 14:49:01.648886 140427965241152 kalign.py:87] Launching subprocess "/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/kalign -i /tmp/tmp7jmjd5ir/input.fasta -o /tmp/tmp7jmjd5ir/output.a3m -format fasta"
+I0314 14:49:01.766316 140427965241152 utils.py:36] Started Kalign query
+I0314 14:49:01.767053 140427965241152 kalign.py:94] Kalign stdout:
+
+
+stderr:
+
+Kalign version 2.04, Copyright (C) 2004, 2005, 2006 Timo Lassmann
+
+        Kalign is free software. You can redistribute it and/or modify
+        it under the terms of the GNU General Public License as
+        published by the Free Software Foundation.
+
+reading from STDIN: found 0 sequences
+reading from /tmp/tmp7jmjd5ir/input.fasta: found 2 sequences
+Aligning 2 protein sequences with these parameters:
+        54.94940948	gap open penalty
+        8.52492046	gap extension
+        4.42409992	terminal gap penalty
+        0.20000000	bonus
+Alignment will be written to file:'/tmp/tmp7jmjd5ir/output.a3m'.
+
+Distance Calculation:
+     100 percent done
+Alignment:
+       0 percent done     100 percent done
+
+
+I0314 14:49:01.767149 140427965241152 utils.py:40] Finished Kalign query in 0.000 seconds
+I0314 14:49:01.767675 140427965241152 templates.py:370] Old aligned template: QLYENKPRRPYIL
+New aligned template: ELYENKPRRPYIL
+I0314 14:49:01.767774 140427965241152 templates.py:555] Sequence in 5luz_D: QLYENKPRRPYIL successfully realigned to ELYENKPRRPYIL
+W0314 14:49:01.769096 140427965241152 templates.py:547] The exact sequence QLYENKPRRPYIL was not found in 5luz_P. Realigning the template to the actual sequence.
+I0314 14:49:01.769174 140427965241152 kalign.py:66] Aligning 2 sequences
+I0314 14:49:01.769498 140427965241152 kalign.py:87] Launching subprocess "/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/kalign -i /tmp/tmpn19kui_q/input.fasta -o /tmp/tmpn19kui_q/output.a3m -format fasta"
+I0314 14:49:01.887675 140427965241152 utils.py:36] Started Kalign query
+I0314 14:49:01.888447 140427965241152 kalign.py:94] Kalign stdout:
+
+
+stderr:
+
+Kalign version 2.04, Copyright (C) 2004, 2005, 2006 Timo Lassmann
+
+        Kalign is free software. You can redistribute it and/or modify
+        it under the terms of the GNU General Public License as
+        published by the Free Software Foundation.
+
+reading from STDIN: found 0 sequences
+reading from /tmp/tmpn19kui_q/input.fasta: found 2 sequences
+Aligning 2 protein sequences with these parameters:
+        54.94940948	gap open penalty
+        8.52492046	gap extension
+        4.42409992	terminal gap penalty
+        0.20000000	bonus
+Alignment will be written to file:'/tmp/tmpn19kui_q/output.a3m'.
+
+Distance Calculation:
+     100 percent done
+Alignment:
+       0 percent done     100 percent done
+
+
+I0314 14:49:01.888545 140427965241152 utils.py:40] Finished Kalign query in 0.001 seconds
+I0314 14:49:01.889032 140427965241152 templates.py:370] Old aligned template: QLYENKPRRPYIL
+New aligned template: ELYENKPRRPYIL
+I0314 14:49:01.889130 140427965241152 templates.py:555] Sequence in 5luz_P: QLYENKPRRPYIL successfully realigned to ELYENKPRRPYIL
+W0314 14:49:01.890376 140427965241152 templates.py:547] The exact sequence QLYENKPRRPYIL was not found in 5luz_Q. Realigning the template to the actual sequence.
+I0314 14:49:01.890461 140427965241152 kalign.py:66] Aligning 2 sequences
+I0314 14:49:01.890795 140427965241152 kalign.py:87] Launching subprocess "/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/kalign -i /tmp/tmpime47757/input.fasta -o /tmp/tmpime47757/output.a3m -format fasta"
+I0314 14:49:02.001458 140427965241152 utils.py:36] Started Kalign query
+I0314 14:49:02.002218 140427965241152 kalign.py:94] Kalign stdout:
+
+
+stderr:
+
+Kalign version 2.04, Copyright (C) 2004, 2005, 2006 Timo Lassmann
+
+        Kalign is free software. You can redistribute it and/or modify
+        it under the terms of the GNU General Public License as
+        published by the Free Software Foundation.
+
+reading from STDIN: found 0 sequences
+reading from /tmp/tmpime47757/input.fasta: found 2 sequences
+Aligning 2 protein sequences with these parameters:
+        54.94940948	gap open penalty
+        8.52492046	gap extension
+        4.42409992	terminal gap penalty
+        0.20000000	bonus
+Alignment will be written to file:'/tmp/tmpime47757/output.a3m'.
+
+Distance Calculation:
+     100 percent done
+Alignment:
+       0 percent done     100 percent done
+
+
+I0314 14:49:02.002304 140427965241152 utils.py:40] Finished Kalign query in 0.000 seconds
+I0314 14:49:02.002875 140427965241152 templates.py:370] Old aligned template: QLYENKPRRPYIL
+New aligned template: ELYENKPRRPYIL
+I0314 14:49:02.002977 140427965241152 templates.py:555] Sequence in 5luz_Q: QLYENKPRRPYIL successfully realigned to ELYENKPRRPYIL
+I0314 14:49:02.467842 140427965241152 templates.py:267] Found an exact template match 2lne_A.
+I0314 14:49:02.924446 140427965241152 templates.py:267] Found an exact template match 2lnf_A.
+I0314 14:49:03.984550 140427965241152 templates.py:267] Found an exact template match 2lng_A.
+I0314 14:49:03.985982 140427965241152 templates.py:718] hit 3zev_C did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.986080 140427965241152 templates.py:718] hit 3zev_D did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.986157 140427965241152 templates.py:718] hit 6yvr_CCC did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.986227 140427965241152 templates.py:718] hit 6yvr_DDD did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.986294 140427965241152 templates.py:718] hit 4grv_B did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.986367 140427965241152 templates.py:718] hit 4xee_B did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.986432 140427965241152 templates.py:718] hit 4xes_B did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.986495 140427965241152 templates.py:718] hit 5t04_B did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.986557 140427965241152 templates.py:718] hit 6pwc_B did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.986619 140427965241152 templates.py:718] hit 6up7_C did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.986682 140427965241152 templates.py:718] hit 6z4v_BBB did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.986744 140427965241152 templates.py:718] hit 4buo_C did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.986806 140427965241152 templates.py:718] hit 4buo_D did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.986867 140427965241152 templates.py:718] hit 4bv0_C did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.986929 140427965241152 templates.py:718] hit 4bv0_D did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.986991 140427965241152 templates.py:718] hit 4bwb_C did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.987053 140427965241152 templates.py:718] hit 4bwb_D did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.987114 140427965241152 templates.py:718] hit 7l0p_D did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.987176 140427965241152 templates.py:718] hit 7l0q_D did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.987239 140427965241152 templates.py:718] hit 7l0r_D did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.987302 140427965241152 templates.py:718] hit 7l0s_D did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:03.987370 140427965241152 templates.py:718] hit 1g0y_R did not pass prefilter: Template too short. Length: 5.
+I0314 14:49:04.140955 140427965241152 templates.py:267] Found an exact template match 1g0y_R.
+I0314 14:49:04.153641 140427965241152 templates.py:718] hit 1itb_B did not pass prefilter: Template too short. Length: 5.
+I0314 14:49:04.411593 140427965241152 templates.py:267] Found an exact template match 1itb_B.
+I0314 14:49:04.426214 140427965241152 templates.py:718] hit 1ira_Y did not pass prefilter: Template too short. Length: 5.
+I0314 14:49:04.645701 140427965241152 templates.py:267] Found an exact template match 1ira_Y.
+I0314 14:49:04.659503 140427965241152 templates.py:718] hit 4gaf_B did not pass prefilter: Template too short. Length: 5.
+I0314 14:49:05.020497 140427965241152 templates.py:267] Found an exact template match 4gaf_B.
+I0314 14:49:05.034102 140427965241152 templates.py:718] hit 4dep_B did not pass prefilter: Template too short. Length: 5.
+I0314 14:49:05.710155 140427965241152 templates.py:267] Found an exact template match 4dep_B.
+I0314 14:49:05.723015 140427965241152 templates.py:718] hit 4dep_E did not pass prefilter: Template too short. Length: 5.
+I0314 14:49:05.723187 140427965241152 templates.py:267] Found an exact template match 4dep_E.
+I0314 14:49:05.736398 140427965241152 templates.py:718] hit 4v3p_SC did not pass prefilter: Template too short. Length: 7.
+I0314 14:49:05.736505 140427965241152 templates.py:718] hit 4v3p_SC did not pass prefilter: Template too short. Length: 8.
+I0314 14:49:05.736583 140427965241152 templates.py:718] hit 4v7e_BJ did not pass prefilter: Template too short. Length: 7.
+I0314 14:49:05.736653 140427965241152 templates.py:718] hit 4v7e_BJ did not pass prefilter: Template too short. Length: 8.
+I0314 14:49:05.736719 140427965241152 templates.py:718] hit 7qix_Q did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:05.736784 140427965241152 templates.py:718] hit 7qix_Q did not pass prefilter: Template too short. Length: 8.
+I0314 14:49:05.736848 140427965241152 templates.py:718] hit 7qiz_GA did not pass prefilter: Template too short. Length: 6.
+I0314 14:49:05.736910 140427965241152 templates.py:718] hit 7qiz_GA did not pass prefilter: Template too short. Length: 8.
+I0314 14:49:05.736976 140427965241152 templates.py:718] hit 1yfn_A did not pass prefilter: Template too short. Length: 7.
+I0314 14:49:05.737040 140427965241152 templates.py:718] hit 1yfn_B did not pass prefilter: Template too short. Length: 7.
+I0314 14:49:05.737105 140427965241152 templates.py:718] hit 1yfn_C did not pass prefilter: Template too short. Length: 7.
+I0314 14:49:05.737171 140427965241152 templates.py:718] hit 1yfn_D did not pass prefilter: Template too short. Length: 7.
+I0314 14:49:06.640205 140427965241152 templates.py:267] Found an exact template match 1zsz_B.
+I0314 14:49:06.645108 140427965241152 templates.py:267] Found an exact template match 1zsz_A.
+I0314 14:49:07.298984 140427965241152 templates.py:267] Found an exact template match 1ou8_A.
+I0314 14:49:07.303932 140427965241152 templates.py:267] Found an exact template match 1ou8_B.
+I0314 14:49:07.420414 140427965241152 templates.py:267] Found an exact template match 1twb_A.
+I0314 14:49:07.425287 140427965241152 templates.py:267] Found an exact template match 1twb_B.
+I0314 14:49:07.429700 140427965241152 templates.py:718] hit 8et3_Y did not pass prefilter: Template too short. Length: 7.
+I0314 14:49:07.429796 140427965241152 templates.py:718] hit 8et3_Z did not pass prefilter: Template too short. Length: 7.
+I0314 14:49:19.470575 140427965241152 templates.py:267] Found an exact template match 3jbn_A3.
+I0314 14:49:19.476470 140427965241152 templates.py:718] hit 3jbn_A3 did not pass prefilter: Template too short. Length: 8.
+I0314 14:49:31.436152 140427965241152 templates.py:267] Found an exact template match 3jbo_A3.
+I0314 14:49:31.442003 140427965241152 templates.py:718] hit 3jbo_A3 did not pass prefilter: Template too short. Length: 8.
+I0314 14:49:44.237752 140427965241152 templates.py:267] Found an exact template match 3jbp_A3.
+I0314 14:49:44.243964 140427965241152 templates.py:718] hit 3jbp_A3 did not pass prefilter: Template too short. Length: 8.
+I0314 14:49:44.244064 140427965241152 templates.py:718] hit 1ox9_A did not pass prefilter: Template too short. Length: 7.
+I0314 14:49:44.244141 140427965241152 templates.py:718] hit 1ox9_B did not pass prefilter: Template too short. Length: 7.
+I0314 14:49:44.244212 140427965241152 templates.py:718] hit 1ox9_C did not pass prefilter: Template too short. Length: 7.
+I0314 14:49:44.244279 140427965241152 templates.py:718] hit 1ox9_D did not pass prefilter: Template too short. Length: 7.
+I0314 14:49:44.244360 140427965241152 templates.py:718] hit 1ox9_E did not pass prefilter: Template too short. Length: 7.
+I0314 14:49:44.244426 140427965241152 templates.py:718] hit 1ox9_F did not pass prefilter: Template too short. Length: 7.
+I0314 14:49:44.244490 140427965241152 templates.py:718] hit 1ox9_G did not pass prefilter: Template too short. Length: 7.
+I0314 14:49:44.244555 140427965241152 templates.py:718] hit 1ox9_H did not pass prefilter: Template too short. Length: 7.
+I0314 14:49:44.244618 140427965241152 templates.py:718] hit 1ox8_A did not pass prefilter: Template too short. Length: 7.
+I0314 14:49:44.244682 140427965241152 templates.py:718] hit 1ox8_B did not pass prefilter: Template too short. Length: 7.
+I0314 14:49:44.447533 140427965241152 templates.py:267] Found an exact template match 1ou9_A.
+I0314 14:49:44.453692 140427965241152 templates.py:267] Found an exact template match 1ou9_B.
+I0314 14:49:44.458759 140427965241152 templates.py:267] Found an exact template match 1ou9_C.
+I0314 14:49:44.629946 140427965241152 templates.py:267] Found an exact template match 1oul_A.
+I0314 14:49:44.635269 140427965241152 templates.py:267] Found an exact template match 1oul_B.
+I0314 14:49:44.640431 140427965241152 templates.py:718] hit 4v8m_A6 did not pass prefilter: Template too short. Length: 5.
+I0314 14:49:44.640528 140427965241152 templates.py:718] hit 4v8m_A6 did not pass prefilter: Template too short. Length: 8.
+I0314 14:50:03.093141 140427965241152 templates.py:267] Found an exact template match 4v8m_A6.
+I0314 14:50:10.036172 140427965241152 templates.py:267] Found an exact template match 3j79_3.
+I0314 14:50:10.042400 140427965241152 templates.py:718] hit 3j79_3 did not pass prefilter: Template too short. Length: 8.
+I0314 14:50:19.088982 140427965241152 templates.py:267] Found an exact template match 5umd_3.
+I0314 14:50:19.094812 140427965241152 templates.py:718] hit 5umd_3 did not pass prefilter: Template too short. Length: 8.
+I0314 14:50:19.094919 140427965241152 templates.py:718] hit 6os9_L did not pass prefilter: Template too short. Length: 6.
+I0314 14:50:19.094997 140427965241152 templates.py:718] hit 6osa_L did not pass prefilter: Template too short. Length: 6.
+I0314 14:50:19.095069 140427965241152 templates.py:718] hit 5t2a_6 did not pass prefilter: Template too short. Length: 5.
+I0314 14:50:19.095137 140427965241152 templates.py:718] hit 5t2a_6 did not pass prefilter: Template too short. Length: 8.
+I0314 14:50:32.517593 140427965241152 templates.py:267] Found an exact template match 5t2a_6.
+I0314 14:50:32.526195 140427965241152 templates.py:718] hit 6az1_D did not pass prefilter: Template too short. Length: 5.
+I0314 14:50:32.526293 140427965241152 templates.py:718] hit 6az1_D did not pass prefilter: Template too short. Length: 8.
+I0314 14:50:37.115910 140427965241152 templates.py:267] Found an exact template match 6az1_D.
+I0314 14:50:37.126725 140427965241152 templates.py:718] hit 4c3o_B did not pass prefilter: Template too short. Length: 9.
+I0314 14:50:37.126841 140427965241152 templates.py:718] hit 4c3o_D did not pass prefilter: Template too short. Length: 9.
+I0314 14:50:37.126926 140427965241152 templates.py:718] hit 4c3o_F did not pass prefilter: Template too short. Length: 9.
+I0314 14:50:37.127008 140427965241152 templates.py:718] hit 7ase_B did not pass prefilter: Template too short. Length: 5.
+I0314 14:50:37.127116 140427965241152 templates.py:718] hit 7ase_B did not pass prefilter: Template too short. Length: 8.
+I0314 14:50:48.344916 140427965241152 templates.py:267] Found an exact template match 7ase_B.
+I0314 14:50:48.354548 140427965241152 templates.py:718] hit 5opt_b did not pass prefilter: Template too short. Length: 5.
+I0314 14:50:48.354650 140427965241152 templates.py:718] hit 5opt_b did not pass prefilter: Template too short. Length: 8.
+I0314 14:50:53.220562 140427965241152 templates.py:267] Found an exact template match 5opt_b.
+I0314 14:50:53.229901 140427965241152 pipeline.py:234] Uniref90 MSA size: 1 sequences.
+I0314 14:50:53.229984 140427965241152 pipeline.py:235] BFD MSA size: 28 sequences.
+I0314 14:50:53.230043 140427965241152 pipeline.py:236] MGnify MSA size: 1 sequences.
+I0314 14:50:53.230095 140427965241152 pipeline.py:237] Final (deduplicated) MSA size: 28 sequences.
+I0314 14:50:53.230150 140427965241152 pipeline.py:239] Total number of templates (NB: this can include bad templates and is later filtered to top 4): 6.
+W0314 14:50:53.234740 140427965241152 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/ntr1_rat/3830/ntr1_rat-3830/msas/B/uniprot_hits.sto
+I0314 14:50:53.923888 140427965241152 run_alphafold.py:191] Running model model_1_multimer_v3_pred_0 on ntr1_rat-3830
+I0314 14:50:53.924533 140427965241152 model.py:165] Running predict with shape(feat) = {'aatype': (437,), 'residue_index': (437,), 'seq_length': (), 'msa': (2075, 437), 'num_alignments': (), 'template_aatype': (4, 437), 'template_all_atom_mask': (4, 437, 37), 'template_all_atom_positions': (4, 437, 37, 3), 'asym_id': (437,), 'sym_id': (437,), 'entity_id': (437,), 'deletion_matrix': (2075, 437), 'deletion_mean': (437,), 'all_atom_mask': (437, 37), 'all_atom_positions': (437, 37, 3), 'assembly_num_chains': (), 'entity_mask': (437,), 'num_templates': (), 'cluster_bias_mask': (2075,), 'bert_mask': (2075, 437), 'seq_mask': (437,), 'msa_mask': (2075, 437)}
+I0314 15:08:59.015558 140427965241152 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (437, 437, 64)}, 'experimentally_resolved': {'logits': (437, 37)}, 'masked_msa': {'logits': (508, 437, 22)}, 'num_recycles': (), 'predicted_aligned_error': (437, 437), 'predicted_lddt': {'logits': (437, 50)}, 'structure_module': {'final_atom_mask': (437, 37), 'final_atom_positions': (437, 37, 3)}, 'plddt': (437,), 'aligned_confidence_probs': (437, 437, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0314 15:08:59.017284 140427965241152 run_alphafold.py:203] Total JAX model model_1_multimer_v3_pred_0 on ntr1_rat-3830 predict time (includes compilation time, see --benchmark): 1085.1s
+I0314 15:09:11.356560 140427965241152 run_alphafold.py:191] Running model model_2_multimer_v3_pred_0 on ntr1_rat-3830
+I0314 15:09:11.358078 140427965241152 model.py:165] Running predict with shape(feat) = {'aatype': (437,), 'residue_index': (437,), 'seq_length': (), 'msa': (2075, 437), 'num_alignments': (), 'template_aatype': (4, 437), 'template_all_atom_mask': (4, 437, 37), 'template_all_atom_positions': (4, 437, 37, 3), 'asym_id': (437,), 'sym_id': (437,), 'entity_id': (437,), 'deletion_matrix': (2075, 437), 'deletion_mean': (437,), 'all_atom_mask': (437, 37), 'all_atom_positions': (437, 37, 3), 'assembly_num_chains': (), 'entity_mask': (437,), 'num_templates': (), 'cluster_bias_mask': (2075,), 'bert_mask': (2075, 437), 'seq_mask': (437,), 'msa_mask': (2075, 437)}
+I0314 15:20:31.186468 140427965241152 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (437, 437, 64)}, 'experimentally_resolved': {'logits': (437, 37)}, 'masked_msa': {'logits': (508, 437, 22)}, 'num_recycles': (), 'predicted_aligned_error': (437, 437), 'predicted_lddt': {'logits': (437, 50)}, 'structure_module': {'final_atom_mask': (437, 37), 'final_atom_positions': (437, 37, 3)}, 'plddt': (437,), 'aligned_confidence_probs': (437, 437, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0314 15:20:31.188445 140427965241152 run_alphafold.py:203] Total JAX model model_2_multimer_v3_pred_0 on ntr1_rat-3830 predict time (includes compilation time, see --benchmark): 679.8s
+I0314 15:20:43.119555 140427965241152 run_alphafold.py:191] Running model model_3_multimer_v3_pred_0 on ntr1_rat-3830
+I0314 15:20:43.119955 140427965241152 model.py:165] Running predict with shape(feat) = {'aatype': (437,), 'residue_index': (437,), 'seq_length': (), 'msa': (2075, 437), 'num_alignments': (), 'template_aatype': (4, 437), 'template_all_atom_mask': (4, 437, 37), 'template_all_atom_positions': (4, 437, 37, 3), 'asym_id': (437,), 'sym_id': (437,), 'entity_id': (437,), 'deletion_matrix': (2075, 437), 'deletion_mean': (437,), 'all_atom_mask': (437, 37), 'all_atom_positions': (437, 37, 3), 'assembly_num_chains': (), 'entity_mask': (437,), 'num_templates': (), 'cluster_bias_mask': (2075,), 'bert_mask': (2075, 437), 'seq_mask': (437,), 'msa_mask': (2075, 437)}
+I0314 15:33:11.159214 140427965241152 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (437, 437, 64)}, 'experimentally_resolved': {'logits': (437, 37)}, 'masked_msa': {'logits': (508, 437, 22)}, 'num_recycles': (), 'predicted_aligned_error': (437, 437), 'predicted_lddt': {'logits': (437, 50)}, 'structure_module': {'final_atom_mask': (437, 37), 'final_atom_positions': (437, 37, 3)}, 'plddt': (437,), 'aligned_confidence_probs': (437, 437, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0314 15:33:11.161874 140427965241152 run_alphafold.py:203] Total JAX model model_3_multimer_v3_pred_0 on ntr1_rat-3830 predict time (includes compilation time, see --benchmark): 748.0s
+I0314 15:33:22.933192 140427965241152 run_alphafold.py:191] Running model model_4_multimer_v3_pred_0 on ntr1_rat-3830
+I0314 15:33:22.933495 140427965241152 model.py:165] Running predict with shape(feat) = {'aatype': (437,), 'residue_index': (437,), 'seq_length': (), 'msa': (2075, 437), 'num_alignments': (), 'template_aatype': (4, 437), 'template_all_atom_mask': (4, 437, 37), 'template_all_atom_positions': (4, 437, 37, 3), 'asym_id': (437,), 'sym_id': (437,), 'entity_id': (437,), 'deletion_matrix': (2075, 437), 'deletion_mean': (437,), 'all_atom_mask': (437, 37), 'all_atom_positions': (437, 37, 3), 'assembly_num_chains': (), 'entity_mask': (437,), 'num_templates': (), 'cluster_bias_mask': (2075,), 'bert_mask': (2075, 437), 'seq_mask': (437,), 'msa_mask': (2075, 437)}
+I0314 15:58:40.989425 140427965241152 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (437, 437, 64)}, 'experimentally_resolved': {'logits': (437, 37)}, 'masked_msa': {'logits': (508, 437, 22)}, 'num_recycles': (), 'predicted_aligned_error': (437, 437), 'predicted_lddt': {'logits': (437, 50)}, 'structure_module': {'final_atom_mask': (437, 37), 'final_atom_positions': (437, 37, 3)}, 'plddt': (437,), 'aligned_confidence_probs': (437, 437, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0314 15:58:40.991889 140427965241152 run_alphafold.py:203] Total JAX model model_4_multimer_v3_pred_0 on ntr1_rat-3830 predict time (includes compilation time, see --benchmark): 1518.1s
+I0314 15:58:53.085987 140427965241152 run_alphafold.py:191] Running model model_5_multimer_v3_pred_0 on ntr1_rat-3830
+I0314 15:58:53.086563 140427965241152 model.py:165] Running predict with shape(feat) = {'aatype': (437,), 'residue_index': (437,), 'seq_length': (), 'msa': (2075, 437), 'num_alignments': (), 'template_aatype': (4, 437), 'template_all_atom_mask': (4, 437, 37), 'template_all_atom_positions': (4, 437, 37, 3), 'asym_id': (437,), 'sym_id': (437,), 'entity_id': (437,), 'deletion_matrix': (2075, 437), 'deletion_mean': (437,), 'all_atom_mask': (437, 37), 'all_atom_positions': (437, 37, 3), 'assembly_num_chains': (), 'entity_mask': (437,), 'num_templates': (), 'cluster_bias_mask': (2075,), 'bert_mask': (2075, 437), 'seq_mask': (437,), 'msa_mask': (2075, 437)}
+I0314 16:23:54.797324 140427965241152 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (437, 437, 64)}, 'experimentally_resolved': {'logits': (437, 37)}, 'masked_msa': {'logits': (508, 437, 22)}, 'num_recycles': (), 'predicted_aligned_error': (437, 437), 'predicted_lddt': {'logits': (437, 50)}, 'structure_module': {'final_atom_mask': (437, 37), 'final_atom_positions': (437, 37, 3)}, 'plddt': (437,), 'aligned_confidence_probs': (437, 437, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0314 16:23:54.799848 140427965241152 run_alphafold.py:203] Total JAX model model_5_multimer_v3_pred_0 on ntr1_rat-3830 predict time (includes compilation time, see --benchmark): 1501.7s
+I0314 16:24:07.748862 140427965241152 run_alphafold.py:277] Final timings for ntr1_rat-3830: {'features': 267.6857125759125, 'process_features_model_1_multimer_v3_pred_0': 9.775161743164062e-06, 'predict_and_compile_model_1_multimer_v3_pred_0': 1085.0931904315948, 'process_features_model_2_multimer_v3_pred_0': 9.608268737792969e-05, 'predict_and_compile_model_2_multimer_v3_pred_0': 679.8308622837067, 'process_features_model_3_multimer_v3_pred_0': 1.0013580322265625e-05, 'predict_and_compile_model_3_multimer_v3_pred_0': 748.0420694351196, 'process_features_model_4_multimer_v3_pred_0': 1.811981201171875e-05, 'predict_and_compile_model_4_multimer_v3_pred_0': 1518.0585162639618, 'process_features_model_5_multimer_v3_pred_0': 2.2172927856445312e-05, 'predict_and_compile_model_5_multimer_v3_pred_0': 1501.7134926319122}
+
+>> Job finished at: Tue Mar 14 16:24:30 CET 2023
+
+>> Runtime: 5916 s

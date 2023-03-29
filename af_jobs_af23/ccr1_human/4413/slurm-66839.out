@@ -1,0 +1,327 @@
+>> Job started at: Mon Feb 27 04:03:16 CET 2023
+   On Machine:     ilfgridgpun02fl.unicph.domain
+   In directory:   /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/ccr1_human/4413
+
+>> GPU is 4
+
+I0227 04:03:24.164276 139633904478016 templates.py:857] Using precomputed obsolete pdbs /projects/ilfgrid/data/alphafold-genetic-databases///pdb_mmcif/obsolete.dat.
+I0227 04:03:24.378793 139633904478016 xla_bridge.py:353] Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker: 
+I0227 04:03:24.695289 139633904478016 xla_bridge.py:353] Unable to initialize backend 'rocm': NOT_FOUND: Could not find registered platform with name: "rocm". Available platform names are: Interpreter Host CUDA
+I0227 04:03:24.695812 139633904478016 xla_bridge.py:353] Unable to initialize backend 'tpu': module 'jaxlib.xla_extension' has no attribute 'get_tpu_client'
+I0227 04:03:24.695931 139633904478016 xla_bridge.py:353] Unable to initialize backend 'plugin': xla_extension has no attributes named get_plugin_device_client. Compile TensorFlow with //tensorflow/compiler/xla/python:enable_plugin_device set to true (defaults to false) to enable this.
+I0227 04:03:28.953587 139633904478016 run_alphafold.py:386] Have 5 models: ['model_1_multimer_v3_pred_0', 'model_2_multimer_v3_pred_0', 'model_3_multimer_v3_pred_0', 'model_4_multimer_v3_pred_0', 'model_5_multimer_v3_pred_0']
+I0227 04:03:28.953763 139633904478016 run_alphafold.py:403] Using random seed 1322612474180655479 for the data pipeline
+I0227 04:03:28.954011 139633904478016 run_alphafold.py:161] Predicting ccr1_human-4413
+I0227 04:03:28.966446 139633904478016 pipeline_multimer.py:210] Running monomer pipeline on chain A: ccr1_human P32246
+W0227 04:03:28.967966 139633904478016 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/ccr1_human/4413/ccr1_human-4413/msas/A/uniref90_hits.sto
+W0227 04:03:36.514453 139633904478016 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/ccr1_human/4413/ccr1_human-4413/msas/A/mgnify_hits.sto
+I0227 04:03:44.382986 139633904478016 hmmbuild.py:121] Launching subprocess ['/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/hmmbuild', '--hand', '--amino', '/tmp/tmpc75v_bg0/output.hmm', '/tmp/tmpc75v_bg0/query.msa']
+I0227 04:03:44.460420 139633904478016 utils.py:36] Started hmmbuild query
+I0227 04:03:45.600600 139633904478016 hmmbuild.py:128] hmmbuild stdout:
+# hmmbuild :: profile HMM construction from multiple sequence alignments
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# input alignment file:             /tmp/tmpc75v_bg0/query.msa
+# output HMM file:                  /tmp/tmpc75v_bg0/output.hmm
+# input alignment is asserted as:   protein
+# model architecture construction:  hand-specified by RF annotation
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# idx name                  nseq  alen  mlen eff_nseq re/pos description
+#---- -------------------- ----- ----- ----- -------- ------ -----------
+1     query                 9891  1782   355     5.59  0.590 
+
+# CPU time: 1.07u 0.05s 00:00:01.12 Elapsed: 00:00:01.13
+
+
+stderr:
+
+
+I0227 04:03:45.600801 139633904478016 utils.py:40] Finished hmmbuild query in 1.140 seconds
+I0227 04:03:45.604667 139633904478016 hmmsearch.py:103] Launching sub-process ['/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/hmmsearch', '--noali', '--cpu', '8', '--F1', '0.1', '--F2', '0.1', '--F3', '0.1', '--incE', '100', '-E', '100', '--domE', '100', '--incdomE', '100', '-A', '/tmp/tmp608_6vuf/output.sto', '/tmp/tmp608_6vuf/query.hmm', '/projects/ilfgrid/data/alphafold-genetic-databases///pdb_seqres/pdb_seqres.txt']
+I0227 04:03:45.676858 139633904478016 utils.py:36] Started hmmsearch (pdb_seqres.txt) query
+I0227 04:03:51.519863 139633904478016 utils.py:40] Finished hmmsearch (pdb_seqres.txt) query in 5.843 seconds
+W0227 04:03:57.997588 139633904478016 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/ccr1_human/4413/ccr1_human-4413/msas/A/bfd_uniref_hits.a3m
+I0227 04:03:58.163347 139633904478016 templates.py:940] Searching for template for: METPNTTEDYDTTTEFDYGDATPCQKVNERAFGAQLLPPLYSLVFVIGLVGNILVVLVLVQYKRLKNMTSIYLLNLAISDLLFLFTLPFWIDYKLKDDWVFGDAMCKILSGFYYTGLYSEIFFIILLTIDRYLAIVHAVFALRARTVTFGVITSIIIWALAILASMPGLYFSKTQWEFTHHTCSLHFPHESLREWKLFQALKLNLFGLVLPLLVMIICYTGIIKILLRRPNEKKSKAVRLIFVIMIIFFLFWTPYNLTILISVFQDFLFTHECEQSRHLDLAVQVTEVIAYTHCCVNPVIYAFVGERFRKYLRQLFHRRVAVHLVKWLPFLSVDRLERVSSTSPSTGEHELSAGF
+I0227 04:03:58.164058 139633904478016 templates.py:718] hit 7vl8_R did not pass prefilter: Template is an exact subsequence of query with large coverage. Length ratio: 1.0.
+I0227 04:03:58.164279 139633904478016 templates.py:718] hit 7vl9_R did not pass prefilter: Template is an exact subsequence of query with large coverage. Length ratio: 1.0.
+I0227 04:03:58.164437 139633904478016 templates.py:718] hit 7vla_R did not pass prefilter: Template is an exact subsequence of query with large coverage. Length ratio: 1.0.
+I0227 04:03:59.856668 139633904478016 templates.py:267] Found an exact template match 7o7f_C.
+I0227 04:04:01.350291 139633904478016 templates.py:267] Found an exact template match 7xa3_R.
+I0227 04:04:02.535664 139633904478016 templates.py:267] Found an exact template match 7x9y_R.
+I0227 04:04:03.283655 139633904478016 templates.py:267] Found an exact template match 7f1s_R.
+I0227 04:04:03.880082 139633904478016 templates.py:267] Found an exact template match 7f1q_R.
+I0227 04:04:04.734356 139633904478016 templates.py:267] Found an exact template match 4mbs_A.
+I0227 04:04:04.754473 139633904478016 templates.py:267] Found an exact template match 4mbs_A.
+I0227 04:04:04.772588 139633904478016 templates.py:267] Found an exact template match 4mbs_B.
+I0227 04:04:04.791203 139633904478016 templates.py:267] Found an exact template match 4mbs_B.
+I0227 04:04:05.368619 139633904478016 templates.py:267] Found an exact template match 7f1r_R.
+I0227 04:04:05.938756 139633904478016 templates.py:267] Found an exact template match 6meo_B.
+I0227 04:04:06.807008 139633904478016 templates.py:267] Found an exact template match 6met_B.
+I0227 04:04:07.181910 139633904478016 templates.py:267] Found an exact template match 5uiw_A.
+I0227 04:04:07.199076 139633904478016 templates.py:267] Found an exact template match 5uiw_A.
+I0227 04:04:07.547620 139633904478016 templates.py:267] Found an exact template match 6akx_A.
+I0227 04:04:07.563423 139633904478016 templates.py:267] Found an exact template match 6akx_A.
+I0227 04:04:07.578680 139633904478016 templates.py:267] Found an exact template match 6akx_B.
+I0227 04:04:07.595029 139633904478016 templates.py:267] Found an exact template match 6akx_B.
+I0227 04:04:07.784763 139633904478016 templates.py:267] Found an exact template match 6aky_A.
+I0227 04:04:07.800619 139633904478016 templates.py:267] Found an exact template match 6aky_A.
+I0227 04:04:08.040642 139633904478016 templates.py:267] Found an exact template match 7f1t_A.
+I0227 04:04:08.060577 139633904478016 templates.py:267] Found an exact template match 7f1t_A.
+I0227 04:04:08.623360 139633904478016 templates.py:267] Found an exact template match 6gps_A.
+I0227 04:04:08.646046 139633904478016 templates.py:267] Found an exact template match 6gps_A.
+I0227 04:04:09.026249 139633904478016 templates.py:267] Found an exact template match 5t1a_A.
+I0227 04:04:09.048734 139633904478016 templates.py:267] Found an exact template match 5t1a_A.
+I0227 04:04:09.677678 139633904478016 templates.py:267] Found an exact template match 6wwz_R.
+I0227 04:04:10.986862 139633904478016 templates.py:267] Found an exact template match 6gpx_A.
+I0227 04:04:11.009796 139633904478016 templates.py:267] Found an exact template match 6gpx_A.
+I0227 04:04:11.855919 139633904478016 pipeline.py:234] Uniref90 MSA size: 10000 sequences.
+I0227 04:04:11.856101 139633904478016 pipeline.py:235] BFD MSA size: 1317 sequences.
+I0227 04:04:11.856176 139633904478016 pipeline.py:236] MGnify MSA size: 501 sequences.
+I0227 04:04:11.856235 139633904478016 pipeline.py:237] Final (deduplicated) MSA size: 11687 sequences.
+I0227 04:04:11.856506 139633904478016 pipeline.py:239] Total number of templates (NB: this can include bad templates and is later filtered to top 4): 20.
+W0227 04:04:11.874909 139633904478016 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/ccr1_human/4413/ccr1_human-4413/msas/A/uniprot_hits.sto
+I0227 04:05:59.465106 139633904478016 pipeline_multimer.py:210] Running monomer pipeline on chain B: CCL7 gtp:4413
+W0227 04:05:59.467300 139633904478016 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/ccr1_human/4413/ccr1_human-4413/msas/B/uniref90_hits.sto
+W0227 04:05:59.493411 139633904478016 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/ccr1_human/4413/ccr1_human-4413/msas/B/mgnify_hits.sto
+I0227 04:05:59.550143 139633904478016 hmmbuild.py:121] Launching subprocess ['/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/hmmbuild', '--hand', '--amino', '/tmp/tmpgkczwd_1/output.hmm', '/tmp/tmpgkczwd_1/query.msa']
+I0227 04:05:59.652265 139633904478016 utils.py:36] Started hmmbuild query
+I0227 04:05:59.777523 139633904478016 hmmbuild.py:128] hmmbuild stdout:
+# hmmbuild :: profile HMM construction from multiple sequence alignments
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# input alignment file:             /tmp/tmpgkczwd_1/query.msa
+# output HMM file:                  /tmp/tmpgkczwd_1/output.hmm
+# input alignment is asserted as:   protein
+# model architecture construction:  hand-specified by RF annotation
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# idx name                  nseq  alen  mlen eff_nseq re/pos description
+#---- -------------------- ----- ----- ----- -------- ------ -----------
+1     query                 2328   151    74     6.24  0.763 
+
+# CPU time: 0.11u 0.01s 00:00:00.12 Elapsed: 00:00:00.12
+
+
+stderr:
+
+
+I0227 04:05:59.777721 139633904478016 utils.py:40] Finished hmmbuild query in 0.125 seconds
+I0227 04:05:59.778755 139633904478016 hmmsearch.py:103] Launching sub-process ['/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/hmmsearch', '--noali', '--cpu', '8', '--F1', '0.1', '--F2', '0.1', '--F3', '0.1', '--incE', '100', '-E', '100', '--domE', '100', '--incdomE', '100', '-A', '/tmp/tmpevzd2jg9/output.sto', '/tmp/tmpevzd2jg9/query.hmm', '/projects/ilfgrid/data/alphafold-genetic-databases///pdb_seqres/pdb_seqres.txt']
+I0227 04:05:59.878194 139633904478016 utils.py:36] Started hmmsearch (pdb_seqres.txt) query
+I0227 04:06:02.361852 139633904478016 utils.py:40] Finished hmmsearch (pdb_seqres.txt) query in 2.483 seconds
+W0227 04:06:02.458613 139633904478016 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/ccr1_human/4413/ccr1_human-4413/msas/B/bfd_uniref_hits.a3m
+I0227 04:06:02.481842 139633904478016 templates.py:940] Searching for template for: QPDGPNASTCCYVKKQKIPKRNLKSYRRITSSRCPWEAVIFKTKKGMEVCAEAHQKWVEEAIAYLDMKTPTPKP
+I0227 04:06:02.570139 139633904478016 templates.py:267] Found an exact template match 1bo0_A.
+I0227 04:06:04.009150 139633904478016 templates.py:267] Found an exact template match 1ncv_A.
+I0227 04:06:04.014803 139633904478016 templates.py:267] Found an exact template match 1ncv_B.
+I0227 04:06:04.522427 139633904478016 templates.py:267] Found an exact template match 7s58_E.
+I0227 04:06:04.526079 139633904478016 templates.py:267] Found an exact template match 7s58_F.
+I0227 04:06:04.529384 139633904478016 templates.py:267] Found an exact template match 7s58_H.
+I0227 04:06:04.533073 139633904478016 templates.py:267] Found an exact template match 7s58_J.
+I0227 04:06:04.617749 139633904478016 templates.py:267] Found an exact template match 1eot_A.
+I0227 04:06:07.031944 139633904478016 templates.py:267] Found an exact template match 2eot_A.
+I0227 04:06:08.528650 139633904478016 templates.py:267] Found an exact template match 2mpm_A.
+I0227 04:06:08.743582 139633904478016 templates.py:267] Found an exact template match 4zkc_B.
+I0227 04:06:08.996845 139633904478016 templates.py:267] Found an exact template match 7s59_2.
+I0227 04:06:09.000545 139633904478016 templates.py:267] Found an exact template match 7s59_4.
+I0227 04:06:09.099030 139633904478016 templates.py:267] Found an exact template match 2ra4_A.
+I0227 04:06:09.102556 139633904478016 templates.py:267] Found an exact template match 2ra4_B.
+I0227 04:06:09.252468 139633904478016 templates.py:267] Found an exact template match 1dom_A.
+I0227 04:06:09.257596 139633904478016 templates.py:267] Found an exact template match 1dom_B.
+I0227 04:06:12.337433 139633904478016 templates.py:267] Found an exact template match 1don_A.
+I0227 04:06:12.342896 139633904478016 templates.py:267] Found an exact template match 1don_B.
+I0227 04:06:12.590864 139633904478016 templates.py:267] Found an exact template match 2bdn_A.
+I0227 04:06:12.647319 139633904478016 templates.py:267] Found an exact template match 3ifd_A.
+I0227 04:06:12.746237 139633904478016 templates.py:267] Found an exact template match 1dok_A.
+I0227 04:06:12.749971 139633904478016 templates.py:267] Found an exact template match 1dok_B.
+I0227 04:06:12.808796 139633904478016 templates.py:267] Found an exact template match 1dol_A.
+I0227 04:06:12.950200 139633904478016 templates.py:267] Found an exact template match 4r8i_A.
+I0227 04:06:13.200088 139633904478016 templates.py:267] Found an exact template match 4dn4_M.
+I0227 04:06:13.362544 139633904478016 templates.py:267] Found an exact template match 7so0_B.
+W0227 04:06:13.436827 139633904478016 templates.py:547] The exact sequence QPDSVSIPITCCFNVINRKIPIQRLESYTRITNIQCPKEAVIFKTQRGKEVCADPKERWVRDSMKHLDQIFQNLKP was not found in 1esr_A. Realigning the template to the actual sequence.
+I0227 04:06:13.436992 139633904478016 kalign.py:66] Aligning 2 sequences
+I0227 04:06:13.437396 139633904478016 kalign.py:87] Launching subprocess "/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/kalign -i /tmp/tmp__qud23e/input.fasta -o /tmp/tmp__qud23e/output.a3m -format fasta"
+I0227 04:06:13.534650 139633904478016 utils.py:36] Started Kalign query
+I0227 04:06:13.535583 139633904478016 kalign.py:94] Kalign stdout:
+
+
+stderr:
+
+Kalign version 2.04, Copyright (C) 2004, 2005, 2006 Timo Lassmann
+
+        Kalign is free software. You can redistribute it and/or modify
+        it under the terms of the GNU General Public License as
+        published by the Free Software Foundation.
+
+reading from STDIN: found 0 sequences
+reading from /tmp/tmp__qud23e/input.fasta: found 2 sequences
+Aligning 2 protein sequences with these parameters:
+        54.94940948	gap open penalty
+        8.52492046	gap extension
+        4.42409992	terminal gap penalty
+        0.20000000	bonus
+Alignment will be written to file:'/tmp/tmp__qud23e/output.a3m'.
+
+Distance Calculation:
+     100 percent done
+Alignment:
+       0 percent done     100 percent done
+
+
+I0227 04:06:13.535706 139633904478016 utils.py:40] Finished Kalign query in 0.001 seconds
+I0227 04:06:13.536249 139633904478016 templates.py:370] Old aligned template: QPDSVSIPITCCFNVINRKIPIQRLESYTRITNIQCPKEAVIFKTQRGKEVCADPKERWVRDSMKHLDQIFQNLKP
+New aligned template: EPDSVSIPITCCFNVINRKIPIQRLESYTRITNIQCPKEAVIFKTQRGKEVCADPKERWVRDSMKHLDQIFQNLKP
+I0227 04:06:13.536444 139633904478016 templates.py:555] Sequence in 1esr_A: QPDSVSIPITCCFNVINRKIPIQRLESYTRITNIQCPKEAVIFKTQRGKEVCADPKERWVRDSMKHLDQIFQNLKP successfully realigned to EPDSVSIPITCCFNVINRKIPIQRLESYTRITNIQCPKEAVIFKTQRGKEVCADPKERWVRDSMKHLDQIFQNLKP
+I0227 04:06:14.228093 139633904478016 templates.py:267] Found an exact template match 7s5a_A.
+I0227 04:06:14.232095 139633904478016 templates.py:267] Found an exact template match 7s5a_B.
+I0227 04:06:14.484582 139633904478016 templates.py:267] Found an exact template match 4zk9_B.
+I0227 04:06:15.150938 139633904478016 templates.py:267] Found an exact template match 2nz1_D.
+I0227 04:06:15.154746 139633904478016 templates.py:267] Found an exact template match 2nz1_E.
+I0227 04:06:15.158288 139633904478016 templates.py:267] Found an exact template match 2nz1_Y.
+I0227 04:06:15.384566 139633904478016 templates.py:267] Found an exact template match 1ml0_D.
+I0227 04:06:15.977103 139633904478016 templates.py:267] Found an exact template match 7xa3_L.
+I0227 04:06:16.148536 139633904478016 templates.py:267] Found an exact template match 3kbx_A.
+I0227 04:06:16.152194 139633904478016 templates.py:267] Found an exact template match 3kbx_B.
+I0227 04:06:16.155616 139633904478016 templates.py:267] Found an exact template match 3kbx_C.
+I0227 04:06:16.159005 139633904478016 templates.py:267] Found an exact template match 3kbx_D.
+I0227 04:06:16.162333 139633904478016 templates.py:267] Found an exact template match 3kbx_E.
+I0227 04:06:16.606206 139633904478016 templates.py:267] Found an exact template match 4zlt_F.
+I0227 04:06:16.609668 139633904478016 templates.py:267] Found an exact template match 4zlt_L.
+I0227 04:06:16.740839 139633904478016 templates.py:267] Found an exact template match 3fpu_B.
+I0227 04:06:16.948826 139633904478016 templates.py:267] Found an exact template match 4zkb_B.
+I0227 04:06:18.663325 139633904478016 templates.py:267] Found an exact template match 7jh1_A.
+I0227 04:06:18.791599 139633904478016 templates.py:267] Found an exact template match 1hum_A.
+I0227 04:06:18.796128 139633904478016 templates.py:267] Found an exact template match 1hum_B.
+I0227 04:06:23.312357 139633904478016 templates.py:267] Found an exact template match 1hun_A.
+I0227 04:06:23.317378 139633904478016 templates.py:267] Found an exact template match 1hun_B.
+I0227 04:06:23.497297 139633904478016 templates.py:267] Found an exact template match 2x6l_A.
+I0227 04:06:23.501074 139633904478016 templates.py:267] Found an exact template match 2x6l_B.
+I0227 04:06:23.504580 139633904478016 templates.py:267] Found an exact template match 2x6l_C.
+I0227 04:06:23.508065 139633904478016 templates.py:267] Found an exact template match 2x6l_D.
+I0227 04:06:23.511532 139633904478016 templates.py:267] Found an exact template match 2x6l_E.
+I0227 04:06:25.068089 139633904478016 templates.py:267] Found an exact template match 4ral_D.
+I0227 04:06:25.070033 139633904478016 templates.py:267] Found an exact template match 4ral_E.
+I0227 04:06:25.119918 139633904478016 templates.py:267] Found an exact template match 3tn2_A.
+I0227 04:06:25.274821 139633904478016 templates.py:267] Found an exact template match 2x69_A.
+I0227 04:06:25.278116 139633904478016 templates.py:267] Found an exact template match 2x69_B.
+I0227 04:06:25.281204 139633904478016 templates.py:267] Found an exact template match 2x69_C.
+I0227 04:06:25.284355 139633904478016 templates.py:267] Found an exact template match 2x69_D.
+I0227 04:06:25.287451 139633904478016 templates.py:267] Found an exact template match 2x69_E.
+I0227 04:06:26.659103 139633904478016 templates.py:267] Found an exact template match 3h44_C.
+I0227 04:06:26.660825 139633904478016 templates.py:267] Found an exact template match 3h44_D.
+I0227 04:06:27.177950 139633904478016 templates.py:267] Found an exact template match 5cor_A.
+I0227 04:06:27.181570 139633904478016 templates.py:267] Found an exact template match 5cor_B.
+I0227 04:06:27.184895 139633904478016 templates.py:267] Found an exact template match 5cor_C.
+I0227 04:06:27.188159 139633904478016 templates.py:267] Found an exact template match 5cor_D.
+I0227 04:06:27.191411 139633904478016 templates.py:267] Found an exact template match 5cor_E.
+I0227 04:06:27.194765 139633904478016 templates.py:267] Found an exact template match 5cor_F.
+I0227 04:06:27.198377 139633904478016 templates.py:267] Found an exact template match 5cor_G.
+I0227 04:06:27.201976 139633904478016 templates.py:267] Found an exact template match 5cor_H.
+I0227 04:06:27.205463 139633904478016 templates.py:267] Found an exact template match 5cor_I.
+I0227 04:06:27.209007 139633904478016 templates.py:267] Found an exact template match 5cor_J.
+I0227 04:06:27.486721 139633904478016 templates.py:267] Found an exact template match 5d65_A.
+I0227 04:06:27.490470 139633904478016 templates.py:267] Found an exact template match 5d65_B.
+I0227 04:06:27.493905 139633904478016 templates.py:267] Found an exact template match 5d65_C.
+I0227 04:06:27.497489 139633904478016 templates.py:267] Found an exact template match 5d65_D.
+I0227 04:06:27.501267 139633904478016 templates.py:267] Found an exact template match 5d65_E.
+I0227 04:06:27.755595 139633904478016 templates.py:267] Found an exact template match 4ra8_A.
+I0227 04:06:27.759266 139633904478016 templates.py:267] Found an exact template match 4ra8_B.
+I0227 04:06:27.762672 139633904478016 templates.py:267] Found an exact template match 4ra8_C.
+I0227 04:06:27.765972 139633904478016 templates.py:267] Found an exact template match 4ra8_D.
+I0227 04:06:27.769357 139633904478016 templates.py:267] Found an exact template match 4ra8_E.
+I0227 04:06:28.844481 139633904478016 templates.py:267] Found an exact template match 1b50_A.
+I0227 04:06:28.849601 139633904478016 templates.py:267] Found an exact template match 1b50_B.
+I0227 04:06:28.970942 139633904478016 templates.py:267] Found an exact template match 1b53_A.
+I0227 04:06:28.975196 139633904478016 templates.py:267] Found an exact template match 1b53_B.
+I0227 04:06:30.015651 139633904478016 templates.py:267] Found an exact template match 2x6g_A.
+I0227 04:06:30.019254 139633904478016 templates.py:267] Found an exact template match 2x6g_B.
+I0227 04:06:30.022527 139633904478016 templates.py:267] Found an exact template match 2x6g_C.
+I0227 04:06:30.025780 139633904478016 templates.py:267] Found an exact template match 2x6g_D.
+I0227 04:06:30.029033 139633904478016 templates.py:267] Found an exact template match 2x6g_E.
+I0227 04:06:30.032300 139633904478016 templates.py:267] Found an exact template match 2x6g_F.
+I0227 04:06:30.035583 139633904478016 templates.py:267] Found an exact template match 2x6g_G.
+I0227 04:06:30.038795 139633904478016 templates.py:267] Found an exact template match 2x6g_H.
+I0227 04:06:30.042022 139633904478016 templates.py:267] Found an exact template match 2x6g_I.
+I0227 04:06:30.045391 139633904478016 templates.py:267] Found an exact template match 2x6g_J.
+I0227 04:06:30.048657 139633904478016 templates.py:267] Found an exact template match 2x6g_K.
+I0227 04:06:30.051829 139633904478016 templates.py:267] Found an exact template match 2x6g_L.
+I0227 04:06:30.054975 139633904478016 templates.py:267] Found an exact template match 2x6g_M.
+I0227 04:06:30.058142 139633904478016 templates.py:267] Found an exact template match 2x6g_N.
+I0227 04:06:30.061402 139633904478016 templates.py:267] Found an exact template match 2x6g_O.
+I0227 04:06:30.064646 139633904478016 templates.py:267] Found an exact template match 2x6g_P.
+I0227 04:06:30.067876 139633904478016 templates.py:267] Found an exact template match 2x6g_Q.
+I0227 04:06:30.071055 139633904478016 templates.py:267] Found an exact template match 2x6g_R.
+I0227 04:06:30.220455 139633904478016 templates.py:267] Found an exact template match 2q8t_A.
+I0227 04:06:30.223653 139633904478016 templates.py:267] Found an exact template match 2q8t_B.
+I0227 04:06:30.226822 139633904478016 templates.py:267] Found an exact template match 2q8t_C.
+I0227 04:06:30.229966 139633904478016 templates.py:267] Found an exact template match 2q8t_D.
+I0227 04:06:30.386002 139633904478016 templates.py:267] Found an exact template match 2q8r_E.
+I0227 04:06:30.457214 139633904478016 pipeline.py:234] Uniref90 MSA size: 2450 sequences.
+I0227 04:06:30.457342 139633904478016 pipeline.py:235] BFD MSA size: 1237 sequences.
+I0227 04:06:30.457405 139633904478016 pipeline.py:236] MGnify MSA size: 5 sequences.
+I0227 04:06:30.457458 139633904478016 pipeline.py:237] Final (deduplicated) MSA size: 3567 sequences.
+I0227 04:06:30.457513 139633904478016 pipeline.py:239] Total number of templates (NB: this can include bad templates and is later filtered to top 4): 20.
+W0227 04:06:30.460593 139633904478016 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/ccr1_human/4413/ccr1_human-4413/msas/B/uniprot_hits.sto
+I0227 04:06:31.856185 139633904478016 run_alphafold.py:191] Running model model_1_multimer_v3_pred_0 on ccr1_human-4413
+I0227 04:06:31.857090 139633904478016 model.py:165] Running predict with shape(feat) = {'aatype': (429,), 'residue_index': (429,), 'seq_length': (), 'msa': (3072, 429), 'num_alignments': (), 'template_aatype': (4, 429), 'template_all_atom_mask': (4, 429, 37), 'template_all_atom_positions': (4, 429, 37, 3), 'asym_id': (429,), 'sym_id': (429,), 'entity_id': (429,), 'deletion_matrix': (3072, 429), 'deletion_mean': (429,), 'all_atom_mask': (429, 37), 'all_atom_positions': (429, 37, 3), 'assembly_num_chains': (), 'entity_mask': (429,), 'num_templates': (), 'cluster_bias_mask': (3072,), 'bert_mask': (3072, 429), 'seq_mask': (429,), 'msa_mask': (3072, 429)}
+I0227 04:14:37.969463 139633904478016 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (429, 429, 64)}, 'experimentally_resolved': {'logits': (429, 37)}, 'masked_msa': {'logits': (508, 429, 22)}, 'num_recycles': (), 'predicted_aligned_error': (429, 429), 'predicted_lddt': {'logits': (429, 50)}, 'structure_module': {'final_atom_mask': (429, 37), 'final_atom_positions': (429, 37, 3)}, 'plddt': (429,), 'aligned_confidence_probs': (429, 429, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0227 04:14:37.971456 139633904478016 run_alphafold.py:203] Total JAX model model_1_multimer_v3_pred_0 on ccr1_human-4413 predict time (includes compilation time, see --benchmark): 486.1s
+I0227 04:15:11.236227 139633904478016 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 354 (PHE) of chain 0>: ['OXT'], <Residue 428 (PRO) of chain 1>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0227 04:15:12.202177 139633904478016 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0227 04:15:15.215273 139633904478016 amber_minimize.py:72] Restraining 3510 / 7099 particles.
+I0227 04:19:20.444082 139633904478016 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0227 04:19:28.737364 139633904478016 amber_minimize.py:503] Iteration completed: Einit 31132462.13 Efinal -7221.65 Time 240.17 s num residue violations 0 num residue exclusions 0 
+I0227 04:19:29.385379 139633904478016 run_alphafold.py:191] Running model model_2_multimer_v3_pred_0 on ccr1_human-4413
+I0227 04:19:29.385774 139633904478016 model.py:165] Running predict with shape(feat) = {'aatype': (429,), 'residue_index': (429,), 'seq_length': (), 'msa': (3072, 429), 'num_alignments': (), 'template_aatype': (4, 429), 'template_all_atom_mask': (4, 429, 37), 'template_all_atom_positions': (4, 429, 37, 3), 'asym_id': (429,), 'sym_id': (429,), 'entity_id': (429,), 'deletion_matrix': (3072, 429), 'deletion_mean': (429,), 'all_atom_mask': (429, 37), 'all_atom_positions': (429, 37, 3), 'assembly_num_chains': (), 'entity_mask': (429,), 'num_templates': (), 'cluster_bias_mask': (3072,), 'bert_mask': (3072, 429), 'seq_mask': (429,), 'msa_mask': (3072, 429)}
+I0227 04:26:50.714228 139633904478016 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (429, 429, 64)}, 'experimentally_resolved': {'logits': (429, 37)}, 'masked_msa': {'logits': (508, 429, 22)}, 'num_recycles': (), 'predicted_aligned_error': (429, 429), 'predicted_lddt': {'logits': (429, 50)}, 'structure_module': {'final_atom_mask': (429, 37), 'final_atom_positions': (429, 37, 3)}, 'plddt': (429,), 'aligned_confidence_probs': (429, 429, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0227 04:26:50.715429 139633904478016 run_alphafold.py:203] Total JAX model model_2_multimer_v3_pred_0 on ccr1_human-4413 predict time (includes compilation time, see --benchmark): 441.3s
+I0227 04:27:22.444423 139633904478016 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 354 (PHE) of chain 0>: ['OXT'], <Residue 428 (PRO) of chain 1>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0227 04:27:23.697493 139633904478016 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0227 04:27:25.070430 139633904478016 amber_minimize.py:72] Restraining 3510 / 7099 particles.
+I0227 04:32:33.779895 139633904478016 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0227 04:32:38.111638 139633904478016 amber_minimize.py:503] Iteration completed: Einit 2143403923.83 Efinal -5188.97 Time 302.61 s num residue violations 2 num residue exclusions 0 
+I0227 04:32:38.112014 139633904478016 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0227 04:32:40.307642 139633904478016 amber_minimize.py:72] Restraining 3488 / 7099 particles.
+I0227 04:39:11.262665 139633904478016 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0227 04:39:14.283743 139633904478016 amber_minimize.py:503] Iteration completed: Einit 10396.98 Efinal -6142.16 Time 386.52 s num residue violations 2 num residue exclusions 2 
+I0227 04:39:14.284001 139633904478016 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0227 04:39:15.154461 139633904478016 amber_minimize.py:72] Restraining 3488 / 7099 particles.
+I0227 04:43:07.182490 139633904478016 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0227 04:43:10.403909 139633904478016 amber_minimize.py:503] Iteration completed: Einit 10191.68 Efinal -6445.56 Time 226.71 s num residue violations 2 num residue exclusions 2 
+I0227 04:43:10.759797 139633904478016 run_alphafold.py:191] Running model model_3_multimer_v3_pred_0 on ccr1_human-4413
+I0227 04:43:10.760098 139633904478016 model.py:165] Running predict with shape(feat) = {'aatype': (429,), 'residue_index': (429,), 'seq_length': (), 'msa': (3072, 429), 'num_alignments': (), 'template_aatype': (4, 429), 'template_all_atom_mask': (4, 429, 37), 'template_all_atom_positions': (4, 429, 37, 3), 'asym_id': (429,), 'sym_id': (429,), 'entity_id': (429,), 'deletion_matrix': (3072, 429), 'deletion_mean': (429,), 'all_atom_mask': (429, 37), 'all_atom_positions': (429, 37, 3), 'assembly_num_chains': (), 'entity_mask': (429,), 'num_templates': (), 'cluster_bias_mask': (3072,), 'bert_mask': (3072, 429), 'seq_mask': (429,), 'msa_mask': (3072, 429)}
+I0227 04:50:17.497231 139633904478016 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (429, 429, 64)}, 'experimentally_resolved': {'logits': (429, 37)}, 'masked_msa': {'logits': (508, 429, 22)}, 'num_recycles': (), 'predicted_aligned_error': (429, 429), 'predicted_lddt': {'logits': (429, 50)}, 'structure_module': {'final_atom_mask': (429, 37), 'final_atom_positions': (429, 37, 3)}, 'plddt': (429,), 'aligned_confidence_probs': (429, 429, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0227 04:50:17.499531 139633904478016 run_alphafold.py:203] Total JAX model model_3_multimer_v3_pred_0 on ccr1_human-4413 predict time (includes compilation time, see --benchmark): 426.7s
+I0227 04:50:48.598381 139633904478016 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 354 (PHE) of chain 0>: ['OXT'], <Residue 428 (PRO) of chain 1>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0227 04:50:49.757812 139633904478016 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0227 04:50:51.212614 139633904478016 amber_minimize.py:72] Restraining 3510 / 7099 particles.
+I0227 04:56:01.384155 139633904478016 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0227 04:56:04.764971 139633904478016 amber_minimize.py:503] Iteration completed: Einit 302952298.64 Efinal -7167.28 Time 305.63 s num residue violations 0 num residue exclusions 0 
+I0227 04:56:05.104344 139633904478016 run_alphafold.py:191] Running model model_4_multimer_v3_pred_0 on ccr1_human-4413
+I0227 04:56:05.104634 139633904478016 model.py:165] Running predict with shape(feat) = {'aatype': (429,), 'residue_index': (429,), 'seq_length': (), 'msa': (3072, 429), 'num_alignments': (), 'template_aatype': (4, 429), 'template_all_atom_mask': (4, 429, 37), 'template_all_atom_positions': (4, 429, 37, 3), 'asym_id': (429,), 'sym_id': (429,), 'entity_id': (429,), 'deletion_matrix': (3072, 429), 'deletion_mean': (429,), 'all_atom_mask': (429, 37), 'all_atom_positions': (429, 37, 3), 'assembly_num_chains': (), 'entity_mask': (429,), 'num_templates': (), 'cluster_bias_mask': (3072,), 'bert_mask': (3072, 429), 'seq_mask': (429,), 'msa_mask': (3072, 429)}
+I0227 05:03:07.947415 139633904478016 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (429, 429, 64)}, 'experimentally_resolved': {'logits': (429, 37)}, 'masked_msa': {'logits': (508, 429, 22)}, 'num_recycles': (), 'predicted_aligned_error': (429, 429), 'predicted_lddt': {'logits': (429, 50)}, 'structure_module': {'final_atom_mask': (429, 37), 'final_atom_positions': (429, 37, 3)}, 'plddt': (429,), 'aligned_confidence_probs': (429, 429, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0227 05:03:07.949622 139633904478016 run_alphafold.py:203] Total JAX model model_4_multimer_v3_pred_0 on ccr1_human-4413 predict time (includes compilation time, see --benchmark): 422.8s
+I0227 05:03:38.586855 139633904478016 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 354 (PHE) of chain 0>: ['OXT'], <Residue 428 (PRO) of chain 1>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0227 05:03:40.072274 139633904478016 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0227 05:03:41.215070 139633904478016 amber_minimize.py:72] Restraining 3510 / 7099 particles.
+I0227 05:07:32.851468 139633904478016 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0227 05:07:37.359762 139633904478016 amber_minimize.py:503] Iteration completed: Einit 1590231.69 Efinal -7487.16 Time 223.79 s num residue violations 0 num residue exclusions 0 
+I0227 05:07:37.991139 139633904478016 run_alphafold.py:191] Running model model_5_multimer_v3_pred_0 on ccr1_human-4413
+I0227 05:07:37.991930 139633904478016 model.py:165] Running predict with shape(feat) = {'aatype': (429,), 'residue_index': (429,), 'seq_length': (), 'msa': (3072, 429), 'num_alignments': (), 'template_aatype': (4, 429), 'template_all_atom_mask': (4, 429, 37), 'template_all_atom_positions': (4, 429, 37, 3), 'asym_id': (429,), 'sym_id': (429,), 'entity_id': (429,), 'deletion_matrix': (3072, 429), 'deletion_mean': (429,), 'all_atom_mask': (429, 37), 'all_atom_positions': (429, 37, 3), 'assembly_num_chains': (), 'entity_mask': (429,), 'num_templates': (), 'cluster_bias_mask': (3072,), 'bert_mask': (3072, 429), 'seq_mask': (429,), 'msa_mask': (3072, 429)}
+I0227 05:15:04.715754 139633904478016 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (429, 429, 64)}, 'experimentally_resolved': {'logits': (429, 37)}, 'masked_msa': {'logits': (508, 429, 22)}, 'num_recycles': (), 'predicted_aligned_error': (429, 429), 'predicted_lddt': {'logits': (429, 50)}, 'structure_module': {'final_atom_mask': (429, 37), 'final_atom_positions': (429, 37, 3)}, 'plddt': (429,), 'aligned_confidence_probs': (429, 429, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0227 05:15:04.717523 139633904478016 run_alphafold.py:203] Total JAX model model_5_multimer_v3_pred_0 on ccr1_human-4413 predict time (includes compilation time, see --benchmark): 446.7s
+I0227 05:15:42.480399 139633904478016 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 354 (PHE) of chain 0>: ['OXT'], <Residue 428 (PRO) of chain 1>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0227 05:15:43.666376 139633904478016 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0227 05:15:45.872286 139633904478016 amber_minimize.py:72] Restraining 3510 / 7099 particles.
+I0227 05:20:04.792763 139633904478016 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0227 05:20:09.102954 139633904478016 amber_minimize.py:503] Iteration completed: Einit 1422547752289.72 Efinal -7102.61 Time 251.74 s num residue violations 0 num residue exclusions 0 
+I0227 05:20:09.523795 139633904478016 run_alphafold.py:277] Final timings for ccr1_human-4413: {'features': 182.68662095069885, 'process_features_model_1_multimer_v3_pred_0': 1.1920928955078125e-05, 'predict_and_compile_model_1_multimer_v3_pred_0': 486.1150059700012, 'relax_model_1_multimer_v3_pred_0': 278.9583795070648, 'process_features_model_2_multimer_v3_pred_0': 1.1920928955078125e-05, 'predict_and_compile_model_2_multimer_v3_pred_0': 441.32982301712036, 'relax_model_2_multimer_v3_pred_0': 966.2651178836823, 'process_features_model_3_multimer_v3_pred_0': 1.049041748046875e-05, 'predict_and_compile_model_3_multimer_v3_pred_0': 426.7395353317261, 'relax_model_3_multimer_v3_pred_0': 334.6997272968292, 'process_features_model_4_multimer_v3_pred_0': 9.775161743164062e-06, 'predict_and_compile_model_4_multimer_v3_pred_0': 422.84508895874023, 'relax_model_4_multimer_v3_pred_0': 257.5818111896515, 'process_features_model_5_multimer_v3_pred_0': 7.414817810058594e-05, 'predict_and_compile_model_5_multimer_v3_pred_0': 446.72605180740356, 'relax_model_5_multimer_v3_pred_0': 289.84881258010864}
+
+>> Job finished at: Mon Feb 27 05:20:16 CET 2023
+
+>> Runtime: 4620 s

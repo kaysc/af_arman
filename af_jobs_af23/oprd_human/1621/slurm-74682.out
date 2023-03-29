@@ -1,0 +1,217 @@
+>> Job started at: Tue Mar 14 18:58:33 CET 2023
+   On Machine:     ilfgridgpun02fl.unicph.domain
+   In directory:   /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/oprd_human/1621
+
+>> GPU is 6
+
+Loaded miniconda shell environment for bash
+I0314 18:58:40.474403 140120604677952 templates.py:857] Using precomputed obsolete pdbs /projects/ilfgrid/data/alphafold-genetic-databases///pdb_mmcif/obsolete.dat.
+I0314 18:58:40.671224 140120604677952 xla_bridge.py:353] Unable to initialize backend 'tpu_driver': NOT_FOUND: Unable to find driver in registry given worker: 
+I0314 18:58:40.984116 140120604677952 xla_bridge.py:353] Unable to initialize backend 'rocm': NOT_FOUND: Could not find registered platform with name: "rocm". Available platform names are: Interpreter Host CUDA
+I0314 18:58:40.984638 140120604677952 xla_bridge.py:353] Unable to initialize backend 'tpu': module 'jaxlib.xla_extension' has no attribute 'get_tpu_client'
+I0314 18:58:40.984766 140120604677952 xla_bridge.py:353] Unable to initialize backend 'plugin': xla_extension has no attributes named get_plugin_device_client. Compile TensorFlow with //tensorflow/compiler/xla/python:enable_plugin_device set to true (defaults to false) to enable this.
+I0314 18:58:45.118240 140120604677952 run_alphafold.py:386] Have 5 models: ['model_1_multimer_v3_pred_0', 'model_2_multimer_v3_pred_0', 'model_3_multimer_v3_pred_0', 'model_4_multimer_v3_pred_0', 'model_5_multimer_v3_pred_0']
+I0314 18:58:45.118424 140120604677952 run_alphafold.py:403] Using random seed 408692049760896812 for the data pipeline
+I0314 18:58:45.118650 140120604677952 run_alphafold.py:161] Predicting oprd_human-1621
+I0314 18:58:45.134777 140120604677952 pipeline_multimer.py:210] Running monomer pipeline on chain A: oprd_human P41143
+W0314 18:58:45.136477 140120604677952 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/oprd_human/1621/oprd_human-1621/msas/A/uniref90_hits.sto
+W0314 18:58:56.979448 140120604677952 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/oprd_human/1621/oprd_human-1621/msas/A/mgnify_hits.sto
+I0314 18:59:05.594374 140120604677952 hmmbuild.py:121] Launching subprocess ['/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/hmmbuild', '--hand', '--amino', '/tmp/tmpqs25uvtl/output.hmm', '/tmp/tmpqs25uvtl/query.msa']
+I0314 18:59:05.671737 140120604677952 utils.py:36] Started hmmbuild query
+I0314 18:59:06.784999 140120604677952 hmmbuild.py:128] hmmbuild stdout:
+# hmmbuild :: profile HMM construction from multiple sequence alignments
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# input alignment file:             /tmp/tmpqs25uvtl/query.msa
+# output HMM file:                  /tmp/tmpqs25uvtl/output.hmm
+# input alignment is asserted as:   protein
+# model architecture construction:  hand-specified by RF annotation
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# idx name                  nseq  alen  mlen eff_nseq re/pos description
+#---- -------------------- ----- ----- ----- -------- ------ -----------
+1     query                 9908  2194   372     7.12  0.590 
+
+# CPU time: 1.05u 0.05s 00:00:01.10 Elapsed: 00:00:01.10
+
+
+stderr:
+
+
+I0314 18:59:06.785190 140120604677952 utils.py:40] Finished hmmbuild query in 1.113 seconds
+I0314 18:59:06.789386 140120604677952 hmmsearch.py:103] Launching sub-process ['/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/hmmsearch', '--noali', '--cpu', '8', '--F1', '0.1', '--F2', '0.1', '--F3', '0.1', '--incE', '100', '-E', '100', '--domE', '100', '--incdomE', '100', '-A', '/tmp/tmptdkyj0u1/output.sto', '/tmp/tmptdkyj0u1/query.hmm', '/projects/ilfgrid/data/alphafold-genetic-databases///pdb_seqres/pdb_seqres.txt']
+I0314 18:59:06.871609 140120604677952 utils.py:36] Started hmmsearch (pdb_seqres.txt) query
+I0314 18:59:16.399202 140120604677952 utils.py:40] Finished hmmsearch (pdb_seqres.txt) query in 9.527 seconds
+W0314 18:59:20.655895 140120604677952 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/oprd_human/1621/oprd_human-1621/msas/A/bfd_uniref_hits.a3m
+I0314 18:59:20.764503 140120604677952 templates.py:940] Searching for template for: MEPAPSAGAELQPPLFANASDAYPSACPSAGANASGPPGARSASSLALAIAITALYSAVCAVGLLGNVLVMFGIVRYTKMKTATNIYIFNLALADALATSTLPFQSAKYLMETWPFGELLCKAVLSIDYYNMFTSIFTLTMMSVDRYIAVCHPVKALDFRTPAKAKLINICIWVLASGVGVPIMVMAVTRPRDGAVVCMLQFPSPSWYWDTVTKICVFLFAFVVPILIITVCYGLMLLRLRSVRLLSGSKEKDRSLRRITRMVLVVVGAFVVCWAPIHIFVIVWTLVDIDRRDPLVVAALHLCIALGYANSSLNPVLYAFLDENFKRCFRQLCRKPCGRPDPSSFSRAREATARERVTACTPSDGPGGGAAA
+I0314 18:59:21.587437 140120604677952 templates.py:267] Found an exact template match 8f7s_D.
+I0314 18:59:21.601271 140120604677952 templates.py:267] Found an exact template match 8f7s_R.
+I0314 18:59:21.952345 140120604677952 templates.py:267] Found an exact template match 4n6h_A.
+I0314 18:59:22.537406 140120604677952 templates.py:267] Found an exact template match 4rwa_A.
+I0314 18:59:22.553913 140120604677952 templates.py:267] Found an exact template match 4rwa_B.
+I0314 18:59:23.357101 140120604677952 templates.py:267] Found an exact template match 4rwd_A.
+I0314 18:59:23.375367 140120604677952 templates.py:267] Found an exact template match 4rwd_B.
+I0314 18:59:24.093463 140120604677952 templates.py:267] Found an exact template match 8f7r_M.
+I0314 18:59:24.107319 140120604677952 templates.py:267] Found an exact template match 8f7r_R.
+I0314 18:59:24.315387 140120604677952 templates.py:267] Found an exact template match 7ul4_A.
+I0314 18:59:25.260858 140120604677952 templates.py:267] Found an exact template match 8f7q_M.
+I0314 18:59:25.274675 140120604677952 templates.py:267] Found an exact template match 8f7q_R.
+I0314 18:59:25.808840 140120604677952 templates.py:267] Found an exact template match 7sbf_R.
+I0314 18:59:26.287255 140120604677952 templates.py:267] Found an exact template match 7t2g_R.
+I0314 18:59:27.127456 140120604677952 templates.py:267] Found an exact template match 6pt2_A.
+I0314 18:59:27.144906 140120604677952 templates.py:267] Found an exact template match 6pt2_B.
+I0314 18:59:27.719379 140120604677952 templates.py:267] Found an exact template match 6pt3_A.
+I0314 18:59:27.736498 140120604677952 templates.py:267] Found an exact template match 6pt3_B.
+I0314 18:59:28.451121 140120604677952 templates.py:267] Found an exact template match 8ef5_M.
+I0314 18:59:28.464446 140120604677952 templates.py:267] Found an exact template match 8ef5_R.
+I0314 18:59:29.473055 140120604677952 templates.py:267] Found an exact template match 8ef6_M.
+I0314 18:59:29.486961 140120604677952 templates.py:267] Found an exact template match 8ef6_R.
+I0314 18:59:30.207848 140120604677952 templates.py:267] Found an exact template match 8efl_M.
+I0314 18:59:30.221074 140120604677952 templates.py:267] Found an exact template match 8efl_R.
+I0314 18:59:30.939678 140120604677952 templates.py:267] Found an exact template match 8efo_M.
+I0314 18:59:30.953043 140120604677952 templates.py:267] Found an exact template match 8efo_R.
+I0314 18:59:31.390107 140120604677952 templates.py:267] Found an exact template match 8efq_R.
+I0314 18:59:32.274549 140120604677952 templates.py:267] Found an exact template match 8efb_R.
+I0314 18:59:32.493505 140120604677952 templates.py:267] Found an exact template match 4ej4_A.
+I0314 18:59:32.511490 140120604677952 templates.py:267] Found an exact template match 4ej4_A.
+I0314 18:59:33.044867 140120604677952 templates.py:267] Found an exact template match 6dde_R.
+I0314 18:59:33.469195 140120604677952 templates.py:267] Found an exact template match 6ddf_R.
+I0314 18:59:34.009875 140120604677952 templates.py:267] Found an exact template match 7scg_D.
+I0314 18:59:34.544378 140120604677952 templates.py:267] Found an exact template match 7t2h_D.
+I0314 18:59:34.969864 140120604677952 templates.py:267] Found an exact template match 7u2k_D.
+I0314 18:59:35.950149 140120604677952 templates.py:267] Found an exact template match 7u2l_D.
+I0314 18:59:36.507557 140120604677952 templates.py:267] Found an exact template match 8f7w_R.
+I0314 18:59:37.126945 140120604677952 templates.py:267] Found an exact template match 6b73_A.
+I0314 18:59:37.140637 140120604677952 templates.py:267] Found an exact template match 6b73_B.
+I0314 18:59:37.514368 140120604677952 templates.py:267] Found an exact template match 5c1m_A.
+I0314 18:59:37.897389 140120604677952 templates.py:267] Found an exact template match 6vi4_A.
+I0314 18:59:37.910161 140120604677952 templates.py:267] Found an exact template match 6vi4_B.
+I0314 18:59:38.279315 140120604677952 templates.py:267] Found an exact template match 4dkl_A.
+I0314 18:59:38.298501 140120604677952 templates.py:267] Found an exact template match 4dkl_A.
+I0314 18:59:39.280198 140120604677952 templates.py:267] Found an exact template match 8f7x_R.
+I0314 18:59:40.167976 140120604677952 pipeline.py:234] Uniref90 MSA size: 10000 sequences.
+I0314 18:59:40.168147 140120604677952 pipeline.py:235] BFD MSA size: 1842 sequences.
+I0314 18:59:40.168211 140120604677952 pipeline.py:236] MGnify MSA size: 501 sequences.
+I0314 18:59:40.168273 140120604677952 pipeline.py:237] Final (deduplicated) MSA size: 12233 sequences.
+I0314 18:59:40.168545 140120604677952 pipeline.py:239] Total number of templates (NB: this can include bad templates and is later filtered to top 4): 20.
+W0314 18:59:40.186779 140120604677952 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/oprd_human/1621/oprd_human-1621/msas/A/uniprot_hits.sto
+I0314 19:02:12.760969 140120604677952 pipeline_multimer.py:210] Running monomer pipeline on chain B: dynorphin A-(1-8) gtp:1621
+W0314 19:02:12.762632 140120604677952 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/oprd_human/1621/oprd_human-1621/msas/B/uniref90_hits.sto
+W0314 19:02:12.766126 140120604677952 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/oprd_human/1621/oprd_human-1621/msas/B/mgnify_hits.sto
+I0314 19:02:12.768296 140120604677952 hmmbuild.py:121] Launching subprocess ['/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/hmmbuild', '--hand', '--amino', '/tmp/tmpnzchqqom/output.hmm', '/tmp/tmpnzchqqom/query.msa']
+I0314 19:02:12.905190 140120604677952 utils.py:36] Started hmmbuild query
+I0314 19:02:12.915817 140120604677952 hmmbuild.py:128] hmmbuild stdout:
+# hmmbuild :: profile HMM construction from multiple sequence alignments
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# input alignment file:             /tmp/tmpnzchqqom/query.msa
+# output HMM file:                  /tmp/tmpnzchqqom/output.hmm
+# input alignment is asserted as:   protein
+# model architecture construction:  hand-specified by RF annotation
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# idx name                  nseq  alen  mlen eff_nseq re/pos description
+#---- -------------------- ----- ----- ----- -------- ------ -----------
+1     query                    1     8     8     1.00  1.611 
+
+# CPU time: 0.00u 0.00s 00:00:00.00 Elapsed: 00:00:00.00
+
+
+stderr:
+
+
+I0314 19:02:12.915981 140120604677952 utils.py:40] Finished hmmbuild query in 0.010 seconds
+I0314 19:02:12.916699 140120604677952 hmmsearch.py:103] Launching sub-process ['/projects/ilfgrid/apps/alphafold-2.3.1/AF_2.3.1_conda_env/bin/hmmsearch', '--noali', '--cpu', '8', '--F1', '0.1', '--F2', '0.1', '--F3', '0.1', '--incE', '100', '-E', '100', '--domE', '100', '--incdomE', '100', '-A', '/tmp/tmpjx4un50g/output.sto', '/tmp/tmpjx4un50g/query.hmm', '/projects/ilfgrid/data/alphafold-genetic-databases///pdb_seqres/pdb_seqres.txt']
+I0314 19:02:13.039591 140120604677952 utils.py:36] Started hmmsearch (pdb_seqres.txt) query
+I0314 19:02:14.447575 140120604677952 utils.py:40] Finished hmmsearch (pdb_seqres.txt) query in 1.408 seconds
+W0314 19:02:14.454915 140120604677952 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/oprd_human/1621/oprd_human-1621/msas/B/bfd_uniref_hits.a3m
+I0314 19:02:14.456593 140120604677952 templates.py:940] Searching for template for: YGGFLRRI
+I0314 19:02:14.456772 140120604677952 templates.py:718] hit 8f7w_P did not pass prefilter: Template is an exact subsequence of query with large coverage. Length ratio: 1.0.
+I0314 19:02:14.456870 140120604677952 templates.py:718] hit 2n2f_A did not pass prefilter: Template is an exact subsequence of query with large coverage. Length ratio: 1.0.
+I0314 19:02:14.456946 140120604677952 templates.py:718] hit 5e3a_B did not pass prefilter: Template too short. Length: 5.
+I0314 19:02:14.457017 140120604677952 templates.py:718] hit 8gvn_A did not pass prefilter: Template too short. Length: 5.
+I0314 19:02:14.457081 140120604677952 templates.py:718] hit 8gvn_A did not pass prefilter: Template too short. Length: 5.
+I0314 19:02:14.457144 140120604677952 templates.py:718] hit 4b6m_A did not pass prefilter: Template too short. Length: 6.
+I0314 19:02:14.457206 140120604677952 templates.py:718] hit 4b6m_B did not pass prefilter: Template too short. Length: 6.
+I0314 19:02:14.457267 140120604677952 templates.py:718] hit 1plw_A did not pass prefilter: Template too short. Length: 5.
+I0314 19:02:14.457350 140120604677952 templates.py:718] hit 1plx_A did not pass prefilter: Template too short. Length: 5.
+I0314 19:02:14.457415 140120604677952 templates.py:718] hit 2lwc_A did not pass prefilter: Template too short. Length: 5.
+I0314 19:02:14.457477 140120604677952 templates.py:718] hit 5e33_B did not pass prefilter: Template too short. Length: 5.
+I0314 19:02:14.457540 140120604677952 templates.py:718] hit 7ane_an did not pass prefilter: Template too short. Length: 7.
+I0314 19:02:14.457602 140120604677952 templates.py:718] hit 7ane_an did not pass prefilter: Template too short. Length: 6.
+I0314 19:02:14.457900 140120604677952 pipeline.py:234] Uniref90 MSA size: 1 sequences.
+I0314 19:02:14.457963 140120604677952 pipeline.py:235] BFD MSA size: 1 sequences.
+I0314 19:02:14.458012 140120604677952 pipeline.py:236] MGnify MSA size: 1 sequences.
+I0314 19:02:14.458058 140120604677952 pipeline.py:237] Final (deduplicated) MSA size: 1 sequences.
+I0314 19:02:14.458114 140120604677952 pipeline.py:239] Total number of templates (NB: this can include bad templates and is later filtered to top 4): 1.
+W0314 19:02:14.459420 140120604677952 pipeline.py:100] Reading MSA from file /projects/ilfgrid/people/nqz918/code/deorph/scripts/af_arman/af_jobs_af23/oprd_human/1621/oprd_human-1621/msas/B/uniprot_hits.sto
+I0314 19:02:15.025140 140120604677952 run_alphafold.py:191] Running model model_1_multimer_v3_pred_0 on oprd_human-1621
+I0314 19:02:15.026513 140120604677952 model.py:165] Running predict with shape(feat) = {'aatype': (380,), 'residue_index': (380,), 'seq_length': (), 'msa': (2048, 380), 'num_alignments': (), 'template_aatype': (4, 380), 'template_all_atom_mask': (4, 380, 37), 'template_all_atom_positions': (4, 380, 37, 3), 'asym_id': (380,), 'sym_id': (380,), 'entity_id': (380,), 'deletion_matrix': (2048, 380), 'deletion_mean': (380,), 'all_atom_mask': (380, 37), 'all_atom_positions': (380, 37, 3), 'assembly_num_chains': (), 'entity_mask': (380,), 'num_templates': (), 'cluster_bias_mask': (2048,), 'bert_mask': (2048, 380), 'seq_mask': (380,), 'msa_mask': (2048, 380)}
+I0314 19:13:28.903125 140120604677952 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (380, 380, 64)}, 'experimentally_resolved': {'logits': (380, 37)}, 'masked_msa': {'logits': (508, 380, 22)}, 'num_recycles': (), 'predicted_aligned_error': (380, 380), 'predicted_lddt': {'logits': (380, 50)}, 'structure_module': {'final_atom_mask': (380, 37), 'final_atom_positions': (380, 37, 3)}, 'plddt': (380,), 'aligned_confidence_probs': (380, 380, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0314 19:13:28.904779 140120604677952 run_alphafold.py:203] Total JAX model model_1_multimer_v3_pred_0 on oprd_human-1621 predict time (includes compilation time, see --benchmark): 673.9s
+I0314 19:13:59.057703 140120604677952 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 371 (ALA) of chain 0>: ['OXT'], <Residue 379 (ILE) of chain 1>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0314 19:14:00.182614 140120604677952 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0314 19:14:01.487950 140120604677952 amber_minimize.py:72] Restraining 2901 / 5897 particles.
+I0314 19:17:25.943304 140120604677952 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0314 19:17:30.860008 140120604677952 amber_minimize.py:503] Iteration completed: Einit 286065823193.39 Efinal -1990.00 Time 201.80 s num residue violations 2 num residue exclusions 0 
+I0314 19:17:30.875058 140120604677952 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0314 19:17:31.985821 140120604677952 amber_minimize.py:72] Restraining 2877 / 5897 particles.
+I0314 19:19:13.644511 140120604677952 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0314 19:19:17.645430 140120604677952 amber_minimize.py:503] Iteration completed: Einit 11534.64 Efinal -3191.89 Time 99.12 s num residue violations 2 num residue exclusions 2 
+I0314 19:19:17.646123 140120604677952 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0314 19:19:18.944632 140120604677952 amber_minimize.py:72] Restraining 2877 / 5897 particles.
+I0314 19:22:11.680272 140120604677952 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0314 19:22:14.920608 140120604677952 amber_minimize.py:503] Iteration completed: Einit 10439.08 Efinal -3499.23 Time 170.26 s num residue violations 2 num residue exclusions 2 
+I0314 19:22:15.178682 140120604677952 run_alphafold.py:191] Running model model_2_multimer_v3_pred_0 on oprd_human-1621
+I0314 19:22:15.178996 140120604677952 model.py:165] Running predict with shape(feat) = {'aatype': (380,), 'residue_index': (380,), 'seq_length': (), 'msa': (2048, 380), 'num_alignments': (), 'template_aatype': (4, 380), 'template_all_atom_mask': (4, 380, 37), 'template_all_atom_positions': (4, 380, 37, 3), 'asym_id': (380,), 'sym_id': (380,), 'entity_id': (380,), 'deletion_matrix': (2048, 380), 'deletion_mean': (380,), 'all_atom_mask': (380, 37), 'all_atom_positions': (380, 37, 3), 'assembly_num_chains': (), 'entity_mask': (380,), 'num_templates': (), 'cluster_bias_mask': (2048,), 'bert_mask': (2048, 380), 'seq_mask': (380,), 'msa_mask': (2048, 380)}
+I0314 19:43:36.310379 140120604677952 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (380, 380, 64)}, 'experimentally_resolved': {'logits': (380, 37)}, 'masked_msa': {'logits': (508, 380, 22)}, 'num_recycles': (), 'predicted_aligned_error': (380, 380), 'predicted_lddt': {'logits': (380, 50)}, 'structure_module': {'final_atom_mask': (380, 37), 'final_atom_positions': (380, 37, 3)}, 'plddt': (380,), 'aligned_confidence_probs': (380, 380, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0314 19:43:36.340515 140120604677952 run_alphafold.py:203] Total JAX model model_2_multimer_v3_pred_0 on oprd_human-1621 predict time (includes compilation time, see --benchmark): 1281.2s
+I0314 19:44:01.923678 140120604677952 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 371 (ALA) of chain 0>: ['OXT'], <Residue 379 (ILE) of chain 1>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0314 19:44:03.116519 140120604677952 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0314 19:44:04.489915 140120604677952 amber_minimize.py:72] Restraining 2901 / 5897 particles.
+I0314 19:49:26.882909 140120604677952 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0314 19:49:30.447667 140120604677952 amber_minimize.py:503] Iteration completed: Einit 674454754.93 Efinal -4914.54 Time 319.87 s num residue violations 2 num residue exclusions 0 
+I0314 19:49:30.447992 140120604677952 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0314 19:49:31.669228 140120604677952 amber_minimize.py:72] Restraining 2885 / 5897 particles.
+I0314 19:52:40.236755 140120604677952 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0314 19:52:43.491503 140120604677952 amber_minimize.py:503] Iteration completed: Einit 10529.84 Efinal -5900.73 Time 186.25 s num residue violations 0 num residue exclusions 2 
+I0314 19:52:43.883260 140120604677952 run_alphafold.py:191] Running model model_3_multimer_v3_pred_0 on oprd_human-1621
+I0314 19:52:43.883651 140120604677952 model.py:165] Running predict with shape(feat) = {'aatype': (380,), 'residue_index': (380,), 'seq_length': (), 'msa': (2048, 380), 'num_alignments': (), 'template_aatype': (4, 380), 'template_all_atom_mask': (4, 380, 37), 'template_all_atom_positions': (4, 380, 37, 3), 'asym_id': (380,), 'sym_id': (380,), 'entity_id': (380,), 'deletion_matrix': (2048, 380), 'deletion_mean': (380,), 'all_atom_mask': (380, 37), 'all_atom_positions': (380, 37, 3), 'assembly_num_chains': (), 'entity_mask': (380,), 'num_templates': (), 'cluster_bias_mask': (2048,), 'bert_mask': (2048, 380), 'seq_mask': (380,), 'msa_mask': (2048, 380)}
+I0314 19:59:52.290963 140120604677952 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (380, 380, 64)}, 'experimentally_resolved': {'logits': (380, 37)}, 'masked_msa': {'logits': (508, 380, 22)}, 'num_recycles': (), 'predicted_aligned_error': (380, 380), 'predicted_lddt': {'logits': (380, 50)}, 'structure_module': {'final_atom_mask': (380, 37), 'final_atom_positions': (380, 37, 3)}, 'plddt': (380,), 'aligned_confidence_probs': (380, 380, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0314 19:59:52.322441 140120604677952 run_alphafold.py:203] Total JAX model model_3_multimer_v3_pred_0 on oprd_human-1621 predict time (includes compilation time, see --benchmark): 428.4s
+I0314 20:00:19.079331 140120604677952 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 371 (ALA) of chain 0>: ['OXT'], <Residue 379 (ILE) of chain 1>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0314 20:00:19.994006 140120604677952 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0314 20:00:20.937067 140120604677952 amber_minimize.py:72] Restraining 2901 / 5897 particles.
+I0314 20:02:57.597373 140120604677952 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0314 20:03:00.062182 140120604677952 amber_minimize.py:503] Iteration completed: Einit 615331046.42 Efinal -4812.12 Time 154.04 s num residue violations 0 num residue exclusions 0 
+I0314 20:03:00.354859 140120604677952 run_alphafold.py:191] Running model model_4_multimer_v3_pred_0 on oprd_human-1621
+I0314 20:03:00.355175 140120604677952 model.py:165] Running predict with shape(feat) = {'aatype': (380,), 'residue_index': (380,), 'seq_length': (), 'msa': (2048, 380), 'num_alignments': (), 'template_aatype': (4, 380), 'template_all_atom_mask': (4, 380, 37), 'template_all_atom_positions': (4, 380, 37, 3), 'asym_id': (380,), 'sym_id': (380,), 'entity_id': (380,), 'deletion_matrix': (2048, 380), 'deletion_mean': (380,), 'all_atom_mask': (380, 37), 'all_atom_positions': (380, 37, 3), 'assembly_num_chains': (), 'entity_mask': (380,), 'num_templates': (), 'cluster_bias_mask': (2048,), 'bert_mask': (2048, 380), 'seq_mask': (380,), 'msa_mask': (2048, 380)}
+I0314 20:13:16.347808 140120604677952 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (380, 380, 64)}, 'experimentally_resolved': {'logits': (380, 37)}, 'masked_msa': {'logits': (508, 380, 22)}, 'num_recycles': (), 'predicted_aligned_error': (380, 380), 'predicted_lddt': {'logits': (380, 50)}, 'structure_module': {'final_atom_mask': (380, 37), 'final_atom_positions': (380, 37, 3)}, 'plddt': (380,), 'aligned_confidence_probs': (380, 380, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0314 20:13:16.350129 140120604677952 run_alphafold.py:203] Total JAX model model_4_multimer_v3_pred_0 on oprd_human-1621 predict time (includes compilation time, see --benchmark): 616.0s
+I0314 20:13:42.487910 140120604677952 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 371 (ALA) of chain 0>: ['OXT'], <Residue 379 (ILE) of chain 1>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0314 20:13:43.483989 140120604677952 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0314 20:13:44.678514 140120604677952 amber_minimize.py:72] Restraining 2901 / 5897 particles.
+I0314 20:19:01.371255 140120604677952 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0314 20:19:03.756522 140120604677952 amber_minimize.py:503] Iteration completed: Einit 49017871837.25 Efinal -4531.64 Time 313.66 s num residue violations 2 num residue exclusions 0 
+I0314 20:19:03.756819 140120604677952 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0314 20:19:04.928832 140120604677952 amber_minimize.py:72] Restraining 2881 / 5897 particles.
+I0314 20:22:53.797736 140120604677952 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0314 20:22:56.154207 140120604677952 amber_minimize.py:503] Iteration completed: Einit 12533.39 Efinal -5813.76 Time 226.32 s num residue violations 0 num residue exclusions 2 
+I0314 20:22:56.400893 140120604677952 run_alphafold.py:191] Running model model_5_multimer_v3_pred_0 on oprd_human-1621
+I0314 20:22:56.401156 140120604677952 model.py:165] Running predict with shape(feat) = {'aatype': (380,), 'residue_index': (380,), 'seq_length': (), 'msa': (2048, 380), 'num_alignments': (), 'template_aatype': (4, 380), 'template_all_atom_mask': (4, 380, 37), 'template_all_atom_positions': (4, 380, 37, 3), 'asym_id': (380,), 'sym_id': (380,), 'entity_id': (380,), 'deletion_matrix': (2048, 380), 'deletion_mean': (380,), 'all_atom_mask': (380, 37), 'all_atom_positions': (380, 37, 3), 'assembly_num_chains': (), 'entity_mask': (380,), 'num_templates': (), 'cluster_bias_mask': (2048,), 'bert_mask': (2048, 380), 'seq_mask': (380,), 'msa_mask': (2048, 380)}
+I0314 20:31:23.031945 140120604677952 model.py:175] Output shape was {'distogram': {'bin_edges': (63,), 'logits': (380, 380, 64)}, 'experimentally_resolved': {'logits': (380, 37)}, 'masked_msa': {'logits': (508, 380, 22)}, 'num_recycles': (), 'predicted_aligned_error': (380, 380), 'predicted_lddt': {'logits': (380, 50)}, 'structure_module': {'final_atom_mask': (380, 37), 'final_atom_positions': (380, 37, 3)}, 'plddt': (380,), 'aligned_confidence_probs': (380, 380, 64), 'max_predicted_aligned_error': (), 'ptm': (), 'iptm': (), 'ranking_confidence': ()}
+I0314 20:31:23.033345 140120604677952 run_alphafold.py:203] Total JAX model model_5_multimer_v3_pred_0 on oprd_human-1621 predict time (includes compilation time, see --benchmark): 506.6s
+I0314 20:31:46.655115 140120604677952 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {<Residue 371 (ALA) of chain 0>: ['OXT'], <Residue 379 (ILE) of chain 1>: ['OXT']}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0314 20:31:47.585052 140120604677952 amber_minimize.py:411] Minimizing protein, attempt 1 of 100.
+I0314 20:31:48.691563 140120604677952 amber_minimize.py:72] Restraining 2901 / 5897 particles.
+I0314 20:35:09.435816 140120604677952 amber_minimize.py:181] alterations info: {'nonstandard_residues': [], 'removed_heterogens': set(), 'missing_residues': {}, 'missing_heavy_atoms': {}, 'missing_terminals': {}, 'Se_in_MET': [], 'removed_chains': {0: []}}
+I0314 20:35:11.892364 140120604677952 amber_minimize.py:503] Iteration completed: Einit 29536896.45 Efinal -4786.21 Time 198.24 s num residue violations 0 num residue exclusions 0 
+I0314 20:35:12.204420 140120604677952 run_alphafold.py:277] Final timings for oprd_human-1621: {'features': 209.7714865207672, 'process_features_model_1_multimer_v3_pred_0': 6.175041198730469e-05, 'predict_and_compile_model_1_multimer_v3_pred_0': 673.879380941391, 'relax_model_1_multimer_v3_pred_0': 515.4130039215088, 'process_features_model_2_multimer_v3_pred_0': 4.76837158203125e-06, 'predict_and_compile_model_2_multimer_v3_pred_0': 1281.1616435050964, 'relax_model_2_multimer_v3_pred_0': 535.8193025588989, 'process_features_model_3_multimer_v3_pred_0': 5.7220458984375e-06, 'predict_and_compile_model_3_multimer_v3_pred_0': 428.4389297962189, 'relax_model_3_multimer_v3_pred_0': 175.26258993148804, 'process_features_model_4_multimer_v3_pred_0': 9.059906005859375e-06, 'predict_and_compile_model_4_multimer_v3_pred_0': 615.9950823783875, 'relax_model_4_multimer_v3_pred_0': 567.6287388801575, 'process_features_model_5_multimer_v3_pred_0': 5.7220458984375e-06, 'predict_and_compile_model_5_multimer_v3_pred_0': 506.6322672367096, 'relax_model_5_multimer_v3_pred_0': 218.66530990600586}
+
+>> Job finished at: Tue Mar 14 20:35:18 CET 2023
+
+>> Runtime: 5805 s
