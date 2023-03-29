@@ -1,7 +1,7 @@
 # af_arman
 Small repo to run endogenous peptide ligand complexes. Rather quick and dirty with minimal dependencies. List of endogenous peptide ligands and their receptors taken via query from GPCRdb (see input folder). Relaxation only run for complexes without undefined AAs (Xs in sequence) and single chain ligands. Multi-chain ligands are defined seperately (see input_files/peptide_spec_ligands). Analysis script checks center of mass (COM) - if ligand COM is more extracellular than receptor COM, the ligand passes (see also output csv). 
 
-
+```bash
 .
 ├── af_jobs(_af23)						# Parent folder for AF jobs
 │   ├── RECEPTORNAME						# Receptor folder (with protein name)
@@ -34,3 +34,4 @@ Small repo to run endogenous peptide ligand complexes. Rather quick and dirty wi
     ├── af_results.csv				# Info of AF results and their assessment
     └── individual_pdbs				# Folder with individual PDBs that passed assessment
        └── RECEPTORNAME-GTP-rank4.pdb
+       ```
