@@ -12,12 +12,12 @@ af_arman
 │   │       ├── 1_buildmodels.run				# Script to run modeling step (GPU)
 │   │       ├── RECEPTORNAME-GTP				# AF output folder
 │   │       │   ├── first_outside.pdb				# Highest ranked AF model that passed COM assessment
-│   │       │   ├── ranked_X.pdb				# AF output in ranked order
+│   │       │   ├── ranked_[0-4].pdb				# AF output in ranked order
 │   │       │   ├── ranking_debug.json				# Info about AF metrics of models and rank
 │   │       │   ├── relax_metrics.json				# Info about clashes in models
-│   │       │   ├── relaxed_model_X_multimer_v3_pred_0.pdb	# Relaxed AF model, not for all complexes
+│   │       │   ├── relaxed_model_[1-5]_multimer_v3_pred_0.pdb	# Relaxed AF model, not for all complexes
 │   │       │   ├── timings.json				# JSON with duration of AF steps
-│   │       │   └── unrelaxed_model_X_multimer_v3_pred_0.pdb	# Unrelaxed AF output
+│   │       │   └── unrelaxed_model_[1-5]_multimer_v3_pred_0.pdb	# Unrelaxed AF output
 │   │       ├── RECEPTORNAME-GTP.fasta		# FASTA with receptor and ligand seq for AF
 │   │       ├── RECEPTORNAME-GTP.json		# JSON with some info about complex
 │   │       ├── RECEPTORNAME-GTP.pdb		# Best AF model (without check), i.e. ranked_0
